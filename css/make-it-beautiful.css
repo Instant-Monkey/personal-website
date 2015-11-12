@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* This website is designed for mobile first */ 
+/* Built on FOUNDATION 5 by the ZURB FOUNDATION */
+
+
+/* ---------------------------------- *\ 
+  #DECLARING SOME BEAUTIFUL FONTS 
+\* ---------------------------------- */
+
+
+@font-face { 
+	font-family: Adam;
+	src:url(../fonts/ADAM.otf);
+
+}
+@font-face {
+	font-family:Aileron-semiBold; 
+	src:url(../fonts/Aileron-SemiBold.otf);
+}
+@font-face {
+	font-family:Aileron-Bold; 
+	src:url(../fonts/Aileron-Bold.otf);
+}
+
+
+/* ---------------------------------- *\ 
+  #GENERAL RULES FOR DOCUMENT 
+\* ---------------------------------- */
+ 
+html, body {
+	font-size:16px;	
+	margin-left: auto;
+	margin-right: auto;	
+	width:100vw;
+	max-width:1920px;
+	text-shadow:none;
+	overflow-y:auto;
+	overflow-x:hidden; 
+}
+
+
+h1 { 
+	font-family:Adam;
+}
+
+h2 { 
+	font-family:Aileron-Bold;
+}
+
+
+p { 
+	line-height:100%;
+	font-family:Aileron-semiBold;
+	color:#fff;
+}
+
+div {  /*Make border and padding part of the width/height by default */ 
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+
+
+
+
+
+/* ---------------------------------- *\ 
+ *....................
+ *....................
+ * TIME TO GET SERIOUS
+ *....................
+ *....................
+\* ---------------------------------- */
+	
+	
+	
+	
+	
+/* ---------------------------------- *\ 
+  #NAVIGATION
+\* ---------------------------------- */
+
+/*-----MOBILE-----*/
+
+.menu-mobile {
+	display:block;
+	position:fixed;
+	width:100vw; 
+	height:4rem; 
+	background:#e74c3c;
+	z-index:100;
+}
+
+.menu-mobile .menu-icones { 
+	display:block;
+	list-style-type: none;	
+	width:100%;	
+	height:100%;
+	margin:0;
+	z-index:101;
+}
+
+.menu-mobile .menu-icones li { 
+	display:inline;
+}
+
+/*-----DESKTOP-----*/
+
+.menu-desktop {
+	display:block;	
+	position:fixed; 
+	width:5rem;
+	height:100vh;
+	background:#e74c3c;
+	z-index:100;
+}
+
+.menu-desktop .menu-icones {
+	display:block;
+	position:absolute; 
+	width:100%;
+	top:33%; 
+	list-style-type: none;
+	margin:0;
+	z-index:101;
+}
+
+.menu-desktop .menu-icones li {
+	
+} 
+
+/* ---------------------------------- *\ 
+  #NAVIGATION
+\* ---------------------------------- */
