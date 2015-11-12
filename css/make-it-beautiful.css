@@ -1,7 +1,15 @@
 @charset "utf-8";
 
-/* This website is designed for mobile first */ 
-/* Built on FOUNDATION 5 by the ZURB FOUNDATION */
+/** 
+ * This website is designed for mobile first 
+ * All the default css rules are thus for mobile display 
+ * The media queries take care of choosing the right rules for bigger screen sizes
+ * but I guess that since you're here, you probably know what mobile first is ;-)
+ *
+ * Built on FOUNDATION 5 by the ZURB FOUNDATION 
+ * BTW I know bootstrap too, but foundation is more flexible for what I was trying to
+ * accomplish here
+ */
 
 
 /* ---------------------------------- *\ 
@@ -55,14 +63,6 @@ p {
 	font-family:Aileron-semiBold;
 	color:#fff;
 }
-
-div {  /*Make border and padding part of the width/height by default */ 
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-
 
 
 
@@ -141,16 +141,14 @@ div {  /*Make border and padding part of the width/height by default */
   #WEBSITE CONTENT
 \* ---------------------------------- */
 
+
 /*-----GENERAL LAYOUT-----*/
 
 .layout-full-width { 
 	position:absolute; 
-	background-color:red; 
 	width: 100vw; 
 	height: calc(100% - 4rem);
 	top:4rem;
-	
-
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -158,13 +156,11 @@ div {  /*Make border and padding part of the width/height by default */
 	.layout-full-width { 
 		width: calc(100vw - 5rem);
 		height:100%;
-		background-color:green; 
 		left:5rem; 
-		top:0;
-		
-	
+		top:0;	
 	}
 }
+
 
 
 
@@ -174,4 +170,214 @@ div {  /*Make border and padding part of the width/height by default */
 \* ---------------------------------- */
 
 
-.
+/*-----Image Container-----*/
+
+#home-section { 
+	position:relative;
+	background-image: url(../images/New-York-small.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover; 
+	height:calc(100vh - 4rem); 
+	overflow:auto; /* Force the Div to align to the top of its parent (layout-full-width) */ 
+} 
+
+@media only screen and (min-width: 64.0625em) { 
+	
+	#home-section { 
+		background-image: url(../images/New-York.jpg);
+		height:100vh; 
+	} 
+}
+
+/*-----Title Container & Title-----*/
+
+#home-section .title-container {
+	position:relative; 
+	width:80%;
+	top:45%; 
+	margin-left:15%;
+	margin-right:auto;
+	
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+}
+
+#home-section .title-container h1 { 
+		color:#e74c3c; 
+		text-align:left;
+		display:block;
+		font-size:2.8rem; 
+		margin:-0.25em 0; 
+}
+
+#home-section .title-container h2 { 
+		font-family:Adam;
+		color:#f2f5f5; 		 
+		text-align:left;
+		font-size:2.8rem; 
+		margin:-0.25em 0; 
+}
+
+#home-section .separation-main-title {
+		height:2em;	
+}
+
+@media only screen and (min-width: 40.0625em) {
+	#home-section .title-container {
+		top:50%;
+		width:50%;
+		margin-left:35%;
+	}
+	
+	#home-section .title-container h1 { 
+		font-size:3.5rem; 
+	}
+	
+	#home-section .title-container h2 { 		
+		font-size:3.5rem; 
+	}
+	
+	#home-section .separation-main-title {
+		height:2.8em;	
+	}
+}
+
+@media only screen and (min-width: 64.0625em){
+	#home-section .title-container {
+		top:52.5%;
+		margin-left:37.5%;
+	}
+	
+	#home-section .title-container h1 { 
+		font-size:4rem; 
+	}
+	
+	#home-section .title-container h2 { 
+		font-size:4rem; 
+	}
+	
+	#home-section .separation-main-title {
+		height:3.1em;	
+	}
+}
+
+@media only screen and (min-width: 90.0625em){
+	#home-section .title-container {
+		top:55%; 
+		margin-left:40%;
+	}
+	
+	#home-section .title-container h1	{ 
+		font-size:4.5rem; 	
+	}
+	
+	#home-section .title-container h2 { 
+		font-size:4.5rem;  
+	}
+	
+	#home-section .separation-main-title {
+		height:3.5em;	
+	}
+}
+
+
+
+
+/* ---------------------------------- *\ 
+  #DESCRIPTION SECTION 
+\* ---------------------------------- */
+
+
+/*-----Image Container-----*/
+
+
+#description-section { 
+	position:relative;
+	background-image: url(../images/dummy-aix-rouge-small.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover; 
+	height:calc(100vh - 4rem); 
+} 
+
+@media only screen and (min-width: 64.0625em) { 
+	
+	#description-section { 
+		background-image: url(../images/dummy-aix-rouge.jpg);
+		height:100vh; 
+	} 
+}
+
+/*-----Content Container & Content -----*/
+
+#description-section .description-container {
+	min-width:320px;
+	position:relative; 
+	top:42.5%; 
+	
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+}
+
+#description-section .description-container h2 { 
+	color:#fff;
+	font-size:2.4rem;
+	text-transform:uppercase;
+	margin-left:-0.2rem;
+}
+
+#description-section .description-container p { 
+	padding-top:1.25em;
+	border-top: thick solid #fff;
+}
+
+@media only screen and (min-width: 40.0625em) {
+
+	#description-section .description-container {
+		top:50%;
+	}
+	
+	#description-section .description-container h2 { 
+		font-size:2.8rem;
+	}
+	
+	#description-section .description-container p { 
+		font-size:1.25rem;
+	}	
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#description-section .description-container h2 { 
+		text-align:right;
+		margin-top:-0.3rem;
+		margin-left:0;
+	}
+	
+	#description-section .description-container p { 
+		padding-left:0.75rem;
+		padding-top:0.35rem;
+		border-left: 0.175rem solid #fff;
+		border-top:none;
+		font-size:1.5rem;
+	}
+}
+
+@media only screen and (min-width: 90.0625em){
+	
+	#description-section .description-container h2 { 
+		font-size:3.6rem;
+		margin-top:-0.5rem;
+	}
+	
+	#description-section .description-container p { 
+		font-size:1.9rem;
+	}
+
+	
+}
