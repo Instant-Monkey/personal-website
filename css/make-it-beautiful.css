@@ -33,6 +33,7 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;	
 	width:100vw;
+	height:100%;
 	max-width:1920px;
 	text-shadow:none;
 	overflow-y:auto;
@@ -81,6 +82,7 @@ div {  /*Make border and padding part of the width/height by default */
 /* ---------------------------------- *\ 
   #NAVIGATION
 \* ---------------------------------- */
+
 
 /*-----MOBILE-----*/
 
@@ -131,6 +133,45 @@ div {  /*Make border and padding part of the width/height by default */
 	
 } 
 
+
+
+
+
 /* ---------------------------------- *\ 
-  #NAVIGATION
+  #WEBSITE CONTENT
 \* ---------------------------------- */
+
+/*-----GENERAL LAYOUT-----*/
+
+.layout-full-width { 
+	position:absolute; 
+	background-color:red; 
+	width: 100vw; 
+	height: calc(100% - 4rem);
+	top:4rem;
+	
+
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	.layout-full-width { 
+		width: calc(100vw - 5rem);
+		height:100%;
+		background-color:green; 
+		left:5rem; 
+		top:0;
+		
+	
+	}
+}
+
+
+
+
+/* ---------------------------------- *\ 
+  #HOME SECTION 
+\* ---------------------------------- */
+
+
+.
