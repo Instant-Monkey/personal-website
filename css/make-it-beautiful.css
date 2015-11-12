@@ -57,6 +57,10 @@ h2 {
 	font-family:Aileron-Bold;
 }
 
+h3 { 
+	font-family:Aileron-semiBold;
+	color:#fff;
+}
 
 p { 
 	line-height:100%;
@@ -381,3 +385,125 @@ p {
 
 	
 }
+
+
+
+
+/* ---------------------------------- *\ 
+  #SKILLS SECTION 
+\* ---------------------------------- */
+
+
+/*-----Container & Title -----*/
+
+
+#skills h2 { 
+	color:#E74C3C; 
+	font-size:2.2rem; 
+	text-align:center; 
+	text-transform:uppercase;
+	max-width:95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#skills .skills-container { 
+	height:calc((100vh - 4rem)*2); 
+	margin:0;
+	max-width:100%;
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#skills { 
+		height:100vh;
+		background-image:url(../images/dummy-image-comp%C3%A9tences.jpg);
+		background-repeat: no-repeat;
+		background-position:center;
+		background-attachment:fixed;
+		background-size:cover; 
+	}
+	
+	#skills h2 { 
+		margin:0; 
+		background-color:white; 
+		margin-bottom:-3px;
+		max-width:1920px;
+		font-size:3rem;
+	}
+	
+	#skills .skills-container { 
+		max-height:400px;
+	}
+}
+
+/*-----Columns -----*/
+
+#skills .skills-container .skill-col { 
+	height:calc((100vh - 4rem)/2);
+	padding:0;
+}
+
+#skills .skills-container .skill-col h3 { 
+	font-size:2.2rem; 
+	text-align:center; 
+	position:relative;
+	top:50%; 
+	text-transform:uppercase;
+	
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+}
+
+/*-----Columns Skill Photos -----*/
+
+
+#skills .skills-container .skill-col .skill-photo-1 { 
+	background-image:url(../images/competence-editoriales.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover; 
+	height:100%;
+}
+
+#skills .skills-container .skill-col .skill-photo-2 {
+	background-image:url(../images/competence-webdesign.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover; 
+	height:100%;
+}
+
+#skills .skills-container .skill-col .skill-photo-3 {
+	background-image:url(../images/competence-gestion-projets.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover; 
+	height:100%;
+}
+
+#skills .skills-container .skill-col .skill-photo-4 {
+	background-image:url(../images/competence-market-social.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover; 
+	height:100%;
+}
+
+@media only screen and (min-width: 64.0625em) {  
+
+}
+
+
+#skills svg { 
+
+display:none; 
+}
+
+.competence-description-4 { 
+
+display:none; 
+} 
+
+
