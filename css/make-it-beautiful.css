@@ -389,6 +389,7 @@ p {
 
 
 
+
 /* ---------------------------------- *\ 
   #SKILLS SECTION 
 \* ---------------------------------- */
@@ -403,6 +404,7 @@ p {
 	text-align:center; 
 	text-transform:uppercase;
 	max-width:95%;
+	margin:0;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -411,6 +413,10 @@ p {
 	height:calc((100vh - 4rem)*2); 
 	margin:0;
 	max-width:100%;
+}
+
+#skills .skills-title-container { 
+	margin:0;
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -426,15 +432,46 @@ p {
 	
 	#skills h2 { 
 		margin:0; 
-		background-color:white; 
-		margin-bottom:-3px;
 		max-width:1920px;
 		font-size:3rem;
+		height:inherit;
+		
 	}
 	
 	#skills .skills-container { 
-		max-height:400px;
+		height:calc((100vh - 4rem)/2); 
 	}
+	
+	#skills .open-skills-container-desktop { 
+		height:calc(100vh - 4rem);
+	}
+	
+	#skills .skills-title-container { 
+		height:4rem;
+		background-color:white; 
+	}
+}
+
+/* Different cases for skill-container on mobile */ 
+
+@media only screen and (max-width: 40.0625em) {
+
+	#skills .skills-container-mobile-open-1 { 
+		height:calc((100vh - 4rem) * 2.5);
+	}
+	
+	#skills .skills-container-mobile-open-2 { 
+		height:calc((100vh - 4rem) * 3);
+	}
+	
+	#skills .skills-container-mobile-open-3 { 
+		height:calc((100vh - 4rem) * 3.5);
+	}
+	
+	#skills .skills-container-mobile-open-4 { 
+		height:calc((100vh - 4rem) * 4);
+	}
+
 }
 
 /*-----Columns -----*/
@@ -455,6 +492,11 @@ p {
 		-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 }
+
+#skills .skills-container .open-skill-col{ 
+	height:calc(100vh - 4rem);
+}
+
 
 /*-----Columns Skill Photos -----*/
 
@@ -491,19 +533,163 @@ p {
 	height:100%;
 }
 
+#skills .skills-container .skill-col .photo-open { 
+	height:50%; 
+}
+
 @media only screen and (min-width: 64.0625em) {  
+	#skills .skills-container .skill-col { 
+		margin-top:-3px; /*align the description photo with top of background */ 
+	}
+}
+
+/*--------- Buttons and SVG ----------*/
+
+#skills .skills-container .skill-col .rounded-button {
+	width:4rem;
+	height:4rem;	
+	border-radius:50%;
+	text-align:center;
+	position:relative;
+	margin:0 auto;
+	top:42.5%;
+}
+
+@media only screen and (min-width: 64.0625em) {  
+	#skills .skills-container .skill-col .rounded-button {
+		
+		top:55%;
+	}
+}
+
+#skills .skills-container .skill-col .b1 {
+	background-color:#9A2519;
+}
+
+#skills .skills-container .skill-col .b2 {
+	background-color:#D0EB55;
+}
+
+#skills .skills-container .skill-col .b3 {
+	background-color:#E74C3C;
+}
+
+#skills .skills-container .skill-col .b4 {
+	background-color:#1D60B4;
+}
+
+#skills .skills-container .skill-col .b1:hover {
+	background-color:#E83826;
+}
+
+#skills .skills-container .skill-col .b2:hover {
+	background-color:#DFFC5B;
+}
+
+#skills .skills-container .skill-col .b3:hover {
+	background-color:#FF5442;
+}
+
+#skills .skills-container .skill-col .b4:hover {
+	background-color:#1D77BC;
+}
+
+#skills .skills-container .skill-col .st2 {
+	display:none;
+}
+
+
+/*--------- Description boxes ----------*/
+
+
+#skills .skills-container .skill-col .skill-description-1 {
+	height:50%;  
+	background-color:#9A2519;
+	display:none;	
+}
+	
+#skills .skills-container .skill-col .skill-description-2 {
+	height:50%; 
+	background-color:#D0EB55;	
+	display:none;	
+}
+	
+#skills .skills-container .skill-col .skill-description-3 {
+	height:50%;  
+	background-color:#E74C3C;
+	display:none;	
+}
+	
+#skills .skills-container .skill-col .skill-description-4 {
+	height:50%;
+	background-color:#1D60B4;
+	display:none;
+}
+
+@media only screen and (min-width: 64.0625em) {  
+	
 
 }
 
 
-#skills svg { 
 
-display:none; 
+
+/* ---------------------------------- *\ 
+  #REALIZATION SECTION 
+\* ---------------------------------- */
+
+#realization { 
+	position:relative;
+	height:calc(100vh - 4rem); 
 }
 
-.competence-description-4 { 
-
-display:none; 
+#realization .realization-title-container { 
+	margin:0; 
 } 
 
+#realization .realization-title-container h2 { 
+	color:#E74C3C; 
+	font-size:2.2rem; 
+	text-align:center; 
+	text-transform:uppercase;
+}
 
+@media only screen and (min-width: 64.0625em) {  
+	
+	#realization { 
+		height:100vh; 
+	}
+}
+
+
+
+#realization .realization-wrapper .realization-snackable { 
+	background:url(../images/snackable-mock-up-mobile.jpg) no-repeat center ;
+	max-width:calc(1920px - 5rem);
+	float: left;
+}
+
+#realization .realization-wrapper .realization-lodafrench { 
+	background:url(../images/lodafrench-mock-up-mobile.jpg) no-repeat center ;
+	max-width:calc(1920px - 5rem);
+	float: left;
+}
+
+@media only screen and (min-width: 40.0625em) {
+
+	#realization .realization-wrapper .realization-snackable  { 
+		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
+		max-width:calc(1920px - 5rem);
+		float: left;
+	}
+	
+	#realization .realization-wrapper .realization-lodafrench { 
+		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
+		max-width:calc(1920px - 5rem);
+	}
+}
+
+
+#realization p { /* temporary, enlever la marge en dessous de p */ 
+	margin-bottom:0;
+} 
