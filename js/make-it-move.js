@@ -67,7 +67,72 @@ $( document ).ready(function() {
 
 	});
 	
+	$(".arrow-left").click(slideRealLeft); 
+	$(".arrow-right").click(slideRealRight); 
+	
 });
+
+function slideRealRight() { 
+	"use strict";
+	var currentSlide = $('.active-slide-real');
+	var nextSlide = currentSlide.next();
+	var currentSlideTextSelector = currentSlide.find("p").selector;
+	var nextSlideTextSelector = nextSlide.find("p").selector;
+	
+	
+	if (nextSlide.length === 0) { 
+           /* nextSlide = $('.slide-real').first();
+			currentSlide.animate({"right":"-100vw"}, "slow").removeClass('active-slide-real');
+			nextSlide.animate({"left":"0"}, "slow").addClass('active-slide-real');*/
+	} else { 
+	
+		$(currentSlideTextSelector).fadeOut("fast"); 
+		$(nextSlideTextSelector).fadeIn("slow"); 
+		currentSlide.animate({"left":"-100vw"}, "slow", 'easeInOutExpo').removeClass('active-slide-real');
+		nextSlide.animate({"left":"0"}, "slow", 'easeInOutExpo').addClass('active-slide-real');
+    }
+		
+	var currentDot = $('.active-dot');
+	var nextDot = currentDot.next(); 
+	if(nextDot.length === 0) { 
+				/*nextDot = $('.dot').first();*/
+	}
+	else {
+		currentDot.removeClass('active-dot'); 
+		nextDot.addClass('active-dot'); 
+	}
+}
+
+function slideRealLeft() { 
+	"use strict";
+	var currentSlide = $('.active-slide-real');
+	var prevSlide = currentSlide.prev();
+	var currentSlideTextSelector = currentSlide.find("p").selector;
+	var prevSlideTextSelector = prevSlide.find("p").selector;
+		
+	if (prevSlide.length === 0) { 
+            /*prevSlide = $('.slide-real').last();
+			  
+			currentSlide.animate({"left":"-100vw"}, "slow").removeClass('active-slide-real');
+			prevSlide.animate({"right":"0"}, "slow").addClass('active-slide-real');*/
+	} else { 
+		$(currentSlideTextSelector).fadeOut("fast"); 
+		$(prevSlideTextSelector).fadeIn("fast"); 
+		currentSlide.animate({"left":"100vw"}, "slow", 'easeInOutExpo').removeClass('active-slide-real');
+		prevSlide.animate({"left":"0"}, "slow", 'easeInOutExpo').addClass('active-slide-real');
+    }
+		
+	var currentDot = $('.active-dot');
+	var prevDot = currentDot.prev(); 
+	
+	if(prevDot.length === 0) { 
+				/*prevDot = $('.dot').last();*/
+	} else {
+		currentDot.removeClass('active-dot'); 
+		prevDot.addClass('active-dot'); 
+	}
+			
+}
 
 function getHeightOfSkillsContainer () { 
 	"use strict"; 
@@ -84,6 +149,12 @@ function sizeHeightMobile() {// return the height of the screen minus the menu h
 	"use strict"; 
 	var height = (100 * vh()) - (4 * rem); 
 	return height; 
+}
+
+function sizeWidthDesktop() {// return the height of the screen minus the menu width
+	"use strict"; 
+	var width = (100 * vw()) - (4 * rem); 
+	return width; 
 }
 
 function getTypeOfMedia() { //return the size of the screen, small, medium, large or x-large

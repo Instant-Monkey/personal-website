@@ -162,6 +162,7 @@ p {
 		height:100%;
 		left:5rem; 
 		top:0;	
+		max-width:calc(1920px - 5rem);
 	}
 }
 
@@ -638,13 +639,18 @@ p {
   #REALIZATION SECTION 
 \* ---------------------------------- */
 
+
+/*----------- Containers -------------*/ 
+
+
 #realization { 
 	position:relative;
-	height:calc(100vh - 4rem); 
+	height:100vh; 
 }
 
 #realization .realization-title-container { 
 	margin:0; 
+	height:4rem;
 } 
 
 #realization .realization-title-container h2 { 
@@ -654,42 +660,143 @@ p {
 	text-transform:uppercase;
 }
 
+#realization .realization-wrapper { 
+		height:calc(100vh - 4rem);	
+		text-align:center;
+		/*overflow-x:hidden;	 used to hide the next slide out of the boud of screen */ 
+}	
+
 @media only screen and (min-width: 64.0625em) {  
 	
 	#realization { 
-		height:100vh; 
+	
 	}
+	
+	#realization .realization-title-container { 
+				
+	}
+	
+	#realization .realization-wrapper { 
+			
+	}	
+		
+	
 }
 
+/*----------- Slides -------------*/ 
 
 
 #realization .realization-wrapper .realization-snackable { 
-	background:url(../images/snackable-mock-up-mobile.jpg) no-repeat center ;
-	max-width:calc(1920px - 5rem);
-	float: left;
+	background:url(../images/snackable-mock-up-mobile.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	height:inherit;
+	position:absolute;
+	float:left;
 }
 
 #realization .realization-wrapper .realization-lodafrench { 
-	background:url(../images/lodafrench-mock-up-mobile.jpg) no-repeat center ;
-	max-width:calc(1920px - 5rem);
-	float: left;
+	background:url(../images/lodafrench-mock-up-mobile.jpg) ;
+	background-repeat: no-repeat;
+	background-position:center;
+	height:inherit;
+	position:absolute;
+	left:100vw;
+	
+}
+
+#realization .realization-wrapper h3 { 
+	color:#fff;
+	font-size:2.2rem; 
+	text-transform:uppercase;
+	max-width:95%;
+	padding-top: 0.5rem;
+	margin-right:auto;
+	margin-left:auto;
+	position:relative; 
+	top:25%; 
+	
+}
+
+#realization .realization-wrapper p { 
+	position:relative;
+	top:25%;
+	width:90%;
+	margin: 0 auto;
 }
 
 @media only screen and (min-width: 40.0625em) {
 
 	#realization .realization-wrapper .realization-snackable  { 
 		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
-		max-width:calc(1920px - 5rem);
-		float: left;
+		
+		
 	}
 	
 	#realization .realization-wrapper .realization-lodafrench { 
 		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
-		max-width:calc(1920px - 5rem);
+		left:calc(100vw - 5rem); 
 	}
 }
 
 
-#realization p { /* temporary, enlever la marge en dessous de p */ 
+/*----------- Arrow -------------*/ 
+
+
+#realization .arrow-wrapper { 
+	position:absolute; 
+	z-index:2; 
+	width:50%;
+	margin:0 auto;
+	top: 25%;
+	height:1.5rem; 
+	text-align:center;
+	left:0;
+	right:0; /* allow to center with margin auto and absolute positionning */ 
+}
+
+#realization .arrow-wrapper .slider-dots {
+  list-style: none;
+  display: inline-block;
+  margin:0 auto;
+  height:100%;
+  width:50%;
+  position:relative;
+  bottom:0.5rem;
+}
+
+#realization .arrow-wrapper .slider-dots li {
+  color: #bbbcbc;
+  display: inline;
+  font-size: 30px;
+  margin-right: 5px;
+  
+}
+
+#realization .arrow-wrapper .slider-dots li.active-dot {
+  color: #363636;
+}
+
+#realization .arrow-wrapper .arrow-left { 
+vertical-align:top; 
+display:inline-block;
+margin-right: 1rem;
+}
+#realization .arrow-wrapper .arrow-right { 
+vertical-align:top; 
+display:inline-block;
+margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
+/*
+
+#realization p {  temporary, enlever la marge en dessous de p 
 	margin-bottom:0;
-} 
+} */ 
