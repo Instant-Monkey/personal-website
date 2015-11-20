@@ -420,15 +420,45 @@ p {
 	margin:0;
 }
 
-@media only screen and (min-width: 64.0625em) { 
-
+@media only screen and (min-width: 40.0625em) {
+	
 	#skills { 
-		height:100vh;
 		background-image:url(../images/dummy-image-comp%C3%A9tences.jpg);
 		background-repeat: no-repeat;
 		background-position:center;
 		background-attachment:fixed;
 		background-size:cover; 
+	}
+	
+	#skills .skills-container { 
+		height:calc(100vh - 4rem); 
+	}
+	
+	#skills .skills-container .c3 {
+		clear:left;  /* Allow the photo gestion de projet to go back to the line */ 
+	}
+	
+	#skills .skills-container-one-open-tablet {
+		height:calc((100vh - 4rem) * 1.5);
+	}
+	
+	#skills .skills-container-both-open-tablet {
+		height:calc((100vh - 4rem) * 2);
+	}
+	
+	#skills .skills-title-container { 
+		background-color:white; 
+	}
+	
+	#skills .skills-container .skill-col { 
+		margin-top:-2px; /*align the description photo with top of background */ 
+	}
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#skills { 
+		height:100vh;		
 	}
 	
 	#skills h2 { 
@@ -449,7 +479,10 @@ p {
 	
 	#skills .skills-title-container { 
 		height:4rem;
-		background-color:white; 
+	}
+	
+	#skills .skills-container .c3 {
+		clear:none; /* cancel the settings for the tablet mode */ 
 	}
 }
 
@@ -498,6 +531,9 @@ p {
 	height:calc(100vh - 4rem);
 }
 
+#skills .skills-container .skill-col-tablet-open {
+	height:calc(100vh - 4rem);
+} 
 
 /*-----Columns Skill Photos -----*/
 
@@ -729,14 +765,27 @@ p {
 
 	#realization .realization-wrapper .realization-snackable  { 
 		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
-		
-		
 	}
 	
 	#realization .realization-wrapper .realization-lodafrench { 
 		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
+	}
+	
+	#realization .realization-wrapper p { 
+		position:relative;
+		top:25%;
+		width:50%;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#realization .realization-wrapper .realization-lodafrench { 
+		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
 		left:calc(100vw - 5rem); 
 	}
+
 }
 
 
@@ -756,47 +805,45 @@ p {
 }
 
 #realization .arrow-wrapper .slider-dots {
-  list-style: none;
-  display: inline-block;
-  margin:0 auto;
-  height:100%;
-  width:50%;
-  position:relative;
-  bottom:0.5rem;
+	list-style: none;
+	display: inline-block;
+	margin:0 auto;
+	height:100%;
+	width:50%;
+	position:relative;
+	bottom:0.5rem;
 }
 
 #realization .arrow-wrapper .slider-dots li {
-  color: #bbbcbc;
-  display: inline;
-  font-size: 30px;
-  margin-right: 5px;
-  
+	color: #bbbcbc;
+	display: inline;
+	font-size: 30px;
+	margin-right: 5px; 
 }
 
 #realization .arrow-wrapper .slider-dots li.active-dot {
-  color: #363636;
+	color: #E74C3C;
 }
 
 #realization .arrow-wrapper .arrow-left { 
-vertical-align:top; 
-display:inline-block;
-margin-right: 1rem;
+	vertical-align:top; 
+	display:inline-block;
+	margin-right: 1rem;
 }
 #realization .arrow-wrapper .arrow-right { 
-vertical-align:top; 
-display:inline-block;
-margin-left: 1rem;
+	vertical-align:top; 
+	display:inline-block;
+	margin-left: 1rem;
 }
 
 
 
 
+/* ---------------------------------- *\ 
+  #STORY SECTION 
+\* ---------------------------------- */
 
-
-
-
-/*
-
-#realization p {  temporary, enlever la marge en dessous de p 
-	margin-bottom:0;
-} */ 
+#story { 
+	height:100vh; 
+	background:red ; 
+}

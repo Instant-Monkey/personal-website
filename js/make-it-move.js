@@ -12,11 +12,27 @@ $( document ).ready(function() {
 		
 		if (openTab[numeroBouton] === false){
 			nbrOpenButton += 1 ; 
+			openTab[numeroBouton]=true;
+			
 			if (getTypeOfMedia() === "small") { 
 					
 				$(".skills-container").addClass("skills-container-mobile-open-"+nbrOpenButton);
 				$(".skills-container").removeClass("skills-container-mobile-open-"+(nbrOpenButton-1));
 				
+				
+				} else if (getTypeOfMedia() === "medium") {
+					
+					if ((whatRowIsOpenTablet(openTab) === "one open" ) || (whatRowIsOpenTablet(openTab) === "two open" )) { 
+					
+						$(".skills-container").addClass("skills-container-one-open-tablet"); 
+						$(".skills-container").removeClass("skills-container-both-open-tablet");
+						
+					} else if (whatRowIsOpenTablet(openTab) === "both open" ) { 
+					
+						$(".skills-container").addClass("skills-container-both-open-tablet"); 
+						$(".skills-container").removeClass("skills-container-one-open-tablet"); 
+					} 
+					 
 				} else { 
 			
 				if (nbrOpenButton === 1) { 
@@ -32,12 +48,13 @@ $( document ).ready(function() {
 			$(".st2.a"+numeroBouton).css ("display", "block");
 			$(".st0.a"+numeroBouton).css ("display", "none");
 			
-			openTab[numeroBouton]=true;
+			
 		}
 		
 		
 		else {
 			nbrOpenButton -= 1 ; 
+			openTab[numeroBouton]=false;
 			
 			$(".skill-description-"+numeroBouton).slideUp(350,'easeInOutExpo', function() { 
 				
@@ -47,7 +64,24 @@ $( document ).ready(function() {
 					}
 					$(".skills-container").removeClass("skills-container-mobile-open-"+(nbrOpenButton+1));
 					
-				} else { 
+				} else if (getTypeOfMedia() === "medium") { 
+					
+					if ((whatRowIsOpenTablet(openTab) === "one open" ) || (whatRowIsOpenTablet(openTab) === "two open" )) { 
+					
+						$(".skills-container").addClass("skills-container-one-open-tablet"); 
+						$(".skills-container").removeClass("skills-container-both-open-tablet");
+						
+					} else if (whatRowIsOpenTablet(openTab) === "both open" ) { 
+					
+						$(".skills-container").addClass("skills-container-both-open-tablet"); 
+						$(".skills-container").removeClass("skills-container-one-open-tablet"); 
+					} else { 
+						$(".skills-container").removeClass("skills-container-one-open-tablet"); 
+						
+					}
+				}
+				
+				else { 
 					
 					if (nbrOpenButton === 0) { 
 						$(".skills-container").removeClass("open-skills-container-desktop");
@@ -61,7 +95,7 @@ $( document ).ready(function() {
 				
 			});
 			
-			openTab[numeroBouton]=false;
+			
 		}
 		
 
@@ -71,6 +105,38 @@ $( document ).ready(function() {
 	$(".arrow-right").click(slideRealRight); 
 	
 });
+
+function whatRowIsOpenTablet(array) {
+	"use strict";
+	var topOpen = false, 
+		bottomOpen = false,
+		status ;
+	for (var i = 1; i < array.length; i++) { 
+		if (array[i] === true) { 
+			if (i <= 2) { 
+				topOpen = true; 
+			} else { 
+				bottomOpen = true; 
+			}
+		}
+	}
+	
+	if ((topOpen === false ) && (bottomOpen === false)) { 
+		status = "none open" ;
+		
+	} else if (topOpen === true) {
+		
+		if (bottomOpen === true) {
+			status = "both open"; 
+		} else { 
+			status = "one open"; 
+		} 
+		
+	} else { 
+		status = "two open"; 
+	}
+	return status; 
+}
 
 function slideRealRight() { 
 	"use strict";
