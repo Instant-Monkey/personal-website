@@ -399,7 +399,7 @@ p {
 /*-----Container & Title -----*/
 
 
-#skills h2 { 
+#skills .skills-title-container h2 { 
 	color:#E74C3C; 
 	font-size:2.2rem; 
 	text-align:center; 
@@ -408,6 +408,8 @@ p {
 	margin:0;
 	margin-left:auto;
 	margin-right:auto;
+	position:relative; 
+	top:12%;
 }
 
 #skills .skills-container { 
@@ -418,6 +420,7 @@ p {
 
 #skills .skills-title-container { 
 	margin:0;
+	height:4rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
@@ -461,28 +464,45 @@ p {
 		height:100vh;		
 	}
 	
-	#skills h2 { 
+	#skills .skills-title-container h2 { 
 		margin:0; 
 		max-width:1920px;
 		font-size:3rem;
-		height:inherit;
-		
+		height:inherit;		
 	}
 	
 	#skills .skills-container { 
-		height:calc((100vh - 4rem)/2); 
+		height:calc((100vh - 5rem)/2); 
 	}
 	
 	#skills .open-skills-container-desktop { 
-		height:calc(100vh - 4rem);
+		height:calc(100vh - 5rem);
 	}
 	
 	#skills .skills-title-container { 
-		height:4rem;
+		height:5rem;
 	}
 	
 	#skills .skills-container .c3 {
 		clear:none; /* cancel the settings for the tablet mode */ 
+	}
+}
+
+@media only screen and (min-width: 90.0625em) { 
+
+	#skills .skills-title-container { 
+		height:7rem;
+	}
+	
+	#skills .skills-container { 
+		height:calc((100vh - 7rem)/2); 
+	}
+	
+	#skills .open-skills-container-desktop { 
+		height:calc(100vh - 7rem);
+	}
+	#skills .skills-title-container h2 { 
+		top:15%;
 	}
 }
 
@@ -534,6 +554,28 @@ p {
 #skills .skills-container .skill-col-tablet-open {
 	height:calc(100vh - 4rem);
 } 
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#skills .skills-container .skill-col { 
+		height:calc((100vh - 5rem)/2);	
+	}
+	
+	#skills .skills-container .open-skill-col{ 
+		height:calc(100vh - 5rem);
+	}
+}
+
+@media only screen and (min-width: 90.0625em) { 
+
+	#skills .skills-container .skill-col { 
+		height:calc((100vh - 7rem)/2);	
+	}
+	
+	#skills .skills-container .open-skill-col{ 
+		height:calc(100vh - 7rem);
+	}
+}
 
 /*-----Columns Skill Photos -----*/
 
@@ -803,12 +845,14 @@ p {
 	
 	#realization .realization-wrapper h3 { 
 		top:17.5%; 
+		font-size:2.3rem;
 	}
 	
 	#realization .realization-wrapper p { 
 		position:relative;
 		top:17.5%;
 		width:50%;
+		font-size:1.3rem;
 		margin: 0 auto;
 	}
 }
@@ -822,12 +866,24 @@ p {
 	
 	#realization .realization-wrapper h3 { 
 		top:15%; 
+		font-size:2.5rem;
 	}
 	
 	#realization .realization-wrapper p { 
 		top:15%; 
+		font-size:1.55rem;
 	}
 
+}
+
+@media only screen and (min-width: 90.0625em) { 
+	#realization .realization-wrapper p {  
+		font-size:1.8rem;	
+	}
+	
+	#realization .realization-wrapper h3 { 
+		font-size:2.7rem;
+	}
 }
 
 
