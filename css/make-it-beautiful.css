@@ -694,6 +694,8 @@ p {
 	font-size:2.2rem; 
 	text-align:center; 
 	text-transform:uppercase;
+	position:relative; 
+	top:12%;
 }
 
 #realization .realization-wrapper { 
@@ -702,21 +704,49 @@ p {
 		/*overflow-x:hidden;	 used to hide the next slide out of the boud of screen */ 
 }	
 
-@media only screen and (min-width: 64.0625em) {  
-	
+@media only screen and (min-width: 40.0625em) { 
+
 	#realization { 
-	
+		height:calc(100vh - 4rem);
 	}
 	
+	#realization .realization-wrapper { 
+		height:calc(100vh - 8rem);	
+	}
+}
+
+@media only screen and (min-width: 64.0625em) {  
+		
 	#realization .realization-title-container { 
+		height:5rem;
 				
 	}
 	
 	#realization .realization-wrapper { 
-			
+		height:calc(100vh - 5rem);	
 	}	
-		
 	
+	#realization .realization-title-container h2 { 
+		font-size:2.8rem; 
+		top:10%;
+	}
+}
+
+@media only screen and (min-width: 90.0625em) { 
+	
+	#realization .realization-title-container { 
+		height:7rem;
+				
+	}
+	
+	#realization .realization-wrapper { 
+		height:calc(100vh - 7rem);	
+	}	
+	
+	#realization .realization-title-container h2 { 
+		font-size:3rem; 
+		top:15%;
+	}
 }
 
 /*----------- Slides -------------*/ 
@@ -771,9 +801,13 @@ p {
 		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
 	}
 	
+	#realization .realization-wrapper h3 { 
+		top:17.5%; 
+	}
+	
 	#realization .realization-wrapper p { 
 		position:relative;
-		top:25%;
+		top:17.5%;
 		width:50%;
 		margin: 0 auto;
 	}
@@ -784,6 +818,14 @@ p {
 	#realization .realization-wrapper .realization-lodafrench { 
 		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
 		left:calc(100vw - 5rem); 
+	}
+	
+	#realization .realization-wrapper h3 { 
+		top:15%; 
+	}
+	
+	#realization .realization-wrapper p { 
+		top:15%; 
 	}
 
 }
@@ -834,6 +876,27 @@ p {
 	vertical-align:top; 
 	display:inline-block;
 	margin-left: 1rem;
+}
+
+@media only screen and (min-width: 40.0625em) {	
+	#realization .arrow-wrapper { 
+		width:30%; 
+		top: 20%;
+	}
+}
+
+@media only screen and (min-width: 64.0625em) { 
+	#realization .arrow-wrapper { 
+		width:20%; 
+		top: 20%;
+	}
+}
+
+@media only screen and (min-width: 90.0625em) { 
+	#realization .arrow-wrapper { 
+		width:20%; 
+		top: 20%;
+	}
 }
 
 
