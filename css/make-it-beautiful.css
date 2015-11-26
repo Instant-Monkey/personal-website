@@ -44,8 +44,10 @@ html, body {
 	height:100%;
 	max-width:1920px;
 	text-shadow:none;
-	overflow-y:auto;
-	overflow-x:hidden; 
+}
+
+body { 
+	overflow-x:hidden; /* if this property is used in html it crashes scrollmagic */
 }
 
 
@@ -71,6 +73,12 @@ p {
 
 
 
+
+
+
+
+
+
 /* ---------------------------------- *\ 
  *....................
  *....................
@@ -83,12 +91,24 @@ p {
 	
 	
 	
+	
+	
+	
+	
+	
+	
 /* ---------------------------------- *\ 
-  #NAVIGATION
+ * ---------------------------------- *
+ * #NAVIGUATION                       *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*-----MOBILE-----*/
+
+/*---------------*
+ *Mobile
+ *---------------*/
+
 
 .menu-mobile {
 	display:block;
@@ -112,7 +132,11 @@ p {
 	display:inline;
 }
 
-/*-----DESKTOP-----*/
+
+/*---------------*
+ *Desktop
+ *---------------*/
+
 
 .menu-desktop {
 	display:block;	
@@ -133,33 +157,49 @@ p {
 	z-index:101;
 }
 
-.menu-desktop .menu-icones li {
-	
-} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 /* ---------------------------------- *\ 
-  #WEBSITE CONTENT
+ * ---------------------------------- *
+ * #WEBSITE CONTENT                   *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*-----GENERAL LAYOUT-----*/
+/*---------------*
+ *General layout
+ *---------------*/
 
 .layout-full-width { 
 	position:absolute; 
 	width: 100vw; 
-	height: calc(100% - 4rem);
-	top:4rem;
+	top:4rem; 
 }
 
 @media only screen and (min-width: 64.0625em) { 
 
 	.layout-full-width { 
 		width: calc(100vw - 5rem);
-		height:100%;
 		left:5rem; 
 		top:0;	
 		max-width:calc(1920px - 5rem);
@@ -171,13 +211,19 @@ p {
 
 
 /* ---------------------------------- *\ 
-  #HOME SECTION 
+ * ---------------------------------- *
+ * #HOME SECTION                      *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*-----Image Container-----*/
 
-#home-section { 
+/*---------------*
+ *Image Container
+ *---------------*/
+
+
+#home { 
 	position:relative;
 	background-image: url(../images/New-York-small.jpg);
 	background-repeat: no-repeat;
@@ -185,20 +231,24 @@ p {
 	background-attachment:fixed;
 	background-size:cover; 
 	height:calc(100vh - 4rem); 
-	overflow:auto; /* Force the Div to align to the top of its parent (layout-full-width) */ 
+	overflow:hidden; /* correct the size of the div to be perfect */ 
 } 
 
 @media only screen and (min-width: 64.0625em) { 
 	
-	#home-section { 
+	#home { 
 		background-image: url(../images/New-York.jpg);
 		height:100vh; 
 	} 
 }
 
-/*-----Title Container & Title-----*/
 
-#home-section .title-container {
+/*---------------*
+ *Title, Container & Title 
+ *---------------*/
+ 
+
+.home__title-container {
 	position:relative; 
 	width:80%;
 	top:45%; 
@@ -210,96 +260,101 @@ p {
 			transform: translateY(-50%);
 }
 
-#home-section .title-container h1 { 
-		color:#e74c3c; 
-		text-align:left;
-		display:block;
-		font-size:2.8rem; 
-		margin:-0.25em 0; 
-}
-
-#home-section .title-container h2 { 
-		font-family:Adam;
-		color:#f2f5f5; 		 
-		text-align:left;
-		font-size:2.8rem; 
-		margin:-0.25em 0; 
-}
-
-#home-section .separation-main-title {
-		height:2em;	
-}
+	.home__title-container h1 { 
+			color:#e74c3c; 
+			text-align:left;
+			display:block;
+			font-size:2.8rem; 
+			margin:-0.25em 0; 
+	}
+	
+	.home__title-container h2 { 
+			font-family:Adam;
+			color:#f2f5f5; 		 
+			text-align:left;
+			font-size:2.8rem; 
+			margin:-0.25em 0; 
+	}
+	
+	.home__separation-main-title {
+			height:2em;	
+	}
 
 @media only screen and (min-width: 40.0625em) {
-	#home-section .title-container {
+	.home__title-container {
 		top:50%;
 		width:50%;
 		margin-left:35%;
 	}
 	
-	#home-section .title-container h1 { 
-		font-size:3.5rem; 
-	}
-	
-	#home-section .title-container h2 { 		
-		font-size:3.5rem; 
-	}
-	
-	#home-section .separation-main-title {
-		height:2.8em;	
-	}
+		.home__title-container h1 { 
+			font-size:3.5rem; 
+		}
+		
+		.home__title-container h2 { 		
+			font-size:3.5rem; 
+		}
+		
+		.home__separation-main-title {
+			height:2.8em;	
+		}
 }
 
 @media only screen and (min-width: 64.0625em){
-	#home-section .title-container {
+	.home__title-container {
 		top:52.5%;
 		margin-left:37.5%;
 	}
 	
-	#home-section .title-container h1 { 
-		font-size:4rem; 
-	}
-	
-	#home-section .title-container h2 { 
-		font-size:4rem; 
-	}
-	
-	#home-section .separation-main-title {
-		height:3.1em;	
-	}
+		.home__title-container h1 { 
+			font-size:4rem; 
+		}
+		
+		.home__title-container h2 { 
+			font-size:4rem; 
+		}
+		
+		.home__separation-main-title {
+			height:3.1em;	
+		}
 }
 
 @media only screen and (min-width: 90.0625em){
-	#home-section .title-container {
+	.home__title-container {
 		top:55%; 
 		margin-left:40%;
 	}
 	
-	#home-section .title-container h1	{ 
-		font-size:4.5rem; 	
-	}
-	
-	#home-section .title-container h2 { 
-		font-size:4.5rem;  
-	}
-	
-	#home-section .separation-main-title {
-		height:3.5em;	
-	}
+		.home__title-container h1	{ 
+			font-size:4.5rem; 	
+		}
+		
+		.home__title-container h2 { 
+			font-size:4.5rem;  
+		}
+		
+		.home__separation-main-title {
+			height:3.5em;	
+		}
 }
 
 
 
 
 /* ---------------------------------- *\ 
-  #DESCRIPTION SECTION 
+ * ---------------------------------- *
+ * #DESCRIPTION SECTION               *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*-----Image Container-----*/
+
+/*---------------*
+ *Image Container
+ *---------------*/
 
 
-#description-section { 
+#description { 
 	position:relative;
 	background-image: url(../images/dummy-aix-rouge-small.jpg);
 	background-repeat: no-repeat;
@@ -311,15 +366,19 @@ p {
 
 @media only screen and (min-width: 64.0625em) { 
 	
-	#description-section { 
+	#description { 
 		background-image: url(../images/dummy-aix-rouge.jpg);
 		height:100vh; 
 	} 
 }
 
-/*-----Content Container & Content -----*/
 
-#description-section .description-container {
+/*---------------*
+ *Content, Container & Content 
+ *---------------*/
+ 
+
+.description__container {
 	min-width:320px;
 	position:relative; 
 	top:42.5%; 
@@ -329,62 +388,60 @@ p {
 			transform: translateY(-50%);
 }
 
-#description-section .description-container h2 { 
-	color:#fff;
-	font-size:2.4rem;
-	text-transform:uppercase;
-	margin-left:-0.2rem;
-}
-
-#description-section .description-container p { 
-	padding-top:1.25em;
-	border-top: thick solid #fff;
-}
+	.description__container h2 { 
+		color:#fff;
+		font-size:2.4rem;
+		text-transform:uppercase;
+		margin-left:-0.2rem;
+	}
+	
+	.description__container p { 
+		padding-top:1.25em;
+		border-top: thick solid #fff;
+	}
 
 @media only screen and (min-width: 40.0625em) {
 
-	#description-section .description-container {
+	.description__container {
 		top:50%;
 	}
 	
-	#description-section .description-container h2 { 
-		font-size:2.8rem;
-	}
-	
-	#description-section .description-container p { 
-		font-size:1.25rem;
-	}	
+		.description__container h2 { 
+			font-size:2.8rem;
+		}
+		
+		.description__container p { 
+			font-size:1.25rem;
+		}	
 }
 
 @media only screen and (min-width: 64.0625em) { 
 
-	#description-section .description-container h2 { 
-		text-align:right;
-		margin-top:-0.3rem;
-		margin-left:0;
-	}
+		.description__container h2 { 
+			text-align:right;
+			margin-top:-0.3rem;
+			margin-left:0;
+		}
 	
-	#description-section .description-container p { 
-		padding-left:0.75rem;
-		padding-top:0.35rem;
-		border-left: 0.175rem solid #fff;
-		border-top:none;
-		font-size:1.5rem;
-	}
+		.description__container p { 
+			padding-left:0.75rem;
+			padding-top:0.35rem;
+			border-left: 0.175rem solid #fff;
+			border-top:none;
+			font-size:1.5rem;
+		}
 }
 
 @media only screen and (min-width: 90.0625em){
 	
-	#description-section .description-container h2 { 
-		font-size:3.6rem;
-		margin-top:-0.5rem;
-	}
-	
-	#description-section .description-container p { 
-		font-size:1.9rem;
-	}
-
-	
+		.description__container h2 { 
+			font-size:3.6rem;
+			margin-top:-0.5rem;
+		}
+		
+		.description__container p { 
+			font-size:1.9rem;
+		}	
 }
 
 
@@ -392,36 +449,65 @@ p {
 
 
 /* ---------------------------------- *\ 
-  #SKILLS SECTION 
+ * ---------------------------------- *
+ * #SKILLS SECTION                    *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*-----Container & Title -----*/
 
+/*---------------*
+ *Section, Title & global container 
+ *---------------*/
+ 
 
-#skills .skills-title-container h2 { 
-	color:#E74C3C; 
-	font-size:2.2rem; 
-	text-align:center; 
-	text-transform:uppercase;
-	max-width:95%;
+.skills__title-container { 
 	margin:0;
-	margin-left:auto;
-	margin-right:auto;
-	position:relative; 
-	top:12%;
+	height:4rem;
 }
 
-#skills .skills-container { 
+	.skills__title-container h2 { 
+		color:#E74C3C; 
+		font-size:2.2rem; 
+		text-align:center; 
+		text-transform:uppercase;
+		max-width:95%;
+		margin:0;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative; 
+		top:12%;
+	}
+
+.skills__container { 
 	height:calc((100vh - 4rem)*2); 
 	margin:0;
 	max-width:100%;
 }
 
-#skills .skills-title-container { 
-	margin:0;
-	height:4rem;
+/* Different cases for skill-container on mobile */ 
+
+@media only screen and (max-width: 40.0625em) {
+
+	.skills__container--open-mobile-1 { 
+		height:calc((100vh - 4rem) * 2.5);
+	}
+	
+	.skills__container--open-mobile-2 { 
+		height:calc((100vh - 4rem) * 3);
+	}
+	
+	.skills__container--open-mobile-3 { 
+		height:calc((100vh - 4rem) * 3.5);
+	}
+	
+	.skills__container--open-mobile-4 { 
+		height:calc((100vh - 4rem) * 4);
+	}
+
 }
+
+/* Media Queries for section, title & containers */ 
 
 @media only screen and (min-width: 40.0625em) {
 	
@@ -433,29 +519,22 @@ p {
 		background-size:cover; 
 	}
 	
-	#skills .skills-container { 
-		height:calc(100vh - 4rem); 
-	}
+		.skills__title-container { 
+			background-color:white; 
+		}
+		
+		.skills__container { 
+			height:calc(100vh - 4rem); 
+		}
+		
+		.skills__container--open-one-tablet {
+			height:calc((100vh - 4rem) * 1.5);
+		}
+		
+		.skills__container--open-both-tablet {
+			height:calc((100vh - 4rem) * 2);
+		}
 	
-	#skills .skills-container .c3 {
-		clear:left;  /* Allow the photo gestion de projet to go back to the line */ 
-	}
-	
-	#skills .skills-container-one-open-tablet {
-		height:calc((100vh - 4rem) * 1.5);
-	}
-	
-	#skills .skills-container-both-open-tablet {
-		height:calc((100vh - 4rem) * 2);
-	}
-	
-	#skills .skills-title-container { 
-		background-color:white; 
-	}
-	
-	#skills .skills-container .skill-col { 
-		margin-top:-2px; /*align the description photo with top of background */ 
-	}
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -464,123 +543,127 @@ p {
 		height:100vh;		
 	}
 	
-	#skills .skills-title-container h2 { 
-		margin:0; 
-		max-width:1920px;
-		font-size:3rem;
-		height:inherit;		
+		.skills__title-container { 
+			height:5rem;
+		}
+	
+			.skills__title-container h2 { 
+				margin:0; 
+				max-width:1920px;
+				font-size:3rem;
+				height:inherit;		
+			}
+	
+		.skills__container { 
+			height:calc((100vh - 5rem)/2); 
+		}
+	
+		.skills__container--open-desktop { 
+			height:calc(100vh - 5rem);
+		}
+	
+}
+
+@media only screen and (min-width: 90.0625em) { 
+
+	.skills__title-container { 
+		height:7rem;
 	}
 	
-	#skills .skills-container { 
-		height:calc((100vh - 5rem)/2); 
+		.skills__title-container h2 { 
+			top:15%;
+		}
+	
+	.skills__container { 
+		height:calc((100vh - 7rem)/2); 
 	}
 	
-	#skills .open-skills-container-desktop { 
+	.skills__container--open-desktop { 
+		height:calc(100vh - 7rem);
+	}
+	
+}
+
+
+/*---------------*
+ *Columns Management  
+ *---------------*/
+ 
+
+.skills__col { 
+	height:calc((100vh - 4rem)/2);
+	padding:0;
+	margin-top:-3px; /*align the description photo with top of background */ 
+	
+}
+
+	.skills__col h3 { 
+		font-size:2.2rem; 
+		text-align:center; 
+		position:relative;
+		top:50%; 
+		text-transform:uppercase;
+		
+		-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+	}
+
+.skills__col--open{ 
+	height:calc(100vh - 4rem);
+}
+
+@media only screen and (min-width: 40.0625em) {
+	
+	.skills__col { 
+		float:left;  /* Prevent the strange bug where each div return line (since the css name were changed)*/
+		margin-top:-2px;  /*align the description photo with top of background */ 
+	}
+	
+	.skills__col--open-tablet {
+		height:calc(100vh - 4rem);
+	} 
+
+	.skills__c3 {
+		clear:left;  /* Allow the photo gestion de projet to go back to the line for tablet mode */ 
+	}
+	
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	.skills__col { 
+		height:calc((100vh - 5rem)/2);
+		margin-top:-3px; /*align the description photo with top of background */ 	
+	}
+	
+	.skills__col--open{ 
 		height:calc(100vh - 5rem);
 	}
 	
-	#skills .skills-title-container { 
-		height:5rem;
-	}
-	
-	#skills .skills-container .c3 {
+	.skills__c3 {
 		clear:none; /* cancel the settings for the tablet mode */ 
 	}
 }
 
 @media only screen and (min-width: 90.0625em) { 
 
-	#skills .skills-title-container { 
-		height:7rem;
-	}
-	
-	#skills .skills-container { 
-		height:calc((100vh - 7rem)/2); 
-	}
-	
-	#skills .open-skills-container-desktop { 
-		height:calc(100vh - 7rem);
-	}
-	#skills .skills-title-container h2 { 
-		top:15%;
-	}
-}
-
-/* Different cases for skill-container on mobile */ 
-
-@media only screen and (max-width: 40.0625em) {
-
-	#skills .skills-container-mobile-open-1 { 
-		height:calc((100vh - 4rem) * 2.5);
-	}
-	
-	#skills .skills-container-mobile-open-2 { 
-		height:calc((100vh - 4rem) * 3);
-	}
-	
-	#skills .skills-container-mobile-open-3 { 
-		height:calc((100vh - 4rem) * 3.5);
-	}
-	
-	#skills .skills-container-mobile-open-4 { 
-		height:calc((100vh - 4rem) * 4);
-	}
-
-}
-
-/*-----Columns -----*/
-
-#skills .skills-container .skill-col { 
-	height:calc((100vh - 4rem)/2);
-	padding:0;
-}
-
-#skills .skills-container .skill-col h3 { 
-	font-size:2.2rem; 
-	text-align:center; 
-	position:relative;
-	top:50%; 
-	text-transform:uppercase;
-	
-	-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-}
-
-#skills .skills-container .open-skill-col{ 
-	height:calc(100vh - 4rem);
-}
-
-#skills .skills-container .skill-col-tablet-open {
-	height:calc(100vh - 4rem);
-} 
-
-@media only screen and (min-width: 64.0625em) { 
-
-	#skills .skills-container .skill-col { 
-		height:calc((100vh - 5rem)/2);	
-	}
-	
-	#skills .skills-container .open-skill-col{ 
-		height:calc(100vh - 5rem);
-	}
-}
-
-@media only screen and (min-width: 90.0625em) { 
-
-	#skills .skills-container .skill-col { 
+	.skills__col { 
 		height:calc((100vh - 7rem)/2);	
 	}
 	
-	#skills .skills-container .open-skill-col{ 
+	.skills__col--open{ 
 		height:calc(100vh - 7rem);
 	}
 }
 
-/*-----Columns Skill Photos -----*/
+
+/*---------------*
+ *Skills Photos   
+ *---------------*/
 
 
-#skills .skills-container .skill-col .skill-photo-1 { 
+.skills__photo-1 { 
 	background-image:url(../images/competence-editoriales.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
@@ -588,7 +671,7 @@ p {
 	height:100%;
 }
 
-#skills .skills-container .skill-col .skill-photo-2 {
+.skills__photo-2 {
 	background-image:url(../images/competence-webdesign.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
@@ -596,7 +679,7 @@ p {
 	height:100%;
 }
 
-#skills .skills-container .skill-col .skill-photo-3 {
+.skills__photo-3 {
 	background-image:url(../images/competence-gestion-projets.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
@@ -604,7 +687,7 @@ p {
 	height:100%;
 }
 
-#skills .skills-container .skill-col .skill-photo-4 {
+.skills__photo-4 {
 	background-image:url(../images/competence-market-social.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
@@ -612,19 +695,18 @@ p {
 	height:100%;
 }
 
-#skills .skills-container .skill-col .photo-open { 
+.skills__photo--open { 
 	height:50%; 
 }
 
-@media only screen and (min-width: 64.0625em) {  
-	#skills .skills-container .skill-col { 
-		margin-top:-3px; /*align the description photo with top of background */ 
-	}
-}
 
-/*--------- Buttons and SVG ----------*/
+/*---------------*
+ *Buttons & Svg   
+ *---------------*/
 
-#skills .skills-container .skill-col .rounded-button {
+
+/* Button settings */ 
+.skills__rounded-button {
 	width:4rem;
 	height:4rem;	
 	border-radius:50%;
@@ -635,185 +717,166 @@ p {
 }
 
 @media only screen and (min-width: 64.0625em) {  
-	#skills .skills-container .skill-col .rounded-button {
-		
+	.skills__rounded-button {
 		top:55%;
 	}
 }
 
-#skills .skills-container .skill-col .b1 {
+/* Setting Colors for each button */ 
+
+.skills__col .b1 {
 	background-color:#9A2519;
 }
 
-#skills .skills-container .skill-col .b2 {
+.skills__col .b2 {
 	background-color:#D0EB55;
 }
 
-#skills .skills-container .skill-col .b3 {
+.skills__col .b3 {
 	background-color:#E74C3C;
 }
 
-#skills .skills-container .skill-col .b4 {
+.skills__col .b4 {
 	background-color:#1D60B4;
 }
 
-#skills .skills-container .skill-col .b1:hover {
+.skills__col .b1:hover {
 	background-color:#E83826;
 }
 
-#skills .skills-container .skill-col .b2:hover {
+.skills__col .b2:hover {
 	background-color:#DFFC5B;
 }
 
-#skills .skills-container .skill-col .b3:hover {
+.skills__col .b3:hover {
 	background-color:#FF5442;
 }
 
-#skills .skills-container .skill-col .b4:hover {
+.skills__col .b4:hover {
 	background-color:#1D77BC;
 }
 
-#skills .skills-container .skill-col .st2 {
+/* Hide the arrow up on button by default */ 
+
+.skills__col .st2 {
 	display:none;
 }
 
 
-/*--------- Description boxes ----------*/
+/*---------------*
+ *Description boxes  
+ *---------------*/
 
 
-#skills .skills-container .skill-col .skill-description-1 {
+.skills__description-1 {
 	height:50%;  
 	background-color:#9A2519;
 	display:none;	
 }
 	
-#skills .skills-container .skill-col .skill-description-2 {
+.skills__description-2 {
 	height:50%; 
 	background-color:#D0EB55;	
 	display:none;	
 }
 	
-#skills .skills-container .skill-col .skill-description-3 {
+.skills__description-3 {
 	height:50%;  
 	background-color:#E74C3C;
 	display:none;	
 }
 	
-#skills .skills-container .skill-col .skill-description-4 {
+.skills__description-4 {
 	height:50%;
 	background-color:#1D60B4;
 	display:none;
 }
 
-@media only screen and (min-width: 64.0625em) {  
-	
-
-}
 
 
 
 
 /* ---------------------------------- *\ 
-  #REALIZATION SECTION 
+ * ---------------------------------- *
+ * #REALIZATION SECTION               *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 
-/*----------- Containers -------------*/ 
+
+/*---------------*
+ *Containers
+ *---------------*/
 
 
 #realization { 
 	position:relative;
-	height:100vh; 
+	height:calc(100vh - 4rem);
 }
 
-#realization .realization-title-container { 
-	margin:0; 
-	height:4rem;
-} 
+	.realization__title-container { 
+		margin:0; 
+		height:4rem;
+	} 
 
-#realization .realization-title-container h2 { 
-	color:#E74C3C; 
-	font-size:2.2rem; 
-	text-align:center; 
-	text-transform:uppercase;
-	position:relative; 
-	top:12%;
-}
+		.realization__title-container h2 { 
+			color:#E74C3C; 
+			font-size:2.2rem; 
+			text-align:center; 
+			text-transform:uppercase;
+			position:relative; 
+			top:12%;
+		}
 
-#realization .realization-wrapper { 
-		height:calc(100vh - 4rem);	
-		text-align:center;
-		/*overflow-x:hidden;	 used to hide the next slide out of the boud of screen */ 
-}	
-
-@media only screen and (min-width: 40.0625em) { 
-
-	#realization { 
-		height:calc(100vh - 4rem);
-	}
-	
-	#realization .realization-wrapper { 
-		height:calc(100vh - 8rem);	
-	}
-}
+	.realization__wrapper { 
+			height:calc(100vh - 8rem);	
+			text-align:center;
+			/*overflow-x:hidden;	 used to hide the next slide out of the boud of screen */ 
+	}	
 
 @media only screen and (min-width: 64.0625em) {  
 		
-	#realization .realization-title-container { 
-		height:5rem;
-				
+	#realization { 
+		height:100vh;
 	}
 	
-	#realization .realization-wrapper { 
-		height:calc(100vh - 5rem);	
-	}	
+		.realization__title-container { 
+			height:5rem;				
+		}
+		
+			.realization__title-container h2 { 
+				font-size:2.8rem; 
+				top:10%;
+			}
 	
-	#realization .realization-title-container h2 { 
-		font-size:2.8rem; 
-		top:10%;
-	}
+		.realization__wrapper { 
+			height:calc(100vh - 5rem);	
+		}	
 }
 
 @media only screen and (min-width: 90.0625em) { 
 	
-	#realization .realization-title-container { 
-		height:7rem;
-				
+	.realization__title-container { 
+		height:7rem;	
 	}
 	
-	#realization .realization-wrapper { 
+		.realization__title-container h2 { 
+			font-size:3rem; 
+			top:15%;
+		}
+	
+	.realization__wrapper { 
 		height:calc(100vh - 7rem);	
 	}	
-	
-	#realization .realization-title-container h2 { 
-		font-size:3rem; 
-		top:15%;
-	}
 }
 
-/*----------- Slides -------------*/ 
+
+/*---------------*
+ *Slides
+ *---------------*/
 
 
-#realization .realization-wrapper .realization-snackable { 
-	background:url(../images/snackable-mock-up-mobile.jpg);
-	background-repeat: no-repeat;
-	background-position:center;
-	height:inherit;
-	position:absolute;
-	float:left;
-}
-
-#realization .realization-wrapper .realization-lodafrench { 
-	background:url(../images/lodafrench-mock-up-mobile.jpg) ;
-	background-repeat: no-repeat;
-	background-position:center;
-	height:inherit;
-	position:absolute;
-	left:100vw;
-	
-}
-
-#realization .realization-wrapper h3 { 
+.realization__slide h3 { 
 	color:#fff;
 	font-size:2.2rem; 
 	text-transform:uppercase;
@@ -826,71 +889,90 @@ p {
 	
 }
 
-#realization .realization-wrapper p { 
+.realization__slide p { 
 	position:relative;
 	top:25%;
 	width:90%;
 	margin: 0 auto;
 }
 
+.realization__snackable { 
+	background:url(../images/snackable-mock-up-mobile.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	height:inherit;
+	position:absolute;
+	float:left;
+}
+
+.realization__lodafrench { 
+	background:url(../images/lodafrench-mock-up-mobile.jpg) ;
+	background-repeat: no-repeat;
+	background-position:center;
+	height:inherit;
+	position:absolute;
+	left:100vw;
+}
+
 @media only screen and (min-width: 40.0625em) {
 
-	#realization .realization-wrapper .realization-snackable  { 
-		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
-	}
-	
-	#realization .realization-wrapper .realization-lodafrench { 
-		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
-	}
-	
-	#realization .realization-wrapper h3 { 
+	.realization__slide h3 { 
 		top:17.5%; 
 		font-size:2.3rem;
 	}
 	
-	#realization .realization-wrapper p { 
+	.realization__slide p { 
 		position:relative;
 		top:17.5%;
 		width:50%;
 		font-size:1.3rem;
 		margin: 0 auto;
 	}
+	
+	.realization__snackable  { 
+		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
+	}
+	
+	.realization__lodafrench { 
+		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
+	}
 }
 
 @media only screen and (min-width: 64.0625em) { 
 
-	#realization .realization-wrapper .realization-lodafrench { 
-		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
-		left:calc(100vw - 5rem); 
-	}
-	
-	#realization .realization-wrapper h3 { 
+	.realization__slide h3 { 
 		top:15%; 
 		font-size:2.5rem;
 	}
 	
-	#realization .realization-wrapper p { 
+	.realization__slide p { 
 		top:15%; 
 		font-size:1.55rem;
 	}
-
+	
+	.realization__lodafrench { 
+		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
+		left:calc(100vw - 5rem); 
+	}
 }
 
 @media only screen and (min-width: 90.0625em) { 
-	#realization .realization-wrapper p {  
-		font-size:1.8rem;	
-	}
 	
-	#realization .realization-wrapper h3 { 
+	.realization__slide h3 { 
 		font-size:2.7rem;
+	}
+	.realization__slide p {  
+		font-size:1.8rem;	
 	}
 }
 
 
-/*----------- Arrow -------------*/ 
+/*---------------*
+ *Arows
+ *---------------*/
 
 
-#realization .arrow-wrapper { 
+.realization__arrow-wrapper { 
 	position:absolute; 
 	z-index:2; 
 	width:50%;
@@ -902,7 +984,7 @@ p {
 	right:0; /* allow to center with margin auto and absolute positionning */ 
 }
 
-#realization .arrow-wrapper .slider-dots {
+.realization__slider-dots {
 	list-style: none;
 	display: inline-block;
 	margin:0 auto;
@@ -912,44 +994,47 @@ p {
 	bottom:0.5rem;
 }
 
-#realization .arrow-wrapper .slider-dots li {
+.realization__slider-dots .dot {
 	color: #bbbcbc;
 	display: inline;
 	font-size: 30px;
 	margin-right: 5px; 
 }
 
-#realization .arrow-wrapper .slider-dots li.active-dot {
+.realization__slider-dots .dot--active {
 	color: #E74C3C;
 }
 
-#realization .arrow-wrapper .arrow-left { 
+.realization__arrow-left { 
 	vertical-align:top; 
 	display:inline-block;
 	margin-right: 1rem;
 }
-#realization .arrow-wrapper .arrow-right { 
+.realization__arrow-right { 
 	vertical-align:top; 
 	display:inline-block;
 	margin-left: 1rem;
 }
 
 @media only screen and (min-width: 40.0625em) {	
-	#realization .arrow-wrapper { 
+	
+	.realization__arrow-wrapper { 
 		width:30%; 
 		top: 20%;
 	}
 }
 
 @media only screen and (min-width: 64.0625em) { 
-	#realization .arrow-wrapper { 
+	
+	.realization__arrow-wrapper{ 
 		width:20%; 
 		top: 20%;
 	}
 }
 
 @media only screen and (min-width: 90.0625em) { 
-	#realization .arrow-wrapper { 
+	
+	.realization__arrow-wrapper { 
 		width:20%; 
 		top: 20%;
 	}
@@ -958,11 +1043,181 @@ p {
 
 
 
+
 /* ---------------------------------- *\ 
-  #STORY SECTION 
+ * ---------------------------------- *
+ * #STORY SECTION                     *
+ * ---------------------------------- *
 \* ---------------------------------- */
 
 #story { 
-	height:100vh; 
-	background:red ; 
+	
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	#story .story-intro { 
+		background:url(../images/france-map-black-calque.jpg); 
+		background-position: top left ; 
+		background-repeat: no-repeat ;
+		background-attachment: fixed;
+		height:200vh;
+		overflow:hidden;
+		
+	}
+	
+	#story .story-intro .story-intro-title { 
+		text-align:center;
+		width:35vw;
+		height:5rem;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative; 
+		top:50vh;
+		background-color:white;
+	}
+	
+	#story .story-intro .story-intro-title h2 { 
+		color:#E74C3C; 
+		font-size:3.2rem; 
+		text-transform:uppercase;
+		padding-top:5px;
+	}
+	
+	#story .story-wrapper {
+		
+	}
+	
+	#story .story-wrapper .story-list-year { 
+		width:10vw;
+		height:100vh;		
+		position:relative;
+		z-index:3;
+		float:right;
+		margin-right:5vw;
+	}
+	
+	#story .story-wrapper .story-list-year .active { 
+		background-color:#E74C3C;
+		margin-right:15%;
+		padding-left:10%;
+		color:#fff;
+		margin-left:-1vw;
+	}
+	
+	#story .story-wrapper .story-list-year ul { 
+		position:relative; 
+		top:25%;
+		margin:0;
+		margin-right:auto;
+		list-style-type:none; 
+		list-style-position: inside;
+		font-size:3rem;
+		font-family:Aileron-bold; 
+		color:#212121;
+		
+	} 
+	
+	
+	
+	#story .story-wrapper .story-france-1 { 
+		background:url(../images/france-map.jpg); 
+		background-position: top left ; 
+		background-repeat: no-repeat ;
+		background-attachment: fixed;
+		position:relative; 
+		top:-3px;
+		height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
+	}
+
+}
+
+/*---------Wrappers--------*/
+
+	#story .story-wrapper .story-france-1 .card-story { 
+		background-color:#fff;
+		box-shadow: 4px 4px 12px #000;
+		padding: 0.5%;
+		width:500px; 
+		height:205px; 
+		position:relative; 
+	}
+
+	#story .story-wrapper .story-france-1 .wrapper-description-iut { 	
+		top:1009px; 
+		left:579px;
+		opacity: 0; 
+	}
+	
+	
+
+	#story .story-wrapper .story-france-1 .wrapper-description-iut h3{
+		background-color:#E74C3C;
+		color:#fff;
+		padding-left:3%;
+		font-size:1.6rem;
+		font-family: helvetica, arial, sans-serif;
+	}
+
+	#story .story-wrapper .story-france-1 .wrapper-description-iut p {
+		padding-left:3%;
+		color:#000;
+	}
+
+	#story .story-wrapper .story-france-1 .wrapper-description-iut h4 {
+		padding-left:3%;
+	}
+	
+	#story .story-wrapper .story-france-1 .location-iut-dot { 
+		width:25px; 
+		height:25px; 
+		border-radius:50%;
+		background-color:#fff;
+		position:relative;
+		top:20%;
+		margin:0 auto; 
+	}
+	
+	
+	
+@media only screen and (min-width: 90.0625em){
+	#story .story-wrapper .story-france-1 .wrapper-description-iut { 
+		
+		
+	}
+	
+	#story .story-wrapper .story-france-1 .location-iut-dot { 
+
+	}
+	
+	#story .story-wrapper .story-france-1 .fixed-wrapper-iut { 
+		position:fixed; 
+		top: 536px;
+    	left: 664px;
+	}
+	
+	
+	
+	.wrapper-line-to-canada { 
+		position:relative; 
+		top:1400px;
+		z-index:19;
+	}
+	
+	#story .story-wrapper .story-france-1 .fixed-wrapper-line-to-canada { 
+		position:fixed; 
+		top:120px;
+		left:80px;
+	}
+}
+
+#story .story-wrapper .story-canada { 
+		background:url(../images/canada-map.jpg); 
+		background-position: top left ; 
+		background-repeat: no-repeat ;
+		background-attachment: fixed;
+		position:relative; 
+		top:-3px;
+		height:200vh;
+		
 }
