@@ -1050,23 +1050,29 @@ p {
  * ---------------------------------- *
 \* ---------------------------------- */
 
+
+
+/*---------------*
+ *Global containers and list of years 
+ *---------------*/
+ 
+ 
 #story { 
 	
 }
 
 @media only screen and (min-width: 64.0625em) { 
 
-	#story .story-intro { 
-		background:url(../images/france-map-black-calque.jpg); 
+	.story__intro { 
+		background:url(../images/france-map-black.jpg); 
 		background-position: top left ; 
 		background-repeat: no-repeat ;
 		background-attachment: fixed;
 		height:200vh;
 		overflow:hidden;
-		
 	}
 	
-	#story .story-intro .story-intro-title { 
+	.story__intro-title { 
 		text-align:center;
 		width:35vw;
 		height:5rem;
@@ -1077,64 +1083,53 @@ p {
 		background-color:white;
 	}
 	
-	#story .story-intro .story-intro-title h2 { 
+	.story__intro-title h2 { 
 		color:#E74C3C; 
 		font-size:3.2rem; 
 		text-transform:uppercase;
 		padding-top:5px;
 	}
 	
-	#story .story-wrapper {
-		
-	}
-	
-	#story .story-wrapper .story-list-year { 
+	.story__list-year { 
 		width:10vw;
 		height:100vh;		
 		position:relative;
+		top:215px;
 		z-index:3;
 		float:right;
 		margin-right:5vw;
 	}
 	
-	#story .story-wrapper .story-list-year .active { 
-		background-color:#E74C3C;
-		margin-right:15%;
-		padding-left:10%;
-		color:#fff;
-		margin-left:-1vw;
+	.story__list-year--fixed { 
+		position:fixed;
+		top: 215px;
+    	left: 1300px;
 	}
 	
-	#story .story-wrapper .story-list-year ul { 
+	.story__year { 
 		position:relative; 
 		top:25%;
 		margin:0;
 		margin-right:auto;
 		list-style-type:none; 
-		list-style-position: inside;
+		list-style-position:inside;
 		font-size:3rem;
 		font-family:Aileron-bold; 
 		color:#212121;
-		
 	} 
 	
-	
-	
-	#story .story-wrapper .story-france-1 { 
-		background:url(../images/france-map.jpg); 
-		background-position: top left ; 
-		background-repeat: no-repeat ;
-		background-attachment: fixed;
-		position:relative; 
-		top:-3px;
-		height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
+	.story__year--active { 
+		background-color:#E74C3C;
+		padding-left:10%;
+		color:#fff;
+		margin-left:-1vw;
 	}
-
-}
-
-/*---------Wrappers--------*/
-
-	#story .story-wrapper .story-france-1 .card-story { 
+	
+	.story__year--white { 
+		color:#fff; 
+	} 
+	
+	.story__description-card { 
 		background-color:#fff;
 		box-shadow: 4px 4px 12px #000;
 		padding: 0.5%;
@@ -1142,16 +1137,8 @@ p {
 		height:205px; 
 		position:relative; 
 	}
-
-	#story .story-wrapper .story-france-1 .wrapper-description-iut { 	
-		top:1009px; 
-		left:579px;
-		opacity: 0; 
-	}
 	
-	
-
-	#story .story-wrapper .story-france-1 .wrapper-description-iut h3{
+	.story__description-card h3 {
 		background-color:#E74C3C;
 		color:#fff;
 		padding-left:3%;
@@ -1159,65 +1146,204 @@ p {
 		font-family: helvetica, arial, sans-serif;
 	}
 
-	#story .story-wrapper .story-france-1 .wrapper-description-iut p {
+	.story__description-card p {
 		padding-left:3%;
 		color:#000;
 	}
 
-	#story .story-wrapper .story-france-1 .wrapper-description-iut h4 {
+	.story__description-card h4 {
 		padding-left:3%;
 	}
+}
+
 	
-	#story .story-wrapper .story-france-1 .location-iut-dot { 
-		width:25px; 
-		height:25px; 
-		border-radius:50%;
-		background-color:#fff;
-		position:relative;
-		top:20%;
-		margin:0 auto; 
-	}
+/*---------------*
+ *Story France 1
+ *---------------*/
+ 
 	
+.story__france-1 { 
+	background:url(../images/france-map.jpg); 
+	background-position: top left ; 
+	background-repeat: no-repeat ;
+	background-attachment: fixed;
+	position:relative; 
+	top:-3px;
+	height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
+}
+
+.story__wrapper-description-iut { 	
+	position:fixed;
+	opacity:0;
+	display:none;
+}
+
+.story__wrapper-description-iut--display { 
+	display:block;
+}
 	
+.story__location-dot-iut { 
+	width:25px; 
+	height:25px; 
+	border-radius:50%;
+	background-color:#fff;
+	position:relative;
+	top:20%;
+	margin:0 auto; 
+}	
+
+.story__wrapper-line-to-canada { 
+	position:fixed; 
+	z-index:19;
+	display:none;
+}
+
+.story__wrapper-line-to-canada--display { 
+	display:block; 
+}
 	
 @media only screen and (min-width: 90.0625em){
-	#story .story-wrapper .story-france-1 .wrapper-description-iut { 
-		
-		
+	
+	.story__wrapper-description-iut { 	
+		top:542px; 
+		left:665px;
 	}
 	
-	#story .story-wrapper .story-france-1 .location-iut-dot { 
-
-	}
-	
-	#story .story-wrapper .story-france-1 .fixed-wrapper-iut { 
-		position:fixed; 
-		top: 536px;
-    	left: 664px;
-	}
-	
-	
-	
-	.wrapper-line-to-canada { 
-		position:relative; 
-		top:1400px;
-		z-index:19;
-	}
-	
-	#story .story-wrapper .story-france-1 .fixed-wrapper-line-to-canada { 
-		position:fixed; 
+	.story__wrapper-line-to-canada { 
 		top:120px;
 		left:80px;
 	}
 }
 
-#story .story-wrapper .story-canada { 
-		background:url(../images/canada-map.jpg); 
-		background-position: top left ; 
-		background-repeat: no-repeat ;
-		background-attachment: fixed;
-		position:relative; 
-		top:-3px;
-		height:200vh;
-		
+/*---------------*
+ *Story Canada
+ *---------------*/
+
+
+.story__canada { 
+	background:url(../images/canada-map.jpg); 
+	background-position: top left ; 
+	background-repeat: no-repeat ;
+	background-attachment: fixed;
+	position:relative; 
+	top:-3px;
+	height:250vh; /* 50vh-75vh --> fadein description, 150-175 --> fadeout description, 150-200 --> draw line to finland, 200-225 erase line */  
+}
+
+.story__wrapper-description-canada { 	
+	position:fixed;
+	opacity:0;
+	display:none;
+}
+
+.story__wrapper-description-canada--display { 
+	display:block;
+}
+	
+.story__location-dot-canada { 
+	width:25px; 
+	height:25px; 
+	border-radius:50%;
+	background-color:#fff;
+	position:relative;
+	top:20%;
+	margin:0 auto; 
+}
+
+.story__wrapper-line-to-finland { 
+	position:fixed; 
+	z-index:19;
+	display:none;
+}
+
+.story__wrapper-line-to-finland--display { 
+	display:block; 
+}
+
+@media only screen and (min-width: 90.0625em){
+	
+	.story__wrapper-description-canada { 	
+		top:455px; 
+		left:203px;
+	}
+	
+	.story__wrapper-line-to-finland { 
+		top:297px;
+		left:450px;
+	}
+	
+}
+
+
+/*---------------*
+ *Story Finland
+ *---------------*/
+ 
+ 
+ .story__finland { 
+ 	background:url(../images/finland-map.jpg); 
+	background-position: top left ; 
+	background-repeat: no-repeat ;
+	background-attachment: fixed;
+	position:relative; 
+	top:-3px;
+	height:250vh;
+ } 
+ 
+ .story__wrapper-description-finland { 	
+	position:fixed;
+	opacity:0;
+	display:none;
+}
+
+.story__wrapper-description-finland--display { 
+	display:block;
+}
+	
+.story__location-dot-finland { 
+	width:25px; 
+	height:25px; 
+	border-radius:50%;
+	background-color:#fff;
+	position:relative;
+	top:20%;
+	margin:0 auto; 
+}
+
+.story__wrapper-line-to-france { 
+	position:fixed; 
+	z-index:19;
+	display:none;
+}
+
+.story__wrapper-line-to-france--display { 
+	display:block; 
+}
+
+@media only screen and (min-width: 90.0625em){
+	
+	.story__wrapper-description-finland { 	
+		top:135px; 
+		left:503px;
+	}
+	
+	.story__wrapper-line-to-france { 
+		top:377px;
+		left:-95px;
+	}
+	
+}
+
+/*---------------*
+ *Story France 2 
+ *---------------*/
+ 
+ .story__france-2 { 
+	background:url(../images/france-map.jpg); 
+	background-position: top left ; 
+	background-repeat: no-repeat ;
+	background-attachment: fixed;
+	position:relative; 
+	top:-3px;
+	height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
 }
