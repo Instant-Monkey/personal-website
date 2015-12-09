@@ -1087,7 +1087,6 @@ p {
 		color:#E74C3C; 
 		font-size:3.2rem; 
 		text-transform:uppercase;
-		padding-top:5px;
 	}
 	
 	.story__list-year { 
@@ -1154,6 +1153,16 @@ p {
 	.story__description-card h4 {
 		padding-left:3%;
 	}
+	
+	.story__location-dot { 
+		width:25px; 
+		height:25px; 
+		border-radius:50%;
+		background-color:#fff;
+		position:relative;
+		top:20%;
+		margin:0 auto; 
+	}
 }
 
 	
@@ -1181,16 +1190,6 @@ p {
 .story__wrapper-description-iut--display { 
 	display:block;
 }
-	
-.story__location-dot-iut { 
-	width:25px; 
-	height:25px; 
-	border-radius:50%;
-	background-color:#fff;
-	position:relative;
-	top:20%;
-	margin:0 auto; 
-}	
 
 .story__wrapper-line-to-canada { 
 	position:fixed; 
@@ -1239,16 +1238,6 @@ p {
 .story__wrapper-description-canada--display { 
 	display:block;
 }
-	
-.story__location-dot-canada { 
-	width:25px; 
-	height:25px; 
-	border-radius:50%;
-	background-color:#fff;
-	position:relative;
-	top:20%;
-	margin:0 auto; 
-}
 
 .story__wrapper-line-to-finland { 
 	position:fixed; 
@@ -1290,7 +1279,7 @@ p {
 	height:250vh;
  } 
  
- .story__wrapper-description-finland { 	
+.story__wrapper-description-finland { 	
 	position:fixed;
 	opacity:0;
 	display:none;
@@ -1298,16 +1287,6 @@ p {
 
 .story__wrapper-description-finland--display { 
 	display:block;
-}
-	
-.story__location-dot-finland { 
-	width:25px; 
-	height:25px; 
-	border-radius:50%;
-	background-color:#fff;
-	position:relative;
-	top:20%;
-	margin:0 auto; 
 }
 
 .story__wrapper-line-to-france { 
@@ -1345,5 +1324,55 @@ p {
 	background-attachment: fixed;
 	position:relative; 
 	top:-3px;
-	height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
+	height:500vh; /* */ 
+}
+
+.story__wrapper-description-gem { 	
+	position:fixed;
+	opacity:0;
+	display:none;
+}
+
+.story__wrapper-description-gem--display { 
+	display:block;
+}
+
+.story__description-gem-1A { 
+	display:none;
+}
+
+.story__description-gem-1A--display { 
+	display:block;
+}
+
+.story__description-gem-2A { 
+	display:none;
+}
+
+.story__description-gem-2A--display { 
+	display:block;
+}
+
+.story__wrapper-description-devoteam { 	
+	position:fixed;
+	opacity:0;
+	display:none;
+}
+
+.story__wrapper-description-devoteam--display { 
+	display:block;
+}
+
+@media only screen and (min-width: 90.0625em){
+	
+	.story__wrapper-description-gem { 	
+		top:379px; 
+		left:683px;
+	}
+	
+	.story__wrapper-description-devoteam { 	
+		top:10px; 
+		left:443px;
+	}
+	
 }

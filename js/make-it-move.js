@@ -208,7 +208,7 @@ var toggleYear2011 = new ScrollMagic.Scene({
 
 //-------------2012 -------------//
 
-var toggleYear2011 = new ScrollMagic.Scene({
+var toggleYear2012 = new ScrollMagic.Scene({
 	triggerElement: ".story__wrapper",
 	duration:250*vh(),
 	offset: (650*vh())
@@ -220,13 +220,37 @@ var toggleYear2011 = new ScrollMagic.Scene({
 
 //-------------2013 -------------//
 
-var toggleYear2011 = new ScrollMagic.Scene({
+var toggleYear2013 = new ScrollMagic.Scene({
 	triggerElement: ".story__wrapper",
-	duration:200*vh(),
+	duration:150*vh(),
 	offset: (900*vh())
 	})						
 	
 	.setClassToggle(".story__y2013", "story__year--active")
+	.addIndicators()					
+	.addTo(controller); 
+
+//-------------2014 -------------//
+
+var toggleYear2014 = new ScrollMagic.Scene({
+	triggerElement: ".story__wrapper",
+	duration:150*vh(),
+	offset: (1050*vh())
+	})						
+	
+	.setClassToggle(".story__y2014", "story__year--active")
+	.addIndicators()					
+	.addTo(controller); 
+	
+//-------------2015 -------------//
+
+var toggleYear2015 = new ScrollMagic.Scene({
+	triggerElement: ".story__wrapper",
+	duration:150*vh(),
+	offset: (1200*vh())
+	})						
+	
+	.setClassToggle(".story__y2015", "story__year--active")
 	.addIndicators()					
 	.addTo(controller); 
 	
@@ -581,7 +605,158 @@ var upLineToFinland = new ScrollMagic.Scene({
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller); 
 	
+	
+	
 
+
+//-------------DISPLAY/HIDE DESCRIPTION GEM 1A -------------//
+
+//Toggle the class which 'display:block' the div 
+
+var displayDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:125*vh(),
+		offset:50*vh()
+	})	
+					
+	.setClassToggle(".story__wrapper-description-gem","story__wrapper-description-gem--display")
+	.addIndicators()				
+	.addTo(controller);
+
+//Toggle the class which 'display:block' the title/text for 1A 
+
+var displayDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:125*vh(),
+		offset:50*vh()
+	})	
+					
+	.setClassToggle(".story__description-gem-1A","story__description-gem-1A--display")
+	.addIndicators()				
+	.addTo(controller);
+	
+// Setting the Fade In 
+
+var fadeInDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:25*vh(),
+		offset:50*vh()
+	})		
+				
+	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "1" })	
+	.addIndicators()				
+	.addTo(controller);
+
+
+// Setting the Fade Out 
+	
+var fadeOutDescriptionIut = new ScrollMagic.Scene({
+	triggerElement: ".story__france-2",
+	duration:25*vh(),
+	offset:150*vh()
+	})						
+	
+	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
+	.addIndicators()				
+	.addTo(controller); 
+	
+	
+	
+	
+
+//-------------DISPLAY/HIDE DESCRIPTION DEVOTEAM -------------//
+
+//Toggle the class which 'display:block' the div 
+
+var displayDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:125*vh(),
+		offset:200*vh()
+	})	
+					
+	.setClassToggle(".story__wrapper-description-devoteam","story__wrapper-description-devoteam--display")
+	.addIndicators()				
+	.addTo(controller);
+	
+// Setting the Fade In 
+
+var fadeInDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:25*vh(),
+		offset:200*vh()
+	})		
+				
+	.setTween(".story__wrapper-description-devoteam", 0.2, {opacity: "1" })	
+	.addIndicators()				
+	.addTo(controller);
+
+
+// Setting the Fade Out 
+	
+var fadeOutDescriptionIut = new ScrollMagic.Scene({
+	triggerElement: ".story__france-2",
+	duration:25*vh(),
+	offset:300*vh()
+	})						
+	
+	.setTween(".story__wrapper-description-devoteam", 0.2, {opacity: "0" })	
+	.addIndicators()				
+	.addTo(controller); 
+	
+	
+	
+	
+	
+//-------------DISPLAY/HIDE DESCRIPTION GEM 2A -------------//
+
+//Toggle the class which 'display:block' the div 
+
+var displayDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:125*vh(),
+		offset:350*vh()
+	})	
+					
+	.setClassToggle(".story__wrapper-description-gem","story__wrapper-description-gem--display")
+	.addIndicators()				
+	.addTo(controller);
+
+//Toggle the class which 'display:block' the title/text for 1A 
+
+var displayDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:125*vh(),
+		offset:350*vh()
+	})	
+					
+	.setClassToggle(".story__description-gem-2A","story__description-gem-2A--display")
+	.addIndicators()				
+	.addTo(controller);
+	
+// Setting the Fade In 
+
+var fadeInDescriptionIut = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:25*vh(),
+		offset:350*vh()
+	})		
+				
+	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "1" })	
+	.addIndicators()				
+	.addTo(controller);
+
+
+// Setting the Fade Out 
+	
+var fadeOutDescriptionIut = new ScrollMagic.Scene({
+	triggerElement: ".story__france-2",
+	duration:25*vh(),
+	offset:450*vh()
+	})						
+	
+	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
+	.addIndicators()				
+	.addTo(controller); 
 	
 });//End of .ready(function())
 
