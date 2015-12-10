@@ -136,7 +136,7 @@ new ScrollMagic.Scene({
         offset: (50*vh())       // start this scene after scrolling for 50 vh 
     })
     .setPin(".story__intro-title") // pins the element for the the scene's duration
-    .addIndicators()
+    
 	.addTo(controller); // assign the scene to the controller
 	
 	
@@ -148,27 +148,29 @@ new ScrollMagic.Scene({
 //-------------FIX LIST YEAR -------------//
 
 // Keep the list year fixed during the whole scroll 
- 
-new ScrollMagic.Scene({
-		triggerElement: '.story__wrapper',
-        duration: 1200*vh(),    // last 100 vh 
-        offset: 50*vh()       // start this scene after scrolling for 50 vh 
-    })
-    .setPin(".story__list-year ul") // pins the element for the the scene's duration
-    .addIndicators()
-	.addTo(controller); // assign the scene to the controller  
-	
-//  Make the year font white for blue background 
 
-new ScrollMagic.Scene({
-		triggerElement: '.story__canada',
-        duration: 225*vh(),    
-        offset: 25*vh()       // start this scene after scrolling for 50 vh 
-    })
-    .setClassToggle(".story__year", "story__year--white")
-    .addIndicators()
-	.addTo(controller); // assign the scene to the controller  
+if (getTypeOfMedia() !== "small") { 
+
+	new ScrollMagic.Scene({
+			triggerElement: '.story__wrapper',
+			duration: 1200*vh(),    // last 100 vh 
+			offset: 50*vh()       // start this scene after scrolling for 50 vh 
+		})
+		.setPin(".story__list-year ul") // pins the element for the the scene's duration
+		
+		.addTo(controller); // assign the scene to the controller  
+		
+	//  Make the year font white for blue background 
 	
+	new ScrollMagic.Scene({
+			triggerElement: '.story__canada',
+			duration: 225*vh(),    
+			offset: 25*vh()       // start this scene after scrolling for 50 vh 
+		})
+		.setClassToggle(".story__year", "story__year--white")
+		
+		.addTo(controller); // assign the scene to the controller  
+}
 
 //-------------2009 -------------//
 
@@ -179,7 +181,7 @@ var toggleYear2009 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2009", "story__year--active")	
-	.addIndicators()				
+					
 	.addTo(controller); 
 
 //-------------2010 -------------//
@@ -191,7 +193,7 @@ var toggleYear2010 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2010", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 	
 //-------------2011 -------------//
@@ -203,7 +205,7 @@ var toggleYear2011 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2011", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 
 //-------------2012 -------------//
@@ -215,7 +217,7 @@ var toggleYear2012 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2012", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 
 //-------------2013 -------------//
@@ -227,7 +229,7 @@ var toggleYear2013 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2013", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 
 //-------------2014 -------------//
@@ -239,7 +241,7 @@ var toggleYear2014 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2014", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 	
 //-------------2015 -------------//
@@ -251,7 +253,7 @@ var toggleYear2015 = new ScrollMagic.Scene({
 	})						
 	
 	.setClassToggle(".story__y2015", "story__year--active")
-	.addIndicators()					
+						
 	.addTo(controller); 
 	
 	
@@ -270,7 +272,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-iut","story__wrapper-description-iut--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -282,7 +284,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-iut", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -295,7 +297,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-iut", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 	
 	
@@ -328,7 +330,7 @@ var displayLineToCanada = new ScrollMagic.Scene({
 	})
 	
 	.setClassToggle(".story__wrapper-line-to-canada","story__wrapper-line-to-canada--display")
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -342,7 +344,7 @@ var drawLineToCanada = new ScrollMagic.Scene({
 	})
 	
 	.setTween(drawFranceCanadaLine )
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -356,7 +358,7 @@ var eraseLineToCanada = new ScrollMagic.Scene({
 	})
 	
 	.setTween("#story__line-to-canada", 0.2, {opacity: "0" })
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 	
 var upLineToCanada = new ScrollMagic.Scene({
@@ -367,7 +369,7 @@ var upLineToCanada = new ScrollMagic.Scene({
 	})
 	
 	.setTween(".story__wrapper-line-to-canada", 0.2, {top: "-400px"})
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 
 	
@@ -388,7 +390,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-canada","story__wrapper-description-canada--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -400,7 +402,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-canada", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -413,7 +415,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-canada", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 
 
@@ -445,7 +447,7 @@ var displayLineToFinland = new ScrollMagic.Scene({
 	})
 	
 	.setClassToggle(".story__wrapper-line-to-finland","story__wrapper-line-to-finland--display")
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -459,7 +461,7 @@ var drawLineToFinland = new ScrollMagic.Scene({
 	})
 	
 	.setTween(drawCanadaFinlandLine)
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -473,7 +475,7 @@ var eraseLineToFinland = new ScrollMagic.Scene({
 	})
 	
 	.setTween("#story__line-to-finland", 0.2, {opacity: "0" })
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 	
 var upLineToFinland = new ScrollMagic.Scene({
@@ -484,7 +486,7 @@ var upLineToFinland = new ScrollMagic.Scene({
 	})
 	
 	.setTween(".story__wrapper-line-to-finland", 0.2, {top: "-200px"})
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 	
 	
@@ -505,7 +507,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-finland","story__wrapper-description-finland--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -517,7 +519,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-finland", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -530,7 +532,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-finland", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 
 
@@ -563,7 +565,7 @@ var displayLineToFrance = new ScrollMagic.Scene({
 	})
 	
 	.setClassToggle(".story__wrapper-line-to-france","story__wrapper-line-to-france--display")
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -577,7 +579,7 @@ var drawLineToFrance = new ScrollMagic.Scene({
 	})
 	
 	.setTween(drawCanadaFranceLine)
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller);
 	
 	
@@ -591,7 +593,7 @@ var eraseLineToFrance = new ScrollMagic.Scene({
 	})
 	
 	.setTween("#story__line-to-france", 0.2, {opacity: "0" })
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 	
 var upLineToFinland = new ScrollMagic.Scene({
@@ -602,7 +604,7 @@ var upLineToFinland = new ScrollMagic.Scene({
 	})
 	
 	.setTween(".story__wrapper-line-to-france", 0.2, {top: "-200px"})
-	.addIndicators() // add indicators (requires plugin)
+	 // add indicators (requires plugin)
 	.addTo(controller); 
 	
 	
@@ -620,7 +622,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-gem","story__wrapper-description-gem--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 
 //Toggle the class which 'display:block' the title/text for 1A 
@@ -632,7 +634,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__description-gem-1A","story__description-gem-1A--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -644,7 +646,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -657,7 +659,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 	
 	
@@ -675,7 +677,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-devoteam","story__wrapper-description-devoteam--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -687,7 +689,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-devoteam", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -700,7 +702,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-devoteam", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 	
 	
@@ -718,7 +720,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__wrapper-description-gem","story__wrapper-description-gem--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 
 //Toggle the class which 'display:block' the title/text for 1A 
@@ -730,7 +732,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	})	
 					
 	.setClassToggle(".story__description-gem-2A","story__description-gem-2A--display")
-	.addIndicators()				
+					
 	.addTo(controller);
 	
 // Setting the Fade In 
@@ -742,7 +744,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 	})		
 				
 	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "1" })	
-	.addIndicators()				
+					
 	.addTo(controller);
 
 
@@ -755,7 +757,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	})						
 	
 	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
-	.addIndicators()				
+					
 	.addTo(controller); 
 	
 });//End of .ready(function())
