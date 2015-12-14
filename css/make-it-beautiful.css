@@ -468,7 +468,7 @@ p {
 
 	.skills__title-container h2 { 
 		color:#E74C3C; 
-		font-size:2.2rem; 
+		font-size:2rem; 
 		text-align:center; 
 		text-transform:uppercase;
 		max-width:95%;
@@ -1092,6 +1092,7 @@ p {
 	width:100vw;
 	height:8vh;
 	z-index:3;
+	
 }
 
 .story__year { 
@@ -1111,6 +1112,7 @@ p {
 	padding-right:25%;
 	color:#fff;
 	text-align:center;
+	box-shadow: 4px 4px 12px #000;
 }
 
 .story__description-card { 
@@ -1151,6 +1153,7 @@ p {
 		height:100%;
 		width:100%;
 		margin:0;
+		
 	}
 }
 
@@ -1174,6 +1177,7 @@ p {
 		left:0;
 		float:right;
 		margin-right:5vw;
+		
 	}
 	
 	.story__year { 
@@ -1186,7 +1190,7 @@ p {
 	.story__year--active { 
 		padding-left:5%;
 		margin-left:-1vw;
-	
+		box-shadow:none;
 	}
 	
 	.story__year--white { 
@@ -1343,6 +1347,12 @@ p {
 		top:230px; 
 		left:55px;
 	}
+	
+	.story__wrapper-line-to-canada { 
+		top:-185px;
+		left:-350px;
+	}
+	
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -1359,6 +1369,11 @@ p {
 	
 	.story__location-dot-iut { 
 		float:right;
+	}
+	
+	.story__wrapper-line-to-canada { 
+		top:0px;
+		left:0px;
 	}
 }
 
@@ -1468,7 +1483,7 @@ p {
  
  .story__finland { 
  	background-image:url(../images/finland-map.jpg); 
-	background-position: top left ; 
+	background-position: 0 4rem ; 
 	background-repeat: no-repeat ;
 	background-attachment: fixed;
 	position:relative; 
@@ -1498,6 +1513,11 @@ p {
 
 @media only screen and (min-width: 90.0625em){
 	
+	.story__finland { 
+ 	background-image:url(../images/finland-map-1920.jpg); 
+	background-position: top left; 
+	}
+	
 	.story__wrapper-description-finland { 	
 		top:135px; 
 		left:503px;
@@ -1516,7 +1536,7 @@ p {
  
  .story__france-2 { 
 	background-image:url(../images/france-map.jpg); 
-	background-position: top left ; 
+	background-position: 0 4rem ; 
 	background-repeat: no-repeat ;
 	background-attachment: fixed;
 	position:relative; 
@@ -1564,6 +1584,7 @@ p {
 	
 	.story__france-2 { 
 	background-image:url(../images/france-map-1920.jpg); 
+	background-position:top left; 
 	}
 	
 	.story__wrapper-description-gem { 	
