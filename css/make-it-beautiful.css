@@ -460,10 +460,18 @@ p {
  *Section, Title & global container 
  *---------------*/
  
-
+#skills { 
+	background-image:url(../images/dummy-image-comp%C3%A9tences.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover; 
+}
+	
 .skills__title-container { 
 	margin:0;
 	height:4rem;
+	background-color:white; 
 }
 
 	.skills__title-container h2 { 
@@ -511,29 +519,17 @@ p {
 
 @media only screen and (min-width: 40.0625em) {
 	
-	#skills { 
-		background-image:url(../images/dummy-image-comp%C3%A9tences.jpg);
-		background-repeat: no-repeat;
-		background-position:center;
-		background-attachment:fixed;
-		background-size:cover; 
+	.skills__container { 
+		height:calc(100vh - 4rem); 
 	}
-	
-		.skills__title-container { 
-			background-color:white; 
-		}
 		
-		.skills__container { 
-			height:calc(100vh - 4rem); 
-		}
+	.skills__container--open-one-tablet {
+		height:calc((100vh - 4rem) * 1.5);
+	}
 		
-		.skills__container--open-one-tablet {
-			height:calc((100vh - 4rem) * 1.5);
-		}
-		
-		.skills__container--open-both-tablet {
-			height:calc((100vh - 4rem) * 2);
-		}
+	.skills__container--open-both-tablet {
+		height:calc((100vh - 4rem) * 2);
+	}
 	
 }
 
@@ -1134,15 +1130,15 @@ p {
 	font-family: helvetica, arial, sans-serif;
 }
 
-.story__description-card p {
-	padding-left:3%;
-	color:#000;
-	font-size:0.9rem;
-}
-
-.story__description-card h4 {
-	padding-left:3%;
-}
+	.story__description-card h4 {
+		padding-left:3%;
+	}
+	
+		.story__description-card p {
+			padding-left:3%;
+			color:#000;
+			font-size:0.9rem;
+		}
 	
 .story__location-dot { 
 	display:none;
@@ -1187,31 +1183,35 @@ p {
 		min-width:100px;
 	} 
 	
-	.story__year--active { 
-		padding-left:5%;
-		margin-left:-1vw;
-		box-shadow:none;
-	}
+		.story__year--active { 
+			padding-left:5%;
+			margin-left:-1vw;
+			box-shadow:none;
+		}
 	
-	.story__year--white { 
-		color:#fff; 
-	} 
+		.story__year--white { 
+			color:#fff; 
+		} 
 	
 	.story__description-card { 
 		padding: 0.5%;
-		width:450px; 
+		width:400px; 
 		height:205px; 
 	}
 	
-	.story__description-card h3 {
-		padding-left:3%;
-		font-size:1.4rem;
-	}
+		.story__description-card h3 {
+			padding-left:3%;
+		}
+		
+			.story__description-card h4 {
+				padding-left:3%;
+				font-size:1.2rem;
+			}
 	
-	.story__description-card p {
-		padding-left:3%;
-		font-size:1rem;
-	}
+				.story__description-card p {
+					padding-left:3%;
+					font-size:1rem;
+				}
 	
 	.story__location-dot { 
 		width:25px; 
@@ -1222,7 +1222,6 @@ p {
 		top:20%;
 		margin:0 auto; 
 		display:block;
-		float:right;
 	}
 }
 
@@ -1237,9 +1236,9 @@ p {
 		width:45vw;
 	}
 	
-	.story__intro-title h2 { 
-		font-size:3.2rem; 
-	}
+		.story__intro-title h2 { 
+			font-size:3.2rem; 
+		}
 	
 	.story__list-year { 
 		width:10vw;
@@ -1253,10 +1252,10 @@ p {
 		min-width:130px;
 	} 
 	
-	.story__year--active { 
-		padding-left:10%;
-	
-	}
+		.story__year--active { 
+			padding-left:10%;
+		
+		}
 	
 	.story__description-card { 
 		padding: 0.5%;
@@ -1264,13 +1263,14 @@ p {
 		height:205px; 
 	}
 	
-	.story__description-card h3 {
-		font-size:1.6rem;
-	}
-
-	.story__description-card h4 {
-		padding-left:3%;
-	}
+		.story__description-card h3 {
+			font-size:1.6rem;
+		}
+	
+			.story__description-card h4 {
+				padding-left:3%;
+				font-size:1.4rem;
+			}
 	
 	.story__location-dot { 
 		float:none;
@@ -1322,9 +1322,9 @@ p {
 	display:none;
 }
 
-.story__wrapper-description-iut--display { 
-	display:block;
-}
+	.story__wrapper-description-iut--display { 
+		display:block;
+	}
 
 .story__wrapper-line-to-canada { 
 	position:fixed; 
@@ -1332,9 +1332,9 @@ p {
 	display:none;
 }
 
-.story__wrapper-line-to-canada--display { 
-	display:block; 
-}
+	.story__wrapper-line-to-canada--display { 
+		display:block; 
+	}
 
 
 @media only screen and (min-width: 40.0625em) {	
@@ -1344,8 +1344,12 @@ p {
 	}
 	
 	.story__wrapper-description-iut { 	
-		top:230px; 
-		left:55px;
+		top:226px; 
+		left:106px;
+	}
+	
+	.story__location-dot-iut { 
+		float:right;
 	}
 	
 	.story__wrapper-line-to-canada { 
@@ -1367,13 +1371,9 @@ p {
 		left:210px;
 	}
 	
-	.story__location-dot-iut { 
-		float:right;
-	}
-	
 	.story__wrapper-line-to-canada { 
-		top:0px;
-		left:0px;
+		top:-83px;
+		left:-147px;
 	}
 }
 
@@ -1446,6 +1446,17 @@ p {
 	.story__canada {
 		background-image:url(../images/canada-map-1024.jpg);
 	}
+	
+	.story__wrapper-description-canada { 
+		top:190px;
+		left:33px;
+		
+	}
+	
+	.story__wrapper-line-to-finland { 
+		top:37px;
+		left:232px;
+	}
 
 }
 
@@ -1454,6 +1465,16 @@ p {
 	.story__canada {
 		background-image:url(../images/canada-map-1440.jpg);
 		background-position: top left ; 
+	}
+	
+	.story__wrapper-description-canada { 	
+		top:95px; 
+		left:84px;
+	}
+	
+	.story__wrapper-line-to-finland { 
+		top:-69px;
+		left:334px;
 	}
 
 }
@@ -1509,6 +1530,51 @@ p {
 
 .story__wrapper-line-to-france--display { 
 	display:block; 
+}
+
+@media only screen and (min-width: 40.0625em) {	
+	
+	.story__finland {
+		background-image:url(../images/finland-map-1024.jpg);
+	}
+	
+	.story__wrapper-description-finland { 	
+		top:65px; 
+		left:140px;
+	}
+	
+	.story__location-dot-finland {
+		
+	} 
+	
+	.story__wrapper-line-to-france { 
+		top:312px;
+		left:-510px;
+	}
+
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	.story__finland {
+		background-image:url(../images/finland-map-1440.jpg);
+		background-position: top left ; 
+	}
+	
+	.story__wrapper-description-finland { 	
+		top:40px; 
+		left:313px;
+	}
+	
+	.story__location-dot-finland {
+		float:none;	
+	}
+	
+	.story__wrapper-line-to-france { 
+		top:279px;
+		left:-285px;
+	}
+
 }
 
 @media only screen and (min-width: 90.0625em){
@@ -1580,6 +1646,71 @@ p {
 	display:block;
 }
 
+@media only screen and (min-width: 40.0625em) {	
+	
+	.story__france-2 {
+		background-image:url(../images/france-map-1024.jpg);
+	}
+	
+	.story__wrapper-description-gem { 	
+		top:150px; 
+		left:110px;
+	}
+	
+	.story__location-dot-gem { 
+		float:right; 
+	}
+	
+	.story__wrapper-description-devoteam { 	
+		top:237px; 
+		left:163px;
+	}
+	
+	.story__location-dot-devoteam {
+		top:-250px;	
+	}
+
+}
+
+@media only screen and (min-width: 54.0625em) {	
+
+	.story__wrapper-description-gem { 	
+		top:150px; 
+		left:293px;
+	}
+	
+	.story__location-dot-gem { 
+		float:none; 
+	}
+}
+
+@media only screen and (min-width: 64.0625em) { 
+
+	.story__france-2 {
+		background-image:url(../images/france-map-1440.jpg);
+		background-position: top left ; 
+	}
+	
+	.story__wrapper-description-gem { 	
+		top:233px; 
+		left:221px;
+	}
+	
+	.story__location-dot-gem { 
+		float:right; 
+	}
+	
+	.story__wrapper-description-devoteam { 	
+		top:5px; 
+		left:276px;
+	}
+	
+	.story__location-dot-devoteam {
+		top:20%;	
+	}
+
+}
+
 @media only screen and (min-width: 90.0625em){
 	
 	.story__france-2 { 
@@ -1590,6 +1721,10 @@ p {
 	.story__wrapper-description-gem { 	
 		top:379px; 
 		left:683px;
+	}
+	
+	.story__location-dot-gem { 
+		float:none; 
 	}
 	
 	.story__wrapper-description-devoteam { 	

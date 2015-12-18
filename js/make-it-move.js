@@ -65,9 +65,9 @@ $( document ).ready(function() {
 				
 				if (getTypeOfMedia() === "small") { 
 					if (nbrOpenButton > 0) { 
-						$(".skills__container").addClass("skills__container--open-mobile--"+nbrOpenButton);
+						$(".skills__container").addClass("skills__container--open-mobile-"+nbrOpenButton);
 					}
-					$(".skills__container").removeClass("skills__container-open-mobile-"+(nbrOpenButton+1));
+					$(".skills__container").removeClass("skills__container--open-mobile-"+(nbrOpenButton+1));
 					
 				} else if (getTypeOfMedia() === "medium") { 
 					
