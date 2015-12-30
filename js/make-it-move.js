@@ -248,7 +248,7 @@ var toggleYear2014 = new ScrollMagic.Scene({
 
 var toggleYear2015 = new ScrollMagic.Scene({
 	triggerElement: ".story__wrapper",
-	duration:150*vh(),
+	duration:50*vh(),
 	offset: (1200*vh())
 	})						
 	

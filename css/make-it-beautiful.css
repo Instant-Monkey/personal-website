@@ -117,6 +117,7 @@ p {
 	height:4rem; 
 	background:#e74c3c;
 	z-index:100;
+	box-shadow: 0px 1px 20px #000;
 }
 
 .menu-mobile .menu-icones { 
@@ -1738,15 +1739,162 @@ p {
 
 
 
+/* ---------------------------------- *\ 
+ * ---------------------------------- *
+ * #HOBBY SECTION                     *
+ * ---------------------------------- *
+\* ---------------------------------- */
+
+
+
+/*---------------*
+ *Global containers  
+ *---------------*/
+ 
+ 
+ #hobby { 
+ 	
+	background-color:#F1F5F5;
+	overflow:hidden; /* Align the top with previous section */ 
+	position:relative;
+	top:-3px; /* correct bug where there is a small white space between section */ 
+ 
+ }
+ 
+ .hobby__title-container {
+	 height:5rem;
+	 position:relative;
+	 top:14px; /* vertical align the title */ 
+ }
+ 
+ 	.hobby__title-container h2 { 
+		color:#e74c3c; 
+		text-transform:uppercase;
+		text-align:center;
+		font-size:2.2rem;
+		
+	}
+
+.hobby__container-individual { 
+	height:calc(100vh - 4rem);
+	overflow-y:hidden;
+}
+
+	.hobby__container-individual h3 { 
+		text-transform:uppercase; 
+		text-align:center;
+		font-size:2rem;
+		margin-top:1rem;
+		margin-bottom:1rem;
+	}
+
+.hobby__text-container { 
+	width:80vw;
+	margin:auto;
+	position:relative;
+	top:2rem;
+} 
+
+	.hobby__text-container li { 
+		font-size:1.3rem; 
+		color:#fff;
+		list-style-type:none;
+		font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+.hobby__container-music { 
+	background-color:#9A2519;
+}
+
+.hobby__container-cinema { 
+	background-color:#D0EB55;
+}
+
+.hobby__container-video-games { 
+	background-color:#E74C3C;
+}
+
+.hobby__container-science { 
+	background-color:#1D60B4;
+}
+
+.hobby__music-icon { 
+	text-align:center;
+}
+
+
 
 @media only screen and (min-width: 40.0625em) {	
 
+	.hobby__container-individual { 
+		overflow-y:auto;
+		overflow-x:hidden;
+		float:left;
+	}
+	
+	.hobby__container-individual h3 { 
+		font-size:2.4rem;
+		margin-top:1.2rem;
+		margin-bottom:1.2rem;
+	}
+	
+	/*.hobby__content-container { 
+		height:80%; 
+		position:relative;
+		top:10%;
+	}*/
+	
+	.hobby__text-container { 
+		width:67%;
+		margin-left:28%;
+		margin-right:5%;
+	} 
+	
+	.hobby__text-container li { 
+		font-size:1.5rem;
+	}
+}
+
+@media only screen and (min-width: 51.0625em) { 
+	
+	.hobby__container { 
+		max-width:64.06em;
+	}
+	.hobby__text-container { 
+		width:60%;
+		margin-left:35%;
+		margin-right:5%;
+	} 
 }
 
 @media only screen and (min-width: 64.0625em) { 
+	
+	#hobby { 
+		height:100vh;
+	}
+	
+	.hobby__container { 
+		max-width:100%;
+	}
+	
+	.hobby__container-individual {
+		height:75vh;	
+	}
 
 }
 
 @media only screen and (min-width: 90.0625em) { 
-
+	.hobby__container-individual {
+		height:60vh;	
+	}
+	
+	.hobby__title-container { 
+		top:0px;
+		
+	}
+	
+		.hobby__title-container h2 { 
+			font-size:3.6rem;
+			margin:0;
+		}
 }
