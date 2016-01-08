@@ -1,0 +1,18 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e74c3c;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <title>icone-cross</title>
+  <g>
+    <line class="cls-1" x1="13.03" y1="46.97" x2="46.97" y2="13.03"/>
+    <line class="cls-1" x1="13.03" y1="13.03" x2="46.97" y2="46.97"/>
+  </g>
+</svg>

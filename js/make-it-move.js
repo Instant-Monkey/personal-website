@@ -32,20 +32,31 @@ if (getTypeOfMedia() === "small" || "medium") {
 	$('.menu__mobile-hamburger-container').click(function() { 
 		if (menuMobileOpen === false) { 
 			menuMobileSize = $('.menu__mobile').height();
-			$('.menu__mobile').animate({ 
-				height: screenHeight() * 0.75,
+			$('.menu__mobile-hamburger-svg').fadeOut(100);
+			$('.menu__mobile-cross-svg').fadeIn(440);
+			$('.menu__mobile-icones li').fadeIn(440);
+			if (getTypeOfMedia() === "small") { 
+				$('.menu__mobile').animate({ 
+					height: screenHeight() ,
 				opacity:'0.85'
-			}, 440,'easeOutBounce', function() {
-					$('.menu__mobile-icones li').fadeIn(400);
-			});
+				}, 440,'easeOutBounce');
+			} else { 
+				$('.menu__mobile').animate({ 				 
+					height: 450,
+					opacity:'0.85'
+				}, 440,'easeOutBounce');
+			}
+			
 			menuMobileOpen = true; 
 			
 		} else { 
-			$('.menu__mobile-icones li').fadeOut(200);
+			$('.menu__mobile-icones li').fadeOut(300);
+			$('.menu__mobile-cross-svg').fadeOut(100);
+			$('.menu__mobile-hamburger-svg').fadeIn(200);
 			$('.menu__mobile').animate({ 
 				height: menuMobileSize,
 				opacity:'1'
-			}, 440,'easeInOutExpo' );
+			}, 440,'easeInOutExpo');
 			menuMobileOpen = false; 
 		}
 	});
