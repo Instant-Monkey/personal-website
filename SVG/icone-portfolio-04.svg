@@ -1,0 +1,18 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e74c3c;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>icone-portfolio</title>
+  <rect class="cls-1" x="3.96" y="13.92" width="52" height="40" rx="1.71" ry="1.71"/>
+  <rect class="cls-1" x="19.96" y="5.92" width="20" height="8" rx="1.67" ry="1.67"/>
+  <line class="cls-1" x1="3.96" y1="27.42" x2="55.96" y2="27.42"/>
+  <rect class="cls-1" x="26.01" y="27.42" width="8" height="5.53"/>
+</svg>

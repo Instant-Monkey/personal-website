@@ -1,6 +1,78 @@
 $( document ).ready(function() {
 	"use strict";
 	
+	
+/* ---------------------------------- *\ 
+  #SMOOTH SCROLLING 
+\* ---------------------------------- */
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+/* ---------------------------------- *\ 
+  #MENU MOBILE ANIMATION
+\* ---------------------------------- */
+
+var menuMobileOpen = false; 
+var menuMobileSize ;
+
+if (getTypeOfMedia() === "small" || "medium") {
+	
+	$('.menu__mobile-hamburger-container').click(function() { 
+		if (menuMobileOpen === false) { 
+			menuMobileSize = $('.menu__mobile').height();
+			$('.menu__mobile').animate({ 
+				height: screenHeight() * 0.75,
+				opacity:'0.85'
+			}, 440,'easeOutBounce', function() {
+					$('.menu__mobile-icones li').fadeIn(400);
+			});
+			menuMobileOpen = true; 
+			
+		} else { 
+			$('.menu__mobile-icones li').fadeOut(200);
+			$('.menu__mobile').animate({ 
+				height: menuMobileSize,
+				opacity:'1'
+			}, 440,'easeInOutExpo' );
+			menuMobileOpen = false; 
+		}
+	});
+}
+
+/* ---------------------------------- *\ 
+  #MENU DESKTOP ANIMATION
+\* ---------------------------------- */
+
+if (getTypeOfMedia() === "large" || "x-large") {
+	$('.menu__desktop-icones li')
+	  .hover(function(e) {
+		$(this).hoverFlow(e.type, { 
+		left: 20,
+		width: 260, 
+		backgroundColor: "#f1f5f5"
+		
+		}, 'fast').addClass( "menu__desktop-icone--open" );
+	  }, function(e) {
+		$(this).hoverFlow(e.type, { 
+		left: 0 ,
+		width:80,
+		backgroundColor: "#e74c3c"
+		
+		}, 'fast').removeClass( "menu__desktop-icone--open" );
+	  });
+}
 
 /* ---------------------------------- *\ 
   #SKILLS SECTION 

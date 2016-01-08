@@ -110,7 +110,7 @@ p {
  *---------------*/
 
 
-.menu-mobile {
+.menu__mobile {
 	display:block;
 	position:fixed;
 	width:100vw; 
@@ -118,19 +118,79 @@ p {
 	background:#e74c3c;
 	z-index:100;
 	box-shadow: 0px 1px 20px #000;
+	text-align:center;
 }
 
-.menu-mobile .menu-icones { 
+.menu__mobile-background { 
 	display:block;
+	position:fixed;
+	width:100vw; 
+	height:4rem; 
+	background:#e74c3c;
+	z-index:99;
+}
+
+.menu__mobile-icones { 
+	display:inline-block;
 	list-style-type: none;	
-	width:100%;	
-	height:100%;
 	margin:0;
 	z-index:101;
+	position:relative;
+	top:5rem;
+	text-align:left;
 }
 
-.menu-mobile .menu-icones li { 
+.menu__mobile-icones li { 
+	display:none;
+	margin:7px 0;
+
+}
+
+.menu__mobile-icone-svg { 
+	fill:none;
+	stroke:#fff;
+	stroke-width:3px;
+	stroke-miterlimit:10;
+	width:40px;
+	height:40px;
+}
+
+.menu__mobile-text { 
+	position:relative; 
+	bottom:12px; 
+	color:#fff;
+	font-size:1.3rem;
+	text-transform:uppercase;
+	margin-left:5px;	
+}
+
+
+/* HAMBURGER MENU */
+
+
+.menu__mobile-hamburger-container { 
 	display:inline;
+	height:35px;
+	width:35px;
+	z-index:101;
+	float:right;
+	margin:0;
+	list-style-type: none;	
+	position:absolute; 
+	top:10px;
+	right:45px;
+} 
+
+.menu__mobile-hamburger-svg { 
+	fill:none;
+	stroke:#fff;
+	stroke-width:7px;
+	stroke-miterlimit:10;
+	stroke-linecap:round;
+}
+
+.menu__mobile-hamburger-svg:hover { 
+	stroke:#f1f5f5;
 }
 
 
@@ -139,24 +199,86 @@ p {
  *---------------*/
 
 
-.menu-desktop {
+.menu__desktop {
 	display:block;	
 	position:fixed; 
 	width:5rem;
-	height:100vh;
+	height:100%;
 	background:#e74c3c;
 	z-index:100;
+	
 }
 
-.menu-desktop .menu-icones {
+.menu__desktop-icones-container { 
+	position:relative; 
+	height:100%;
+} 
+
+.menu__desktop-icones {
 	display:block;
 	position:absolute; 
 	width:100%;
-	top:33%; 
+	height:420px;
 	list-style-type: none;
 	margin:0;
 	z-index:101;
+	text-align:center;
+	top:calc( (100vh - 420px)/2); 
 }
+
+	.menu__desktop-icones li { 
+		height:60px;
+		background-color:#e74c3c;
+		width:5rem;
+		
+	}
+	
+	.menu__desktop-icones li a { 
+		display:block;  /* make the whole div clickable */ 
+	} 
+	
+	.menu__desktop-icones img { 
+		position:relative;
+		top:7.5px;
+	}
+	
+	.menu__desktop-icone-svg{
+		fill:none;
+		stroke:#fff;
+		stroke-width:3;
+		stroke-miterlimit:10;
+		position:relative; 
+		top:7.5px;
+		float:left;
+		margin-left:16px;
+		
+	}
+	
+	.menu__desktop-text { 
+		display:none; 
+	}
+	
+	
+	
+	.menu__desktop-icone--open svg { /* Change the color of svg when hovered */ 
+		stroke:#E74C3C;
+	}
+	
+	.menu__desktop-icone--open span{ 
+		display:inline-block;
+		position:relative; 
+		top:12px;
+		color:#e74c3c;
+		font-size:1.5rem;
+		text-transform:uppercase;
+	}
+	
+	.menu__desktop-icone--open  { 
+		box-shadow: 0px 1px 2px #000;
+		background-color:#f1f5f5;
+	}
+	
+	
 
 
 
@@ -755,7 +877,20 @@ p {
 
 /* Hide the arrow up on button by default */ 
 
+
+.skills__col .st0 { 
+	fill:none;
+	stroke:#fff;
+	stroke-width:5;
+	stroke-miterlimit:10;
+}
+
+
 .skills__col .st2 {
+	fill:none;
+	stroke:#fff;
+	stroke-width:5;
+	stroke-miterlimit:10;
 	display:none;
 }
 
@@ -1113,7 +1248,7 @@ p {
 }
 
 .story__description-card { 
-	background-color:#fff;
+	background-color:#f1f5f5;
 	box-shadow: 4px 4px 12px #000;
 	padding: 0.5%;
 	max-width:90%; 
@@ -1218,7 +1353,7 @@ p {
 		width:25px; 
 		height:25px; 
 		border-radius:50%;
-		background-color:#fff;
+		background-color:#f1f5f5;
 		position:relative;
 		top:20%;
 		margin:0 auto; 

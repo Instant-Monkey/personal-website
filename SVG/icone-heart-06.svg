@@ -1,0 +1,18 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e74c3c;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>icone-heart</title>
+  <g>
+    <path class="cls-1" d="M29.91,17.4C28.56,7.8,16.73,2,9.88,10.22c-7.92,9.46,1,21.83,7.83,29,4.29,4.46,9.94,8.34,11.87,14.52"/>
+    <path class="cls-1" d="M30.09,17.4c1.36-9.6,13.18-15.37,20-7.18,7.92,9.46-1,21.83-7.83,29C38,43.64,32.34,47.51,30.42,53.69"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e74c3c;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>icone-study</title>
+  <g>
+    <polygon class="cls-1" points="18.02 29.84 6.28 24.59 30 14.97 54.48 24.59 42.02 29.98 30 35.16 18.02 29.84"/>
+    <path class="cls-1" d="M42,30V42.31s-5.08,5.06-12,5c-8.83,0-12-4.9-12-4.9V29.83l12,5.33Z"/>
+  </g>
+  <line class="cls-1" x1="10.22" y1="26.35" x2="10.22" y2="49.04"/>
+</svg>

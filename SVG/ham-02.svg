@@ -1,0 +1,19 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e74c3c;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <title>ham</title>
+  <g>
+    <line class="cls-1" x1="8.42" y1="46.79" x2="51.58" y2="46.79"/>
+    <line class="cls-1" x1="8.42" y1="30" x2="51.58" y2="30"/>
+    <line class="cls-1" x1="8.42" y1="13.21" x2="51.58" y2="13.21"/>
+  </g>
+</svg>
