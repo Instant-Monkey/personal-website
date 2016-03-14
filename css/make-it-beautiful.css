@@ -1200,13 +1200,17 @@ p {
 	
 }
 
+.story__background {
+	background-position: top left ; 
+}
+
 .story__intro { 
 	background-image:url(../images/france-map-black.jpg); 
-	background-position: 0  4rem ; 
 	background-repeat: no-repeat ;
-	background-attachment: fixed;
 	height:200vh;
-	overflow:hidden;
+	background-size:auto 100vh;
+	overflow:hidden; /*hide the little top pwhite line between the two sections */
+	
 }
 
 .story__intro-title { 
@@ -1298,6 +1302,11 @@ p {
 
 @media only screen and (min-width: 40.0625em) {	
 	
+	.story__background {
+		background-attachment: fixed;
+		background-size:initial;
+
+	}
 	.story__intro { 
 		background-image:url(../images/france-map-black-1024.jpg); 
 	}
@@ -1372,7 +1381,7 @@ p {
 
 	.story__intro { 
 		background-image:url(../images/france-map-black-1440.jpg); 
-		background-position: top left ; 
+		
 	}
 	
 	.story__intro-title { 

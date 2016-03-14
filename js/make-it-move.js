@@ -213,16 +213,35 @@ var controller = new ScrollMagic.Controller();
 //-------------TITLE MY STORY -------------//
 
 // Keep the title my story centered during 100 vh 
-new ScrollMagic.Scene({
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large" )  { 
+	new ScrollMagic.Scene({
+			triggerElement: '.story__intro',
+			duration: (100*vh()),    // last 100 vh 
+			offset: (50*vh())       // start this scene after scrolling for 50 vh 
+		})
+		.setPin(".story__intro-title") // pins the element for the the scene's duration
+		
+		.addTo(controller); // assign the scene to the controller
+	
+}
+
+
+//------------- MY STORY -------------//
+
+// Get the parallax effect for mobile with scrollMagic // 
+
+if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium" )  { 
+	new ScrollMagic.Scene({
 		triggerElement: '.story__intro',
-        duration: (100*vh()),    // last 100 vh 
+        duration: (150*vh()),    // last 100 vh 
         offset: (50*vh())       // start this scene after scrolling for 50 vh 
     })
-    .setPin(".story__intro-title") // pins the element for the the scene's duration
+    .setPin(".story__intro") // pins the element for the the scene's duration
     
 	.addTo(controller); // assign the scene to the controller
-	
-	
+
+}
 	
 	
 	
