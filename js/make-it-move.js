@@ -3,8 +3,10 @@ $( document ).ready(function() {
 	
 	
 /* ---------------------------------- *\ 
-  #SMOOTH SCROLLING 
+  #SMOOTH SCROLLING, MAKE ANCHORS BUG ON MOBILE 
 \* ---------------------------------- */
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -20,6 +22,24 @@ $(function() {
   });
 });
 
+}
+
+// fix scrollmagic bug on IE 
+
+if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge/)) { // if IE
+	console.log("hello IE Test");
+        $('body').on("mousewheel", function () {
+            // remove default behavior
+            event.preventDefault(); 
+            
+
+            //scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+}
+
 /* ---------------------------------- *\ 
   #MENU MOBILE ANIMATION
 \* ---------------------------------- */
@@ -27,7 +47,7 @@ $(function() {
 var menuMobileOpen = false; 
 var menuMobileSize ;
 
-if (getTypeOfMedia() === "small" || "medium") {
+if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium") {
 	
 	$('.menu__mobile-hamburger-container').click(function() { 
 		if (menuMobileOpen === false) { 
@@ -59,6 +79,19 @@ if (getTypeOfMedia() === "small" || "medium") {
 			}, 440,'easeInOutExpo');
 			menuMobileOpen = false; 
 		}
+	});
+
+	$('.menu__mobile-icones').click(function() { 
+		$('.menu__mobile-icones li').fadeOut(300);
+			$('.menu__mobile-cross-svg').fadeOut(100);
+			$('.menu__mobile-hamburger-svg').fadeIn(200);
+			$('.menu__mobile').animate({ 
+				height: menuMobileSize,
+				opacity:'1'
+			}, 440,'easeInOutExpo');
+			if (getTypeOfMedia() === "small" ){$("#home").css("top","4rem");}
+			menuMobileOpen = false; 
+
 	});
 }
 
@@ -192,9 +225,16 @@ if (getTypeOfMedia() === "large" || "x-large") {
 /* ---------------------------------- *\ 
   #REALIZATION SECTION 
 \* ---------------------------------- */
+
+	$.event.special.swipe.scrollSupressionThreshold = 10; // More than this horizontal displacement, and we will suppress scrolling.
+	$.event.special.swipe.horizontalDistanceThreshold = 30; // Swipe horizontal displacement must be more than this.
+	$.event.special.swipe.durationThreshold = 500;  // More time than this, and it isn't a swipe.
+	$.event.special.swipe.verticalDistanceThreshold = 75;
 	
 	$(".realization__arrow-left").click(slideRealLeft); 
 	$(".realization__arrow-right").click(slideRealRight); 
+	$(".realization__slide" ).on( "swipeleft", slideRealRight );
+	$(".realization__slide" ).on( "swiperight", slideRealLeft );
 	
 	
 	
@@ -214,7 +254,7 @@ var controller = new ScrollMagic.Controller();
 
 // Keep the title my story centered during 100 vh 
 
-if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large" )  { 
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
 	new ScrollMagic.Scene({
 			triggerElement: '.story__intro',
 			duration: (100*vh()),    // last 100 vh 
@@ -227,24 +267,6 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large" )  {
 }
 
 
-//------------- MY STORY -------------//
-
-// Get the parallax effect for mobile with scrollMagic // 
-
-if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium" )  { 
-	new ScrollMagic.Scene({
-		triggerElement: '.story__intro',
-        duration: (150*vh()),    // last 100 vh 
-        offset: (50*vh())       // start this scene after scrolling for 50 vh 
-    })
-    .setPin(".story__intro") // pins the element for the the scene's duration
-    
-	.addTo(controller); // assign the scene to the controller
-
-}
-	
-	
-	
 	
 
 //-------------FIX LIST YEAR -------------//
@@ -252,8 +274,37 @@ if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium" )  {
 // Keep the list year fixed during the whole scroll 
 
 if (getTypeOfMedia() !== "small") { 
+		
+	
+	if (getTypeOfMedia() === "medium") { 
 
-	new ScrollMagic.Scene({
+		//Fix the list year for story on tablet 
+
+		new ScrollMagic.Scene({
+			triggerElement: '.story__wrapper',
+			duration: 340*vh(),    // last 100 vh 
+			offset: 50*vh()       // start this scene after scrolling for 50 vh 
+		})
+		.setClassToggle(".story__list-year", "story__list-year--fixed") // pins the element for the the scene's duration
+		
+		.addTo(controller); // assign the scene to the controller 
+
+		//Make the list year white when arriving on blue screen
+
+		new ScrollMagic.Scene({
+				triggerElement: '.story__canada',
+				duration: 100*vh(),    
+				offset: 25*vh()       // start this scene after scrolling for 50 vh 
+			})
+			.setClassToggle(".story__year", "story__year--white")
+			
+			.addTo(controller); // assign the scene to the controller  
+
+	} else { 
+
+		//Fix the list year for the story on desktop
+
+		new ScrollMagic.Scene({
 			triggerElement: '.story__wrapper',
 			duration: 1200*vh(),    // last 100 vh 
 			offset: 50*vh()       // start this scene after scrolling for 50 vh 
@@ -261,107 +312,215 @@ if (getTypeOfMedia() !== "small") {
 		.setPin(".story__list-year ul") // pins the element for the the scene's duration
 		
 		.addTo(controller); // assign the scene to the controller  
-		
-	//  Make the year font white for blue background 
-	
-	new ScrollMagic.Scene({
-			triggerElement: '.story__canada',
-			duration: 225*vh(),    
-			offset: 25*vh()       // start this scene after scrolling for 50 vh 
-		})
-		.setClassToggle(".story__year", "story__year--white")
-		
-		.addTo(controller); // assign the scene to the controller  
+
+
+		//Make the list year white when arriving on blue screen
+
+		new ScrollMagic.Scene({
+				triggerElement: '.story__canada',
+				duration: 225*vh(),    
+				offset: 25*vh()       // start this scene after scrolling for 50 vh 
+			})
+			.setClassToggle(".story__year", "story__year--white")
+			
+			.addTo(controller); // assign the scene to the controller  
+	}
 }
 
 //-------------2009 -------------//
 
-var toggleYear2009 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:100*vh(),
-	offset: 50*vh()
-	})						
-	
-	.setClassToggle(".story__y2009", "story__year--active")	
-					
-	.addTo(controller); 
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2009 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:100*vh(),
+		offset: 50*vh()
+		})						
+		
+		.setClassToggle(".story__y2009", "story__year--active")	
+						
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2009 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: 0*vh()
+		})						
+		
+		.setClassToggle(".story__y2009", "story__year--active")	
+						
+		.addTo(controller); 
+
+}
 
 //-------------2010 -------------//
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 	
-var toggleYear2010 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:50*vh(),
-	offset: (150*vh())
-	})						
-	
-	.setClassToggle(".story__y2010", "story__year--active")
-						
-	.addTo(controller); 
+	var toggleYear2010 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: (150*vh())
+		})						
+		
+		.setClassToggle(".story__y2010", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2010 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: (50*vh())
+		})						
+		
+		.setClassToggle(".story__y2010", "story__year--active")
+							
+		.addTo(controller); 
+}
 	
 //-------------2011 -------------//
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 	
-var toggleYear2011 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:450*vh(),
-	offset: (200*vh())
-	})						
-	
-	.setClassToggle(".story__y2011", "story__year--active")
-						
-	.addTo(controller); 
+	var toggleYear2011 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:450*vh(),
+		offset: (200*vh())
+		})						
+		
+		.setClassToggle(".story__y2011", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2011 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:150*vh(),
+		offset: (100*vh())
+		})						
+		
+		.setClassToggle(".story__y2011", "story__year--active")
+							
+		.addTo(controller); 
+}
 
 //-------------2012 -------------//
 
-var toggleYear2012 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:250*vh(),
-	offset: (650*vh())
-	})						
-	
-	.setClassToggle(".story__y2012", "story__year--active")
-						
-	.addTo(controller); 
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2012 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:250*vh(),
+		offset: (650*vh())
+		})						
+		
+		.setClassToggle(".story__y2012", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2012 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: (250*vh())
+		})						
+		
+		.setClassToggle(".story__y2012", "story__year--active")
+							
+		.addTo(controller); 
+}
 
 //-------------2013 -------------//
 
-var toggleYear2013 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:150*vh(),
-	offset: (900*vh())
-	})						
-	
-	.setClassToggle(".story__y2013", "story__year--active")
-						
-	.addTo(controller); 
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2013 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:150*vh(),
+		offset: (900*vh())
+		})						
+		
+		.setClassToggle(".story__y2013", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2013 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:25*vh(),
+		offset: (300*vh())
+		})						
+		
+		.setClassToggle(".story__y2013", "story__year--active")
+							
+		.addTo(controller); 
+}
 
 //-------------2014 -------------//
 
-var toggleYear2014 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:150*vh(),
-	offset: (1050*vh())
-	})						
-	
-	.setClassToggle(".story__y2014", "story__year--active")
-						
-	.addTo(controller); 
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2014 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:150*vh(),
+		offset: (1050*vh())
+		})						
+		
+		.setClassToggle(".story__y2014", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+
+	var toggleYear2014 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:25*vh(),
+		offset: (325*vh())
+		})						
+		
+		.setClassToggle(".story__y2014", "story__year--active")
+							
+		.addTo(controller); 
+
+}
 	
 //-------------2015 -------------//
 
-var toggleYear2015 = new ScrollMagic.Scene({
-	triggerElement: ".story__wrapper",
-	duration:50*vh(),
-	offset: (1200*vh())
-	})						
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2015 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: (1200*vh())
+		})						
+		
+		.setClassToggle(".story__y2015", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+	var toggleYear2015 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:50*vh(),
+		offset: (350*vh())
+		})						
+		
+		.setClassToggle(".story__y2015", "story__year--active")
+							
+		.addTo(controller); 
+}
 	
-	.setClassToggle(".story__y2015", "story__year--active")
-						
-	.addTo(controller); 
 	
 	
 	
-	
-	
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {  // All the parallax is not for mobile and tablet 	
 
 //-------------DISPLAY/HIDE DESCRIPTION IUT -------------//
 
@@ -861,6 +1020,10 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
 					
 	.addTo(controller); 
+
+
+
+} //end of the not for mobile/tablet condition 
 	
 });//End of .ready(function())
 

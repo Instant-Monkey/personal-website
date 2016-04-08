@@ -71,6 +71,23 @@ p {
 }
 
 
+/* Prevents the search bar on chrome mobile from hiding */ 
+@media only screen and (max-width: 40.0625em) { 
+
+	html, body { 
+		overflow-y:hidden;
+	}
+
+	.layout-full-width { 
+		overflow-y:auto;
+		height:100%;
+		overflow-x:hidden;
+	}
+
+
+
+
+}
 
 
 
@@ -142,9 +159,15 @@ p {
 
 .menu__mobile-icones li { 
 	display:none;
-	margin:7px 0;
+	padding:5px 0;
+	height:100%;
 
 }
+
+.menu__mobile-icones li a { 
+	display:block;
+	height:100%;
+	}
 
 .menu__mobile-icone-svg { 
 	fill:none;
@@ -169,9 +192,6 @@ p {
 
 
 .menu__mobile-hamburger-container { 
-	display:inline;
-	height:35px;
-	width:35px;
 	z-index:101;
 	float:right;
 	margin:0;
@@ -324,6 +344,7 @@ p {
 	position:absolute; 
 	width: 100vw; 
 	top:4rem; 
+	overflow-x:hidden;
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -358,7 +379,7 @@ p {
 	background-image: url(../images/New-York-small.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
-	background-attachment:fixed;
+	
 	background-size:cover; 
 	height:calc(100vh - 4rem); 
 	overflow:hidden; /* correct the size of the div to be perfect */ 
@@ -369,6 +390,7 @@ p {
 	#home { 
 		background-image: url(../images/New-York.jpg);
 		height:100vh; 
+		background-attachment:fixed;
 	} 
 }
 
@@ -489,7 +511,6 @@ p {
 	background-image: url(../images/dummy-aix-rouge-small.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
-	background-attachment:fixed;
 	background-size:cover; 
 	height:calc(100vh - 4rem); 
 } 
@@ -547,6 +568,10 @@ p {
 
 @media only screen and (min-width: 64.0625em) { 
 
+		#description { 
+			background-attachment:fixed;
+
+		}
 		.description__container h2 { 
 			text-align:right;
 			margin-top:-0.3rem;
@@ -594,7 +619,6 @@ p {
 	background-image:url(../images/dummy-image-comp%C3%A9tences.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
-	background-attachment:fixed;
 	background-size:cover; 
 }
 	
@@ -622,6 +646,7 @@ p {
 	margin:0;
 	max-width:100%;
 }
+
 
 /* Different cases for skill-container on mobile */ 
 
@@ -666,7 +691,8 @@ p {
 @media only screen and (min-width: 64.0625em) { 
 
 	#skills { 
-		height:100vh;		
+		height:100vh;	
+		background-attachment:fixed;	
 	}
 	
 		.skills__title-container { 
@@ -724,7 +750,7 @@ p {
 }
 
 	.skills__col h3 { 
-		font-size:2.2rem; 
+		font-size:2rem; 
 		text-align:center; 
 		position:relative;
 		top:50%; 
@@ -762,6 +788,10 @@ p {
 		height:calc((100vh - 5rem)/2);
 		margin-top:-3px; /*align the description photo with top of background */ 	
 	}
+
+	.skills__col h3 { 
+		font-size:1.5rem; 
+	}
 	
 	.skills__col--open{ 
 		height:calc(100vh - 5rem);
@@ -769,6 +799,12 @@ p {
 	
 	.skills__c3 {
 		clear:none; /* cancel the settings for the tablet mode */ 
+	}
+}
+
+@media only screen and (min-width: 75.5625em) { 
+	.skills__col h3 { 
+		font-size:1.8rem; 
 	}
 }
 
@@ -780,6 +816,10 @@ p {
 	
 	.skills__col--open{ 
 		height:calc(100vh - 7rem);
+	}
+
+	.skills__col h3 { 
+		font-size:2.1rem; 
 	}
 }
 
@@ -1131,12 +1171,13 @@ p {
 	width:50%;
 	position:relative;
 	bottom:0.5rem;
+	line-height: 1;
 }
 
 .realization__slider-dots .dot {
 	color: #bbbcbc;
 	display: inline;
-	font-size: 30px;
+	font-size: 50px;
 	margin-right: 5px; 
 }
 
@@ -1202,13 +1243,14 @@ p {
 
 .story__background {
 	background-position: top left ; 
+	background-size:cover;
+	background-repeat: no-repeat ;
+	position:relative; 
 }
 
 .story__intro { 
 	background-image:url(../images/france-map-black.jpg); 
-	background-repeat: no-repeat ;
-	height:200vh;
-	background-size:auto 100vh;
+	height:100vh;
 	overflow:hidden; /*hide the little top pwhite line between the two sections */
 	
 }
@@ -1303,10 +1345,9 @@ p {
 @media only screen and (min-width: 40.0625em) {	
 	
 	.story__background {
-		background-attachment: fixed;
 		background-size:initial;
-
 	}
+
 	.story__intro { 
 		background-image:url(../images/france-map-black-1024.jpg); 
 	}
@@ -1322,10 +1363,14 @@ p {
 		position:relative;
 		top:17.5vh;
 		bottom: inherit;
-		left:0;
 		float:right;
 		margin-right:5vw;
 		
+	}
+
+	.story__list-year--fixed { 
+		position:fixed;
+		right:0;
 	}
 	
 	.story__year { 
@@ -1377,11 +1422,22 @@ p {
 	}
 }
 
-@media only screen and (min-width: 64.0625em) { 
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:5/4) {	 
+	.story__intro {
+		background-image:url(../images/france-map-black-1024-vertical.jpg);
+	}
 
+}
+
+@media only screen and (min-width: 64.0625em) { 
+	
+	.story__background {
+		background-attachment: fixed;
+	}
+	
 	.story__intro { 
 		background-image:url(../images/france-map-black-1440.jpg); 
-		
+		height:200vh;
 	}
 	
 	.story__intro-title { 
@@ -1397,6 +1453,7 @@ p {
 		height:100vh;		
 		top:15vh;
 		left:0;
+		z-index: 1000;
 	}
 	
 	.story__year {  
@@ -1452,6 +1509,83 @@ p {
 	} 
 }
 
+
+/*---------------*
+ *Anchor year link
+ *---------------*/
+
+ .story__trigger { 
+ 	position:relative;
+ }
+
+ #story__trigger--2009 { 
+ 	top:100vh;
+ }
+
+ #story__trigger--2010 { 
+ 	top: 150vh;
+ }
+
+ #story__trigger--2011 { 
+ 	top:200vh;
+ }
+
+ #story__trigger--2012 { 
+ 	top:305vh;
+ }
+
+ #story__trigger--2013 { 
+ 	top:360vh;
+ }
+
+ #story__trigger--2014 { 
+ 	top:400vh;
+ }
+
+ #story__trigger--2015 { 
+ 	top:425vh;
+ }
+
+ .story__list-year a{ 
+ 	color:inherit;
+ 	text-decoration: none;
+ }
+
+ @media only screen and (min-width: 64.0625em) { 
+ 	
+ 	#story__trigger { 
+ 		position:relative;
+	 }
+
+	 #story__trigger--2009 { 
+	 	top:210vh;
+	 }
+
+	 #story__trigger--2010 { 
+	 	top: 350vh;
+	 }
+
+	 #story__trigger--2011 { 
+	 	top: 400vh;
+	 }
+
+	 #story__trigger--2012 { 
+	 	top: 850vh;
+	 }
+
+	 #story__trigger--2013 { 
+	 	top: 1100vh;
+	 }
+
+	 #story__trigger--2014 { 
+	 	top: 1250vh;
+	 }
+
+	 #story__trigger--2015 { 
+	 	top: 1400vh;
+	 }
+
+ }
 	
 /*---------------*
  *Story France 1
@@ -1460,23 +1594,14 @@ p {
 	
 .story__france-1 { 
 	background-image:url(../images/france-map.jpg); 
-	background-position:  0  4rem ; 
-	background-repeat: no-repeat ;
-	background-attachment: fixed;
-	position:relative; 
+	height:100vh;
 	top:-3px;
-	height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
 }
 
 .story__wrapper-description-iut { 	
-	position:fixed;
-	opacity:0;
-	display:none;
+	position:relative;
+	top:25vh;
 }
-
-	.story__wrapper-description-iut--display { 
-		display:block;
-	}
 
 .story__wrapper-line-to-canada { 
 	position:fixed; 
@@ -1484,19 +1609,16 @@ p {
 	display:none;
 }
 
-	.story__wrapper-line-to-canada--display { 
-		display:block; 
-	}
-
 
 @media only screen and (min-width: 40.0625em) {	
 	
 	.story__france-1 { 
 		background-image:url(../images/france-map-1024.jpg); 
+		
 	}
 	
 	.story__wrapper-description-iut { 	
-		top:226px; 
+		top:167px; 
 		left:106px;
 	}
 	
@@ -1511,21 +1633,43 @@ p {
 	
 }
 
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:5/4) {	 
+	.story__france-1 {
+		background-image:url(../images/france-map-1024-vertical.jpg);
+	}
+
+	.story__wrapper-description-iut { 	
+		top:558px; 
+		left:38px;
+	}
+
+}
+
 @media only screen and (min-width: 64.0625em) { 
 	
 	.story__france-1 { 
 		background-image:url(../images/france-map-1440.jpg); 
-		background-position:top left;
+		height:300vh; /*50 vh = list years appears --> 100vh = description appear --> 150vh = 2010 --> 200vh = 2011 --> 250vh = Description disappear, arrow created --> 300vh = end */ 
 	}
 	
 	.story__wrapper-description-iut { 	
+		position:fixed;
 		top:342px; 
 		left:210px;
+		opacity:0;
+		display:none;
 	}
 	
+		.story__wrapper-description-iut--display { 
+			display:block;
+		}
 	.story__wrapper-line-to-canada { 
 		top:-83px;
 		left:-147px;
+	}
+
+	.story__wrapper-line-to-canada--display { 
+		display:block; 
 	}
 }
 
@@ -1565,22 +1709,13 @@ p {
 
 .story__canada { 
 	background-image:url(../images/canada-map.jpg); 
-	background-position: 0 4rem ; 
-	background-repeat: no-repeat ;
-	background-attachment: fixed;
-	position:relative; 
-	top:-3px;
-	height:250vh; /* 50vh-75vh --> fadein description, 150-175 --> fadeout description, 150-200 --> draw line to finland, 200-225 erase line */  
+	top:-3px; 
+	height:100vh;
 }
 
-.story__wrapper-description-canada { 	
-	position:fixed;
-	opacity:0;
-	display:none;
-}
-
-.story__wrapper-description-canada--display { 
-	display:block;
+.story__wrapper-description-canada { 
+	position:relative;
+	top:25vh;
 }
 
 .story__wrapper-line-to-finland { 
@@ -1600,7 +1735,7 @@ p {
 	}
 	
 	.story__wrapper-description-canada { 
-		top:190px;
+		top:135px;
 		left:33px;
 		
 	}
@@ -1612,17 +1747,31 @@ p {
 
 }
 
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:5/4) {	 
+	.story__canada {
+		background-image:url(../images/canada-map-1024-vertical.jpg);
+	}
+
+}
+
 @media only screen and (min-width: 64.0625em) { 
 
 	.story__canada {
 		background-image:url(../images/canada-map-1440.jpg);
-		background-position: top left ; 
+		height:250vh; /* 50vh-75vh --> fadein description, 150-175 --> fadeout description, 150-200 --> draw line to finland, 200-225 erase line */  
 	}
 	
 	.story__wrapper-description-canada { 	
 		top:95px; 
 		left:84px;
+		position:fixed;
+		opacity:0;
+		display:none;
 	}
+
+		.story__wrapper-description-canada--display { 
+			display:block;
+		}
 	
 	.story__wrapper-line-to-finland { 
 		top:-69px;
@@ -1656,22 +1805,13 @@ p {
  
  .story__finland { 
  	background-image:url(../images/finland-map.jpg); 
-	background-position: 0 4rem ; 
-	background-repeat: no-repeat ;
-	background-attachment: fixed;
-	position:relative; 
 	top:-3px;
-	height:250vh;
+	height:100vh;
  } 
  
 .story__wrapper-description-finland { 	
-	position:fixed;
-	opacity:0;
-	display:none;
-}
-
-.story__wrapper-description-finland--display { 
-	display:block;
+	position: relative; 
+	top: 25vh; 
 }
 
 .story__wrapper-line-to-france { 
@@ -1680,9 +1820,9 @@ p {
 	display:none;
 }
 
-.story__wrapper-line-to-france--display { 
-	display:block; 
-}
+	.story__wrapper-line-to-france--display { 
+		display:block; 
+	}
 
 @media only screen and (min-width: 40.0625em) {	
 	
@@ -1691,7 +1831,7 @@ p {
 	}
 	
 	.story__wrapper-description-finland { 	
-		top:65px; 
+		top:17px; 
 		left:140px;
 	}
 	
@@ -1706,17 +1846,31 @@ p {
 
 }
 
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:5/4) {	 
+	.story__finland {
+		background-image:url(../images/finland-map-1024-vertical.jpg);
+	}
+
+}
+
 @media only screen and (min-width: 64.0625em) { 
 
 	.story__finland {
 		background-image:url(../images/finland-map-1440.jpg);
-		background-position: top left ; 
+		height:250vh;
 	}
 	
 	.story__wrapper-description-finland { 	
 		top:40px; 
 		left:313px;
+		position:fixed;
+		opacity:0;
+		display:none;
 	}
+
+		.story__wrapper-description-finland--display { 
+			display:block;
+		}
 	
 	.story__location-dot-finland {
 		float:none;	
@@ -1733,7 +1887,6 @@ p {
 	
 	.story__finland { 
  	background-image:url(../images/finland-map-1920.jpg); 
-	background-position: top left; 
 	}
 	
 	.story__wrapper-description-finland { 	
@@ -1754,30 +1907,14 @@ p {
  
  .story__france-2 { 
 	background-image:url(../images/france-map.jpg); 
-	background-position: 0 4rem ; 
-	background-repeat: no-repeat ;
-	background-attachment: fixed;
-	position:relative; 
 	top:-3px;
-	height:500vh; /* */ 
+	height:120vh; /* */ 
+	background-position: top;
 }
 
-.story__wrapper-description-gem { 	
-	position:fixed;
-	opacity:0;
-	display:none;
-}
-
-.story__wrapper-description-gem--display { 
-	display:block;
-}
-
-.story__description-gem-1A { 
-	display:none;
-}
-
-.story__description-gem-1A--display { 
-	display:block;
+.story__wrapper-description-gem { 
+	position: relative; 
+	top:10vh;
 }
 
 .story__description-gem-2A { 
@@ -1789,50 +1926,96 @@ p {
 }
 
 .story__wrapper-description-devoteam { 	
-	position:fixed;
-	opacity:0;
-	display:none;
-}
-
-.story__wrapper-description-devoteam--display { 
-	display:block;
+	position:relative;
+	top:20vh;
 }
 
 @media only screen and (min-width: 40.0625em) {	
 	
 	.story__france-2 {
 		background-image:url(../images/france-map-1024.jpg);
+		background-repeat: no-repeat;
+		background-position: top left; 
+		height:100vh;
+
 	}
 	
 	.story__wrapper-description-gem { 	
-		top:150px; 
-		left:110px;
+		top:392px; 
+		left:107px;
 	}
 	
 	.story__location-dot-gem { 
-		float:right; 
+		float:right;
+		top:-248px;
 	}
 	
 	.story__wrapper-description-devoteam { 	
-		top:237px; 
-		left:163px;
+		top:-35px; 
+		left:15px;
 	}
 	
 	.story__location-dot-devoteam {
 		top:-250px;	
+		left:160px;
 	}
 
 }
 
-@media only screen and (min-width: 54.0625em) {	
+@media only screen and (min-width: 40.0625em) and (max-width: 64.0625em) and  (max-aspect-ratio:5/4) {	 
+	.story__france-2 {
+		background-image:url(../images/france-map-1024-vertical.jpg);
+	}
 
-	.story__wrapper-description-gem { 	
-		top:150px; 
+	.story__wrapper-description-gem { 	 
+		top:614px;
+		left:5px;
+	}
+
+		.story__location-dot-gem { 
+			float:right; 
+			top:-117px;
+			left:45px;
+
+		}
+
+	.story__wrapper-description-devoteam { 	
+		top:24px; 
+		left:88px;
+	}
+
+	.story__location-dot-devoteam {
+		float:none;
+		top:20%;
+		left:0;
+	}
+
+}	
+
+@media only screen and (min-width: 54.0625em) and (min-aspect-ratio:5/4) {	
+
+	.story__wrapper-description-gem { 	 
 		left:293px;
 	}
 	
 	.story__location-dot-gem { 
 		float:none; 
+	}
+	
+}
+
+
+
+@media only screen and (min-width: 59.375em) and (min-aspect-ratio:5/4) {
+	
+	.story__wrapper-description-devoteam { 	
+		top:-162px; 
+		left:400px;
+	}
+
+	.story__location-dot-devoteam {
+		top:-100px;	
+		left:-238px;
 	}
 }
 
@@ -1840,25 +2023,53 @@ p {
 
 	.story__france-2 {
 		background-image:url(../images/france-map-1440.jpg);
-		background-position: top left ; 
+		height:500vh; /* */ 
+		background-repeat: no-repeat;
+		background-size: initial; 
+		background-position: top left; 
 	}
 	
 	.story__wrapper-description-gem { 	
 		top:233px; 
-		left:221px;
+		left:446px;
+		position:fixed;
+		opacity:0;
+		display:none;
 	}
+
+		.story__wrapper-description-gem--display { 
+			display:block;
+		}
+
+	.story__description-gem-1A { 
+		display:none;
+	}
+
+		.story__description-gem-1A--display { 
+			display:block;
+		}
 	
 	.story__location-dot-gem { 
-		float:right; 
+		 top:40px;
+		 float:none; 
 	}
 	
 	.story__wrapper-description-devoteam { 	
-		top:5px; 
+		top:235px; 
 		left:276px;
+		position:fixed;
+		opacity:0;
+		display:none;
 	}
+
+		.story__wrapper-description-devoteam--display { 
+			display:block;
+		}
 	
 	.story__location-dot-devoteam {
-		top:20%;	
+		top:-246px;	
+		float:none;
+		left:0px;
 	}
 
 }
@@ -1867,12 +2078,11 @@ p {
 	
 	.story__france-2 { 
 	background-image:url(../images/france-map-1920.jpg); 
-	background-position:top left; 
 	}
 	
 	.story__wrapper-description-gem { 	
-		top:379px; 
-		left:683px;
+		top:376px; 
+		left:689px;
 	}
 	
 	.story__location-dot-gem { 
@@ -1880,8 +2090,13 @@ p {
 	}
 	
 	.story__wrapper-description-devoteam { 	
-		top:10px; 
-		left:443px;
+		top: 300px;
+   		left: 459px;
+	}
+
+	.story__location-dot-devoteam {
+			
+	
 	}
 	
 }
@@ -1909,6 +2124,7 @@ p {
 	overflow:hidden; /* Align the top with previous section */ 
 	position:relative;
 	top:-3px; /* correct bug where there is a small white space between section */ 
+	height:calc((100vh - 4rem)*2);;
  
  }
  
@@ -1927,11 +2143,11 @@ p {
 	}
 
 .hobby__container-individual { 
-	height:calc(100vh - 4rem);
+	height:calc((100vh - 8rem)/2);
 	overflow-y:hidden;
 }
 
-	.hobby__container-individual h3 { 
+	.hobby__content-container h3 { 
 		text-transform:uppercase; 
 		text-align:center;
 		font-size:2rem;
@@ -1958,7 +2174,7 @@ p {
 }
 
 .hobby__container-cinema { 
-	background-color:#D0EB55;
+	background-color:#099A4D;
 }
 
 .hobby__container-video-games { 
@@ -1969,31 +2185,36 @@ p {
 	background-color:#1D60B4;
 }
 
-.hobby__music-icon { 
+.hobby__icon { 
 	text-align:center;
+}
+
+.hobby__show-large-image { 
+	display:none;
 }
 
 
 
 @media only screen and (min-width: 40.0625em) {	
 
+	#hobby { 
+		height:calc((100vh - 4rem)/2);
+	}
+
 	.hobby__container-individual { 
-		overflow-y:auto;
 		overflow-x:hidden;
 		float:left;
 	}
 	
 	.hobby__container-individual h3 { 
-		font-size:2.4rem;
+		font-size:2rem;
 		margin-top:1.2rem;
 		margin-bottom:1.2rem;
 	}
 	
-	/*.hobby__content-container { 
-		height:80%; 
-		position:relative;
-		top:10%;
-	}*/
+	.hobby__content-container { 
+		margin-top: 15%; 
+	}
 	
 	.hobby__text-container { 
 		width:67%;
@@ -2021,31 +2242,148 @@ p {
 @media only screen and (min-width: 64.0625em) { 
 	
 	#hobby { 
-		height:100vh;
+		height:50vh;
 	}
+
+	.hobby__title-container h2 { 
+		font-size:2.8rem;
+	}
+	
 	
 	.hobby__container { 
 		max-width:100%;
+		height:5rem;
 	}
-	
+
+	.hobby__container-individual h3 { 
+		font-size:2.2rem;
+	}
+
+	.hobby__show-large-image { 
+		display:inline;
+	}
+
+	.hobby__show-small-image { 
+		display:none;
+	}
+
+	.hobby__content-container { 
+		margin-top: 10%; 
+	}
+
+}
+
+@media only screen and (min-width: 64.0625em) and  (max-aspect-ratio:5/4) { 
+	#hobby { 
+		height:100vh;
+	}
 	.hobby__container-individual {
-		height:75vh;	
+		height:calc((100vh - 5rem)/2);
+		width:50%;
+	}
+
+	.hobby__content-container { 
+		margin-top: 15%; 
 	}
 
 }
 
 @media only screen and (min-width: 90.0625em) { 
-	.hobby__container-individual {
-		height:60vh;	
-	}
 	
 	.hobby__title-container { 
 		top:0px;
+		height:7rem;
 		
 	}
-	
-		.hobby__title-container h2 { 
-			font-size:3.6rem;
-			margin:0;
-		}
+
+	.hobby__title-container h2 { 
+		font-size:3rem;
+		padding-top:1rem;
+	}
+
+	.hobby__content-container { 
+		margin-top: 20%; 
+	}
+}
+
+/* ---------------------------------- *\ 
+ * ---------------------------------- *
+ * #CONTACT SECTION                   *
+ * ---------------------------------- *
+\* ---------------------------------- */
+
+#contact { 
+	padding-bottom: 10vh;
+}
+
+ .contact__title-container {
+	 height:5rem; 
+ }
+
+ 	.contact__title-container h2 { 
+		color:#e74c3c; 
+		text-transform:uppercase;
+		text-align:center;
+		font-size:2.2rem;
+		
+		
+	}
+
+.contact__form-container { 
+	margin:0 10%;
+	height:auto;
+	padding-bottom: 10vh;
+}
+
+.contact__form-container p label{ 
+	 font-weight: bold;
+	 font-size:1.3rem;
+
+
+}
+
+#contact textarea { 
+	height: 20vh; 
+	color:rgba(0,0,0,0.75);
+}
+
+#contact label { 
+	cursor:initial;
+}
+
+@media only screen and (min-width: 64.0625em) {
+
+	#contact { 
+	padding-bottom: 0vh;
+	height:100vh;
+}
+
+	.contact__title-container h2 { 
+		position:relative;
+		top:1rem;
+		font-size:2.8rem;
+	}
+}
+
+@media only screen and (min-width: 90.0625em) {
+	.contact__title-container h2 { 
+		position:relative;
+		top:1rem;
+		font-size:3rem;
+	}
+
+}
+
+
+/* Special cases for Iphone 4S *
+-------------------------------*/  
+
+@media only screen and (max-width: 321px) { 
+	.skills__title-container h2 { 
+		font-size:1.8rem;	
+	}
+
+	.realization__title-container h2 { 
+		font-size:1.8rem;	
+	}
 }
