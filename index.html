@@ -18,11 +18,24 @@
 
     <!-- Custom CSS, check it out ! ;) -->
     <link href="css/make-it-beautiful.css" rel="stylesheet">
+
+
     
 
   </head>
 
 <!-- 
+
+╔╗─╔╦═══╦╗──╔╗──╔═══╗╔╗
+║║─║║╔══╣║──║║──║╔═╗║║║
+║╚═╝║╚══╣║──║║──║║─║║║║
+║╔═╗║╔══╣║─╔╣║─╔╣║─║║╚╝
+║║─║║╚══╣╚═╝║╚═╝║╚═╝║╔╗
+╚╝─╚╩═══╩═══╩═══╩═══╝╚╝
+
+WELCOME TO THE SOURCE CODE !!! 
+
+
 
      Y.                      _   
                 YiL                   .```.  
@@ -47,14 +60,7 @@ _.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
       .i!$$$$$$YYYYYYYYY$$$$$$YYY$$YYiiiiiiYYYYYYY    
      :YYiii$$$$$$$YYYYYYY$$$$YY$$$$YYiiiiiYYYYYYi' 
     
-╔╗─╔╦═══╦╗──╔╗──╔═══╗╔╗
-║║─║║╔══╣║──║║──║╔═╗║║║
-║╚═╝║╚══╣║──║║──║║─║║║║
-║╔═╗║╔══╣║─╔╣║─╔╣║─║║╚╝
-║║─║║╚══╣╚═╝║╚═╝║╚═╝║╔╗
-╚╝─╚╩═══╩═══╩═══╩═══╝╚╝
 
-WELCOME TO THE SOURCE CODE !!! 
 
 IF YOU'RE HERE I GUESS YOU'RE QUITE CURIOUS ABOUT THE WAY I CODED THIS WEBSITE 
 FEEL FREE TO CHECK IT OUT, THE CSS IS NAMED 'MAKE IT BEAUTIFUL' AND THE 
@@ -227,7 +233,7 @@ ENJOY !
   	<div class = "menu__desktop-icones-container"> 
  	 <ul class="menu__desktop-icones"> 
      
- 		<li><a href="#home" > 
+ 		<li id="home__nav" ><a href="#home"  > 
         
 			<svg version="1.1"  class="menu__desktop-icone-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          		viewBox="0 0 60 60" style="enable-background:new 0 0 60 60; width:45px; height:45px;" xml:space="preserve">
@@ -249,7 +255,7 @@ ENJOY !
         
         
         
-        <li><a href="#skills">
+        <li id="skills__nav"><a href="#skills" >
         
         	<svg  class="menu__desktop-icone-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" style=" width:45px; height:45px;">	
 				<g>
@@ -278,7 +284,7 @@ ENJOY !
         
         
         
-  		<li><a href="#realization">
+  		<li id="realization__nav"><a href="#realization" >
         
         	<svg  class="menu__desktop-icone-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" style=" width:45px; height:45px;">
 				<g> 
@@ -294,7 +300,7 @@ ENJOY !
         
         
         
- 		<li><a href="#story">
+ 		<li id="story__nav"><a href="#story" >
         	
             <svg  class="menu__desktop-icone-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" style=" width:45px; height:45px;">
 				<g> 
@@ -309,7 +315,7 @@ ENJOY !
         
         
         
-        <li><a href="#hobby">
+        <li id="hobby__nav"><a href="#hobby" >
         	
             <svg  class="menu__desktop-icone-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" style=" width:45px; height:45px;">
 				<g>
@@ -323,7 +329,7 @@ ENJOY !
         
 		
 		
-        <li><a href="#contact">
+        <li id="contact__nav"><a href="#contact" >
         	<svg  class="menu__desktop-icone-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" style=" width:45px; height:45px;">
                 <g>
 					<polygon class="cls-1" points="55.92 10.09 55.92 49.92 55.13 49.92 4.78 49.92 4.08 49.92 4.08 10.09 55.92 10.09"/>
@@ -357,6 +363,7 @@ ENJOY !
   ========================--> 
 
 	<section id="home"  > 
+    <div id="introduction"> 
     	
         <div class="home__title-container">
     
@@ -369,25 +376,25 @@ ENJOY !
                        
          </div>
          
-    </section> 
+    </div> 
     
   <!--========================
   		// DESCRIPTION SECTION \\ 
   -========================--> 
   
-  	<section id="description" >
+  	<div id="description" >
         
         	<div class="row description__container">
-      			<div class="large-6 columns description__col-left"> 
+      			  <div class="large-6 columns description__col-left"> 
             			<h2> Présentation </h2>
-            	</div>          
+              </div>          
             
             	<div class="large-6 columns description__col-right"> 
-            			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum quam augue, vel suscipit turpis placerat at. Curabitur pharetra sapien urna, ac faucibus mi tempus et. Mauris sapien dolor, volutpat at laoreet eget, dictum sed ligula. Nam pretium nunc ut tortor pretium, nec pellentesque enim ultrices. Nullam sed euismod lacus. Suspendisse et porta est. </p> 
+            			<p>Bonjour, mon nom est Sylvain Laugier et je fais des sites web. </br>Originaire d'Aix-en-Provence, je suis fraîchement diplômé d'une grande école de commerce et j'ai appris le web design en autodidacte. Je propose mes services en auto-entrepreneur ou en CDD.</br>Mais ne me croyez pas sur parole et n'hésitez pas à lire la suite pour en apprendre plus.</p> 
             	</div>
-            </div>
-             
-     </section>
+          </div>
+     </div>
+  </section>
   
   <!--========================
   		// SKILLS SECTION \\ 
@@ -401,7 +408,7 @@ ENJOY !
         
         	<div class="medium-6  large-3  skills__col  skills__c1  skills__col-top">
         		<div class="skills__photo-1" >
-                	<h3> Editoriales </h3>
+                	<h3> Webdesign </h3>
                     <div class="skills__rounded-button  b1" >
 						<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 							
@@ -415,14 +422,29 @@ ENJOY !
                     </div>
                      
                 </div>
-                <div class="skills__description-1">
-                	<p>Lorem ipsum dolor sin amet, un chasseur sachant chasser sans sa soeur.</p>
+                <div class="skills__description skills__description-1">
+                  <div class="skills__description-content">
+                  	<ul> 
+                  	<li> HTML5</li> 
+                  	<li> CSS3 </li> 
+                  	<li> BOOTSTRAP</li> 
+                  	<li> JAVASCRIPT</li> 
+                  	<li> JQUERY</li> 
+                  	<li> ADOBE PHOTOSHOP</li> 
+                  	</ul>
+                  	<p></br> Une preuve ? 
+                      </br> </br> 
+                      Ce site, codé à partir de zéro.
+                    </p>
+
+                    <a id="source-code-link" class="button secondary skills__description-button">Voir le code source</a>
+                  </div>
                 </div>
             </div>
             
             <div class="medium-6  large-3  skills__col  skills__c2  skills__col-top">
         		<div class="skills__photo-2" >
-                	<h3> Webdesign </h3>
+                	<h3> Editoriales </h3>
                     <div class="skills__rounded-button  b2" >
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 							
@@ -436,14 +458,29 @@ ENJOY !
                     </div>
                     
                 </div>
-                <div class="skills__description-2">
-                	<p>Lorem ipsum dolor sin amet, un chasseur sachant chasser sans sa soeur.</p>
+                <div class="skills__description skills__description-2">
+                  <div class="skills__description-content">
+                  	<ul> 
+                  	<li> REDACTION WEB</li> 
+                  	<li> GESTION WORDPRESS </li> 
+                  	<li> SEO </li> 
+                  	<li> REALISATION DE VIDEOS </li>
+                  	<li> ADOBE PREMIERE </li>
+                  	<li> ADOBE ILLUSTRATOR </li> 
+                  	</ul>
+                    <p></br> Une preuve ? 
+                      </br> </br> 
+                      Mon blog snackable.fr où j'écris depuis 2 ans
+                    </p>
+
+                    <a href="http://www.snackable.fr/author/slaugier/" target="_blank" class="button secondary skills__description-button">Voir mes articles</a>
+                  </div>
                 </div>
             </div>
             
             <div class="medium-6  large-3  skills__col  skills__c3  skills__col-bottom">
         		<div class="skills__photo-3" >
-                	<h3> Gestion de projet </h3>
+                	<h3> Développement Web</h3>
                     <div class="skills__rounded-button  b3" >
 						<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 							<g>
@@ -455,8 +492,23 @@ ENJOY !
 						</svg>
                     </div>
                 </div>
-                <div class="skills__description-3">
-                	<p>Lorem ipsum dolor sin amet, un chasseur sachant chasser sans sa soeur.</p>
+                <div class="skills__description skills__description-3">
+                  <div class="skills__description-content">
+                  	<ul>
+                  	<li> RUBY </li>
+                  	<li> RUBY ON RAILS  </li>
+                  	<li> LINUX </li> 
+                  	<li> ALGORITHMIE 101 </li> 
+                  	<li> WORDPRESS </li> 
+                  	<li> APPRENTISSAGE DE PHP </li> 
+                  	</ul>
+                    <p></br> Une preuve ? 
+                      </br> </br> 
+                      En ligne très prochainement ;)
+                    </p>
+
+                    <a class="button secondary skills__description-button" style="cursor:text;">Soon...</a>
+                  </div>
                 </div>
             </div>
             
@@ -475,11 +527,28 @@ ENJOY !
 						</svg>
                     </div> 
                 </div>
-                <div class="skills__description-4">
-                	<p>Lorem ipsum dolor sin amet, un chasseur sachant chasser sans sa soeur.</p>
+                <div class="skills__description skills__description-4">
+                  <div class="skills__description-content">
+                  	<ul>
+                  	<li> COMMUNITY MANAGEMENT </li>
+                  	<li> STRATEGIE SOCIAL </li>
+                  	<li> SEM </li> 
+                  	<li> SMO </li> 
+                  	<li> HOOTSUITE </li> 
+                  	</ul>
+                    <p></br> Une preuve ? 
+                      </br> </br> 
+                      Mon stage d'1 an au service marketing de Devoteam
+                    </p>
+
+                    <a href="#story" class="button secondary skills__description-button">Voir section parcours</a>
+                  </div>
                 </div>
             </div>
-		 </div>	           
+		 </div>	  
+		 <div id ="source-code">
+		 	<a id="close-source-code"><img src="images/icone-croix.png" alt="close"></a>
+		 </div>         
     </section>
   
   <!--========================
@@ -533,7 +602,16 @@ ENJOY !
     	<div class="story__intro story__background">
         	<div class ="story__intro-title"> 
             	<h2> Mon Parcours </h2>
-            </div>
+          </div>
+           <div class="story__arrow arrow-bounce">
+                <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                
+                  <g>
+                    <line  x1="9" y1="23" x2="33" y2="40.7"/>
+                    <line  x1="53.9" y1="23" x2="30" y2="40.7"/>
+                  </g>
+                </svg>
+              </div>
     	</div>
         
         <!-- ALL THE PATH THROUGH TIME -->
@@ -752,10 +830,9 @@ ENJOY !
 <!--CDN link for the latest TweenMax-->
 
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="js/Scroll-Magic/TweenMax.min.js"></script>
 <script src="js/Scroll-Magic/ScrollMagic.js"></script>
 <script src="js/Scroll-Magic/plugins/animation.gsap.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 
 
 

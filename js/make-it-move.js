@@ -41,6 +41,27 @@ if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge/
 }
 
 /* ---------------------------------- *\ 
+  #FUNCTION DISPLAY SOURCE CODE 
+\* ---------------------------------- */
+
+$(function() {
+	$("<pre />", {
+		"html":   '&lt;!DOCTYPE html>\n&lt;html>\n' + 
+				$("html")
+					.html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})					
+	}).appendTo("#source-code");
+});
+
+$("#source-code-link").click(function() { 
+	$("#source-code").css("display","block");;
+});
+
+$("#close-source-code").click(function() { 
+	$("#source-code").css("display","none");;
+});
+
+
+/* ---------------------------------- *\ 
   #MENU MOBILE ANIMATION
 \* ---------------------------------- */
 
@@ -89,7 +110,7 @@ if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium") {
 				height: menuMobileSize,
 				opacity:'1'
 			}, 440,'easeInOutExpo');
-			if (getTypeOfMedia() === "small" ){$("#home").css("top","4rem");}
+			if (getTypeOfMedia() === "small" ){$("#introduction").css("top","4rem");}
 			menuMobileOpen = false; 
 
 	});
@@ -117,6 +138,61 @@ if (getTypeOfMedia() === "large" || "x-large") {
 		}, 'fast').removeClass( "menu__desktop-icone--open" );
 	  });
 }
+
+function highlightIconMenu(icon) { 
+	"use strict";
+	$(icon)
+		.css('background-color', "#f1f5f5"); 
+	$(icon+' a svg')
+		.css({stroke: "#E74C3C"});
+}
+
+	// init controller
+var highlightMenuController = new ScrollMagic.Controller({
+	globalSceneOptions: { 
+   		triggerHook: .025,
+   		reverse: true
+  }
+});
+
+var scenes = {
+  'intro': {
+    'home': 'home__nav'
+  },
+  'scene2': {
+    'skills': 'skills__nav'
+  },
+  'scene3': {
+    'realization': 'realization__nav'
+  },
+  'scene4': {
+    'story': 'story__nav'
+  },
+  'scene5': {
+    'hobby': 'hobby__nav'
+  },
+  'scene6': {
+    'contact': 'contact__nav'
+  }
+}
+
+
+for(var key in scenes) {
+  // skip loop if the property is from prototype
+  if (!scenes.hasOwnProperty(key)) continue;
+
+  var obj = scenes[key];
+
+  for (var prop in obj) {
+    // skip loop if the property is from prototype
+    if(!obj.hasOwnProperty(prop)) continue;
+
+    new ScrollMagic.Scene({ triggerElement: '#'+prop, duration: $('#'+prop).height(),  })
+        .setClassToggle('#'+obj[prop], 'menu__desktop-icone--active')
+		.addTo(highlightMenuController); // assign the scene to the controller
+  }
+	
+} 
 
 /* ---------------------------------- *\ 
   #SKILLS SECTION 
@@ -235,6 +311,7 @@ if (getTypeOfMedia() === "large" || "x-large") {
 	$(".realization__arrow-right").click(slideRealRight); 
 	$(".realization__slide" ).on( "swipeleft", slideRealRight );
 	$(".realization__slide" ).on( "swiperight", slideRealLeft );
+	$(".dot").click(dotChecker);
 	
 	
 	
@@ -261,6 +338,18 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  {
 			offset: (50*vh())       // start this scene after scrolling for 50 vh 
 		})
 		.setPin(".story__intro-title") // pins the element for the the scene's duration
+		
+		.addTo(controller); // assign the scene to the controller
+	
+}
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
+	new ScrollMagic.Scene({
+			triggerElement: '.story__intro',
+			duration: (100*vh()),    // last 100 vh 
+			offset: (50*vh())       // start this scene after scrolling for 50 vh 
+		})
+		.setPin(".story__arrow") // pins the element for the the scene's duration
 		
 		.addTo(controller); // assign the scene to the controller
 	
@@ -1094,8 +1183,8 @@ function slideRealRight() {
 	
 		$(currentSlideTextSelector).fadeOut("fast"); 
 		$(nextSlideTextSelector).fadeIn("slow"); 
-		currentSlide.animate({"left":"-100vw"}, "slow", 'easeInOutExpo').removeClass('realization__slide--active');
-		nextSlide.animate({"left":"0"}, "slow", 'easeInOutExpo').addClass('realization__slide--active');
+		currentSlide.animate({"left":"-100vw"}, "normal", 'easeInOutExpo').removeClass('realization__slide--active');
+		nextSlide.animate({"left":"0"}, "normal", 'easeInOutExpo').addClass('realization__slide--active');
     }
 		
 	var currentDot = $('.realization__slider-dots .dot--active');
@@ -1104,8 +1193,10 @@ function slideRealRight() {
 				/*nextDot = $('.dot').first();*/
 	}
 	else {
-		currentDot.removeClass('dot--active'); 
-		nextDot.addClass('dot--active'); 
+		setTimeout(function () { 
+			currentDot.removeClass('dot--active'); 
+			nextDot.addClass('dot--active'); 
+		},300)
 	}
 }
 
@@ -1124,8 +1215,8 @@ function slideRealLeft() {
 	} else { 
 		$(currentSlideTextSelector).fadeOut("fast"); 
 		$(prevSlideTextSelector).fadeIn("fast"); 
-		currentSlide.animate({"left":"100vw"}, "slow", 'easeInOutExpo').removeClass('realization__slide--active');
-		prevSlide.animate({"left":"0"}, "slow", 'easeInOutExpo').addClass('realization__slide--active');
+		currentSlide.animate({"left":"100vw"}, "normal", 'easeInOutExpo').removeClass('realization__slide--active');
+		prevSlide.animate({"left":"0"}, "normal", 'easeInOutExpo').addClass('realization__slide--active');
     }
 		
 	var currentDot = $('.realization__slider-dots .dot--active');
@@ -1134,10 +1225,42 @@ function slideRealLeft() {
 	if(prevDot.length === 0) { 
 				/*prevDot = $('.dot').last();*/
 	} else {
-		currentDot.removeClass('dot--active'); 
-		prevDot.addClass('dot--active'); 
+		setTimeout(function () { 
+			currentDot.removeClass('dot--active'); 
+			prevDot.addClass('dot--active'); 
+		},100)
 	}
-			
+}
+
+function dotChecker() {  
+
+	var clickedDot = $(this) ;
+	var activeDot = $("dot dot--active");
+
+	if (clickedDot.attr('class').indexOf('dot--active') > - 1) { 
+		
+	} else { 
+		dotSlider(clickedDot);	
+	}
+
+}
+
+function dotSlider(clickedDot) { 
+	
+	var i = 1; 
+	if (clickedDot.prevAll().hasClass("dot--active")) { 
+		slideRealRight();
+
+	} else if (clickedDot.nextAll().hasClass("dot--active")){ 
+		slideRealLeft();
+	}
+
+	if (!clickedDot.hasClass("dot--active")) { 
+		setTimeout(function () { 
+			dotSlider(clickedDot);	
+		},300)
+	}
+		
 }
 
 function sizeHeightMobile() // return the height of the screen minus the menu height
@@ -1177,9 +1300,12 @@ function getTypeOfMedia() //return the size of the screen, small, medium, large 
 	}
 	
 	
-	
-	
 } 
+
+function sectionHeight(sectionName) {
+	"use strict";
+	return $(sectionName).height();
+}
 
 function vw() { 
 	"use strict";
