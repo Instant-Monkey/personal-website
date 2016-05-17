@@ -996,6 +996,7 @@ p {
 		-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
   	width:100%;
+  	padding: 0 2.5% ; 
 
 }
 
@@ -1175,6 +1176,12 @@ p {
  *---------------*/
 
 
+.realization__slide-content { 
+	position:relative;
+	top:16%;
+
+}
+
 .realization__slide h3 { 
 	color:#fff;
 	font-size:2.2rem; 
@@ -1184,16 +1191,32 @@ p {
 	margin-right:auto;
 	margin-left:auto;
 	position:relative; 
-	top:25%; 
+	
 	
 }
 
 .realization__slide p { 
 	position:relative;
-	top:25%;
 	width:90%;
 	margin: 0 auto;
 }
+
+.realization__button { 
+	margin: 25px 0;
+	background-color: #e74c3c;
+	border-radius: 3px;
+	font-size:20px;
+}
+
+.realization__button:visited { 
+	background-color: #e74c3c;
+}
+
+.realization__button:hover { 
+	background-color: #Fff;
+	color:#e74c3c;
+}
+
 
 .realization__snackable { 
 	background:url(../images/snackable-mock-up-mobile.jpg);
@@ -1215,14 +1238,18 @@ p {
 
 @media only screen and (min-width: 40.0625em) {
 
+	.realization__slide-content { 
+		top:23%;
+	}
+
 	.realization__slide h3 { 
-		top:17.5%; 
+	
 		font-size:2.3rem;
 	}
 	
 	.realization__slide p { 
 		position:relative;
-		top:17.5%;
+		
 		width:50%;
 		font-size:1.3rem;
 		margin: 0 auto;
@@ -1239,13 +1266,17 @@ p {
 
 @media only screen and (min-width: 64.0625em) { 
 
+	.realization__slide-content { 
+		top:20%;
+	}
+
 	.realization__slide h3 { 
-		top:15%; 
+		 
 		font-size:2.5rem;
 	}
 	
 	.realization__slide p { 
-		top:15%; 
+		
 		font-size:1.55rem;
 	}
 	
@@ -1257,6 +1288,10 @@ p {
 
 @media only screen and (min-width: 90.0625em) { 
 	
+	.realization__slide-content { 
+		top:25%;
+	}
+
 	.realization__slide h3 { 
 		font-size:2.7rem;
 	}
@@ -1276,7 +1311,7 @@ p {
 	z-index:2; 
 	width:50%;
 	margin:0 auto;
-	top: 25%;
+	top: 19%;
 	height:1.5rem; 
 	text-align:center;
 	left:0;
@@ -1321,7 +1356,7 @@ p {
 	
 	.realization__arrow-wrapper { 
 		width:30%; 
-		top: 20%;
+		top: 22%;
 	}
 }
 
@@ -1337,7 +1372,7 @@ p {
 	
 	.realization__arrow-wrapper { 
 		width:20%; 
-		top: 20%;
+		top: 25%;
 	}
 }
 
@@ -1401,12 +1436,13 @@ p {
 	height:4rem;
 	text-align: center;
 	margin: 0 auto;
-	bottom:45vh;
+	bottom:-35vh;
 	fill:none;
 	stroke:#fff;
 	stroke-width:5;
 	stroke-miterlimit:10;
 	display:none;
+	z-index: 1000;
 
 }
 
@@ -1414,6 +1450,11 @@ p {
 
 	.story__arrow { 
 		display:block;
+		cursor: pointer;
+	}
+
+	.story__arrow:hover { 
+		stroke:#E74C3C ;
 	}
 }
 
@@ -1720,11 +1761,11 @@ p {
 	 }
 
 	 #story__trigger--2011 { 
-	 	top: 400vh;
+	 	top: 520vh;
 	 }
 
 	 #story__trigger--2012 { 
-	 	top: 850vh;
+	 	top: 820vh;
 	 }
 
 	 #story__trigger--2013 { 
@@ -2274,12 +2315,17 @@ p {
  
  #hobby { 
  	
-	background-color:#F1F5F5;
 	overflow:hidden; /* Align the top with previous section */ 
 	position:relative;
 	top:-3px; /* correct bug where there is a small white space between section */ 
 	height:calc((100vh - 4rem)*2);;
  
+ }
+
+ .hobby__container {
+ 	background-color: #fff;
+
+
  }
  
  .hobby__title-container {
@@ -2335,19 +2381,35 @@ p {
 	}
 
 .hobby__container-music { 
-	background-color:#9A2519;
+	/*background-color:#9A2519;*/
 }
 
 .hobby__container-cinema { 
-	background-color:#099A4D;
+	/*background-color:#099A4D;*/
 }
 
 .hobby__container-video-games { 
-	background-color:#E74C3C;
+	/*background-color:#E74C3C;*/
 }
 
 .hobby__container-science { 
-	background-color:#1D60B4;
+	/*background-color:#1D60B4;*/
+}
+
+.hobby__container-music h3 { 
+	color:#9A2519;
+}
+
+.hobby__container-cinema h3 { 
+	color:#099A4D;
+}
+
+.hobby__container-video-games h3 { 
+	color:#E74C3C;
+}
+
+.hobby__container-science h3 { 
+	color:#1D60B4;
 }
 
 .hobby__icon { 
@@ -2473,6 +2535,10 @@ p {
 	.hobby__content-container { 
 		
 	}
+
+	.hobby__container-individual { 
+		height:calc((100vh - 14rem)/2);
+	}
 }
 
 /* ---------------------------------- *\ 
@@ -2483,6 +2549,7 @@ p {
 
 #contact { 
 	padding-bottom: 10vh;
+	background-color: #F1F5F5;
 }
 
  .contact__title-container {

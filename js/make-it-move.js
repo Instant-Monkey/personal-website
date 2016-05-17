@@ -66,13 +66,13 @@ $("#close-source-code").click(function() {
 \* ---------------------------------- */
 
 var menuMobileOpen = false; 
-var menuMobileSize ;
+var menuMobileSize = $('.menu__mobile').height();
 
 if (getTypeOfMedia() === "small" || getTypeOfMedia() === "medium") {
 	
 	$('.menu__mobile-hamburger-container').click(function() { 
 		if (menuMobileOpen === false) { 
-			menuMobileSize = $('.menu__mobile').height();
+			
 			$('.menu__mobile-hamburger-svg').fadeOut(100);
 			$('.menu__mobile-cross-svg').fadeIn(440);
 			$('.menu__mobile-icones li').fadeIn(440);
@@ -334,7 +334,7 @@ var controller = new ScrollMagic.Controller();
 if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
 	new ScrollMagic.Scene({
 			triggerElement: '.story__intro',
-			duration: (100*vh()),    // last 100 vh 
+			duration: (50*vh()),    // last 100 vh 
 			offset: (50*vh())       // start this scene after scrolling for 50 vh 
 		})
 		.setPin(".story__intro-title") // pins the element for the the scene's duration
@@ -346,7 +346,7 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  {
 if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
 	new ScrollMagic.Scene({
 			triggerElement: '.story__intro',
-			duration: (100*vh()),    // last 100 vh 
+			duration: (1400*vh()),    // last 100 vh 
 			offset: (50*vh())       // start this scene after scrolling for 50 vh 
 		})
 		.setPin(".story__arrow") // pins the element for the the scene's duration
@@ -1196,7 +1196,7 @@ function slideRealRight() {
 		setTimeout(function () { 
 			currentDot.removeClass('dot--active'); 
 			nextDot.addClass('dot--active'); 
-		},300)
+		},100)
 	}
 }
 
