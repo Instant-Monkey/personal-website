@@ -106,6 +106,18 @@ p {
     75% {transform: translateY(-30px);}
 } 
 
+@-webkit-keyframes bounce-hoz {
+    0%, 50%, 100% {-webkit-transform: translateX(0);}
+    25% {-webkit-transform: translateX(-30px);}
+    75% {-webkit-transform: translateX(-30px);}
+  
+} 
+@keyframes bounce-hoz {
+    0%, 40%, 44%, 48%, 52%, 56%, 60%, 100% {transform: translateX(0);}
+    42%, 46%, 50%, 54%, 58% {transform: translateX(10px);}
+} 
+
+
 
 
 /* ---------------------------------- *\ 
@@ -404,7 +416,7 @@ p {
 
 #introduction { 
 	position:relative;
-	background-image: url(../images/New-York-small.jpg);
+	background-image: url(../images/home-background-small.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
 	
@@ -416,7 +428,7 @@ p {
 @media only screen and (min-width: 64.0625em) { 
 	
 	#introduction { 
-		background-image: url(../images/New-York.jpg);
+		background-image: url(../images/home-background.jpg);
 		height:100vh; 
 		background-attachment:fixed;
 	} 
@@ -536,7 +548,7 @@ p {
 
 #description { 
 	position:relative;
-	background-image: url(../images/dummy-aix-rouge-small.jpg);
+	background-image: url(../images/home-background-small-2.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
 	background-size:cover; 
@@ -546,7 +558,7 @@ p {
 @media only screen and (min-width: 64.0625em) { 
 	
 	#description { 
-		background-image: url(../images/dummy-aix-rouge.jpg);
+		background-image: url(../images/home-background-2.jpg);
 		height:100vh; 
 	} 
 }
@@ -614,6 +626,7 @@ p {
 			font-size:1.5rem;
 		}
 }
+
 
 @media only screen and (min-width: 90.0625em){
 	
@@ -861,14 +874,6 @@ p {
 
 
 .skills__photo-1 { 
-	background-image:url(../images/competence-editoriales.jpg);
-	background-repeat: no-repeat;
-	background-position:center;
-	background-size:cover; 
-	height:100%;
-}
-
-.skills__photo-2 {
 	background-image:url(../images/competence-webdesign.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
@@ -876,8 +881,16 @@ p {
 	height:100%;
 }
 
+.skills__photo-2 {
+	background-image:url(../images/competence-editoriales.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover; 
+	height:100%;
+}
+
 .skills__photo-3 {
-	background-image:url(../images/competence-gestion-projets.jpg);
+	background-image:url(../images/competence-web-development.jpg);
 	background-repeat: no-repeat;
 	background-position:center;
 	background-size:cover; 
@@ -910,12 +923,18 @@ p {
 	text-align:center;
 	position:relative;
 	margin:0 auto;
-	top:52.5%;
+	top:45%;
+}
+
+@media only screen and (min-width: 40.0625em) {  
+	.skills__rounded-button {
+		top:52.5%;
+	}
 }
 
 @media only screen and (min-width: 64.0625em) {  
 	.skills__rounded-button {
-		top:63%;
+		
 	}
 }
 
@@ -1002,7 +1021,9 @@ p {
 
 .skills__description p { 
 	text-decoration: none;
-
+	font-size:0.8rem;
+	line-height: 85%;
+	margin-bottom: 0.5rem;
 
 }
 
@@ -1012,19 +1033,75 @@ p {
 
 .skills__description li { 
 	list-style-type: none;
-	font-size: 1.6rem;
+	font-size: 0.8rem;
 
 }
 
+.skills__description .button  { 
+	font-size:0.8rem;
+	height:35px;
+	margin-bottom: 5px;
+	line-height: 0px;
+}
+
+
 @media only screen and (min-width: 64.0625em) {  
 	.skills__description li { 
-		font-size: 1.3rem;
+		font-size: 0.9rem;
+	}
+
+	.skills__description p { 
+		font-size:0.8rem;
+		line-height: 100%;
+		
+	}
+
+	.skills__description .button { 
+		font-size:0.8rem;
 	}
 }
 
 @media only screen and (min-width: 90.0625em) {  
 	.skills__description li { 
-		font-size: 1.5rem;
+		font-size: 1.1rem;
+		
+	}
+
+	.skills__description .button  { 
+		height:50px;
+		line-height: normal;
+		margin-bottom: 1.25rem;
+	}
+}
+
+@media only screen and (min-width: 115.0625em) {  
+	.skills__description li { 
+		font-size: 1.4rem;
+	}
+
+	.skills__description p { 
+		font-size:1rem;
+	}
+
+	.skills__description .button  { 
+		font-size:1rem;
+	}
+}
+
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:3/2) {  
+	.skills__description li { 
+		font-size: 1.1rem;
+	}
+
+	.skills__description p { 
+		font-size:1rem;
+		line-height: 100%;
+		padding: 0 10px; 
+	}
+
+	.skills__description .button { 
+		font-size:0.9rem;
+		margin-top: 10px;
 	}
 }
 
@@ -1178,27 +1255,28 @@ p {
 
 .realization__slide-content { 
 	position:relative;
-	top:16%;
+	top:13%;
 
 }
 
 .realization__slide h3 { 
 	color:#fff;
-	font-size:2.2rem; 
+	font-size:1.8rem; 
 	text-transform:uppercase;
 	max-width:95%;
-	padding-top: 0.5rem;
-	margin-right:auto;
-	margin-left:auto;
 	position:relative; 
+	padding:0;
+	padding-bottom: 2.5%;
+	margin:0 auto;
 	
 	
 }
 
 .realization__slide p { 
 	position:relative;
-	width:90%;
+	width:95%;
 	margin: 0 auto;
+	font-size:0.9rem;
 }
 
 .realization__button { 
@@ -1206,6 +1284,7 @@ p {
 	background-color: #e74c3c;
 	border-radius: 3px;
 	font-size:20px;
+	max-width: 95%;
 }
 
 .realization__button:visited { 
@@ -1236,24 +1315,7 @@ p {
 	left:100vw;
 }
 
-@media only screen and (min-width: 40.0625em) {
-
-	.realization__slide-content { 
-		top:23%;
-	}
-
-	.realization__slide h3 { 
-	
-		font-size:2.3rem;
-	}
-	
-	.realization__slide p { 
-		position:relative;
-		
-		width:50%;
-		font-size:1.3rem;
-		margin: 0 auto;
-	}
+@media only screen and (min-width: 40.0625em) { 
 	
 	.realization__snackable  { 
 		background:url(../images/snackable-mock-up-large.jpg) no-repeat center ;
@@ -1262,6 +1324,37 @@ p {
 	.realization__lodafrench { 
 		background:url(../images/lodafrench-mock-up-large.jpg) no-repeat center ;
 	}
+
+	.realization__slide-content { 
+		top:23%;
+	}
+
+	.realization__slide p { 
+		position:relative;	
+		width:75%;
+		margin: 0 auto;
+		font-size:1rem;
+	}
+
+}
+
+@media only screen and (min-width: 40.0625em) and (max-aspect-ratio:3/2) {
+
+	
+	.realization__slide h3 { 
+	
+		font-size:2.3rem;
+		padding-top: 0.5rem;
+		margin-right:auto;
+		margin-left:auto;
+		padding-bottom: 0;
+	}
+	
+	.realization__slide p { 
+		font-size:1.3rem;
+		
+	}
+
 }
 
 @media only screen and (min-width: 64.0625em) { 
@@ -1276,8 +1369,8 @@ p {
 	}
 	
 	.realization__slide p { 
-		
-		font-size:1.55rem;
+		width:65%;
+		font-size:1.35rem;
 	}
 	
 	.realization__lodafrench { 
@@ -1287,6 +1380,13 @@ p {
 }
 
 @media only screen and (min-width: 90.0625em) { 
+	.realization__slide p { 
+		width:55%;
+		font-size:1.55rem;
+	}
+}
+
+@media only screen and (min-width: 115.0625em) { 
 	
 	.realization__slide-content { 
 		top:25%;
@@ -1297,6 +1397,7 @@ p {
 	}
 	.realization__slide p {  
 		font-size:1.8rem;	
+
 	}
 }
 
@@ -1311,7 +1412,7 @@ p {
 	z-index:2; 
 	width:50%;
 	margin:0 auto;
-	top: 19%;
+	top: 16%;
 	height:1.5rem; 
 	text-align:center;
 	left:0;
@@ -1325,14 +1426,13 @@ p {
 	height:100%;
 	width:50%;
 	position:relative;
-	bottom:0.5rem;
 	line-height: 1;
 }
 
 .realization__slider-dots .dot {
 	color: #bbbcbc;
 	display: inline;
-	font-size: 50px;
+	font-size: 30px;
 	margin-right: 5px; 
 	cursor: pointer;
 }
@@ -1352,7 +1452,18 @@ p {
 	margin-left: 1rem;
 }
 
+.realization__bouncing-arrow {
+  animation-name: bounce-hoz;
+  animation-duration:3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 @media only screen and (min-width: 40.0625em) {	
+
+	.realization__slider-dots .dot {
+		font-size: 40px;
+	}
 	
 	.realization__arrow-wrapper { 
 		width:30%; 
@@ -1361,6 +1472,14 @@ p {
 }
 
 @media only screen and (min-width: 64.0625em) { 
+
+	.realization__slider-dots { 
+		top:-10px;
+
+	}
+	.realization__slider-dots .dot {
+		font-size: 50px;
+	}
 	
 	.realization__arrow-wrapper{ 
 		width:20%; 
@@ -1435,26 +1554,45 @@ p {
 	width:4rem;
 	height:4rem;
 	text-align: center;
-	margin: 0 auto;
-	bottom:-35vh;
 	fill:none;
 	stroke:#fff;
 	stroke-width:5;
 	stroke-miterlimit:10;
 	display:none;
-	z-index: 1000;
+	
+	margin:0 auto;
 
+}
+
+.story__arrow-wrapper { 
+	position: fixed;
+	bottom:2.5vh;
+	width: 100%;
+	z-index: 1000;
 }
 
 @media only screen and (min-width: 64.0625em) { 
 
 	.story__arrow { 
-		display:block;
 		cursor: pointer;
+		margin-left: 47.5%;
+	}
+
+	.story__arrow--displayed { 
+		display:block;
+		
 	}
 
 	.story__arrow:hover { 
-		stroke:#E74C3C ;
+		stroke:#099A4D ;
+	}
+
+	.story__arrow--red { 
+		stroke:#E74C3C ; 
+	}
+
+	.story__arrow--red:hover { 
+		stroke:#099A4D ; 
 	}
 }
 
@@ -1559,13 +1697,14 @@ p {
 		top:17.5vh;
 		bottom: inherit;
 		float:right;
-		margin-right:5vw;
+		margin-right:7.5vw;
 		
 	}
 
 	.story__list-year--fixed { 
 		position:fixed;
 		right:0;
+		margin-right:5vw;
 	}
 	
 	.story__year { 
@@ -1573,12 +1712,18 @@ p {
 		position:relative; 
 		font-size:2.3rem;
 		min-width:100px;
+		text-align: center;
 	} 
 	
 		.story__year--active { 
-			padding-left:5%;
-			margin-left:-1vw;
+			padding-left:0;
+			padding-right:0;
 			box-shadow:none;
+		}
+
+		.story__year--hover { 
+			color:#A9A9A9;
+
 		}
 	
 		.story__year--white { 
@@ -1602,7 +1747,7 @@ p {
 	
 				.story__description-card p {
 					padding-left:3%;
-					font-size:1rem;
+					font-size:0.95rem;
 				}
 	
 	.story__location-dot { 
@@ -1657,7 +1802,7 @@ p {
 	} 
 	
 		.story__year--active { 
-			padding-left:10%;
+			
 		
 		}
 	
@@ -2346,6 +2491,7 @@ p {
 	height:calc((100vh - 14rem)/2);
 	overflow-y:hidden;
 	position:relative;
+	min-height:35vh;
 }
 
 .hobby__content-container { 
@@ -2355,6 +2501,7 @@ p {
 		-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 	width:100%;
+	
 }
 
 	.hobby__content-container h3 { 
@@ -2428,9 +2575,14 @@ p {
 		height:calc((100vh - 4rem)/2);
 	}
 
+	.hobby__title-container { 
+		height:3rem;
+	}
+
 	.hobby__container-individual { 
 		overflow-x:hidden;
 		float:left;
+		min-height:25vh;
 	}
 	
 	.hobby__container-individual h3 { 
@@ -2440,7 +2592,6 @@ p {
 	}
 	
 	.hobby__content-container { 
-		
 	}
 	
 	.hobby__text-container { 
@@ -2622,4 +2773,38 @@ p {
 	.realization__title-container h2 { 
 		font-size:1.8rem;	
 	}
+}
+
+
+footer { 
+
+	text-align: right;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif ;
+	font-size:0.8rem;
+	background-color: #9A2519;
+	height: 175px;
+	padding-right:25px;
+	overflow-x: hidden;
+}
+
+@media only screen and (min-width: 64.0625em) {
+	footer {
+		height: 100%;	
+	}
+}
+
+footer p { 
+	color:#fff;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif ;
+	font-size: 0.8rem;
+}
+
+footer h4 {
+	font-size: 1.2rem;
+	color:#fff;
+
+}
+
+footer a { 
+	color:#fff;
 }

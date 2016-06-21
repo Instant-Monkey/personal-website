@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
 if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+  $('a[href*=\\#]:not([href=\\#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -27,16 +27,19 @@ $(function() {
 // fix scrollmagic bug on IE 
 
 if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge/)) { // if IE
-	console.log("hello IE Test");
+
         $('body').on("mousewheel", function () {
             // remove default behavior
             event.preventDefault(); 
+
+        
             
 
             //scroll without smoothing
             var wheelDelta = event.wheelDelta;
             var currentScrollPosition = window.pageYOffset;
             window.scrollTo(0, currentScrollPosition - wheelDelta);
+
         });
 }
 
@@ -240,7 +243,7 @@ for(var key in scenes) {
 			}
 			
 			$(".skills__c"+numeroBouton).addClass("skills__col--open");
-			$(".skills__description-"+numeroBouton).slideDown(650,'easeInOutExpo');		
+			$(".skills__description-"+numeroBouton).slideDown(225,'easeInOutExpo');		
 			$(".skills__photo-"+numeroBouton).addClass ("skills__photo--open");		
 			$(".st2.a"+numeroBouton).css ("display", "block");
 			$(".st0.a"+numeroBouton).css ("display", "none");
@@ -253,7 +256,7 @@ for(var key in scenes) {
 			nbrOpenButton -= 1 ; 
 			openTab[numeroBouton]=false;
 			
-			$(".skills__description-"+numeroBouton).slideUp(350,'easeInOutExpo', function() { 
+			$(".skills__description-"+numeroBouton).slideUp(195,'easeInOutExpo', function() { 
 				
 				if (getTypeOfMedia() === "small") { 
 					if (nbrOpenButton > 0) { 
@@ -323,7 +326,9 @@ for(var key in scenes) {
 	// init controller
 var controller = new ScrollMagic.Controller();
 
+	// When clicking on the arrow of story 
 
+$(".story__arrow").click(activeStoryChecker);
 
 
 
@@ -346,10 +351,24 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  {
 if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
 	new ScrollMagic.Scene({
 			triggerElement: '.story__intro',
-			duration: (1400*vh()),    // last 100 vh 
-			offset: (50*vh())       // start this scene after scrolling for 50 vh 
+			duration: (1405*vh()),    // last 100 vh 
+			offset: (45*vh())       // start this scene after scrolling for 50 vh 
 		})
-		.setPin(".story__arrow") // pins the element for the the scene's duration
+		.setClassToggle(".story__arrow", "story__arrow--displayed") 
+		
+		.addTo(controller); // assign the scene to the controller
+	
+}
+
+// Make the arrow red when on Finland 
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
+	new ScrollMagic.Scene({
+			triggerElement: '.story__finland',
+			duration: (245*vh()),    // last 100 vh 
+			offset: (-45*vh())       // start this scene after scrolling for 50 vh 
+		})
+		.setClassToggle(".story__arrow", "story__arrow--red") 
 		
 		.addTo(controller); // assign the scene to the controller
 	
@@ -415,6 +434,15 @@ if (getTypeOfMedia() !== "small") {
 			.addTo(controller); // assign the scene to the controller  
 	}
 }
+
+
+
+
+
+
+
+
+
 
 //-------------2009 -------------//
 
@@ -1127,14 +1155,9 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 
 
 
-function pathPrepare ($el) {
-	"use strict";
-		var lineLength = $el[0].getTotalLength();
-		$el.css("stroke-dasharray", lineLength);
-		$el.css("stroke-dashoffset", lineLength);
-}
+/* Skills functions() */ 
 
-function whatRowIsOpenTablet(array)//realization section --- Tablet, return the number of row open
+function whatRowIsOpenTablet(array)//skills section --- Tablet, return the number of row open
 {
 	"use strict";
 	var topOpen = false, 
@@ -1167,12 +1190,15 @@ function whatRowIsOpenTablet(array)//realization section --- Tablet, return the 
 	return status; 
 }
 
+/*Realization functions()*/ 
+
 function slideRealRight() { 
 	"use strict";
 	var currentSlide = $('.realization__slide--active');
 	var nextSlide = currentSlide.next();
 	var currentSlideTextSelector = currentSlide.find("p").selector;
 	var nextSlideTextSelector = nextSlide.find("p").selector;
+	$(".realization__bouncing-arrow").removeClass("realization__bouncing-arrow");
 	
 	
 	if (nextSlide.length === 0) { 
@@ -1184,7 +1210,7 @@ function slideRealRight() {
 		$(currentSlideTextSelector).fadeOut("fast"); 
 		$(nextSlideTextSelector).fadeIn("slow"); 
 		currentSlide.animate({"left":"-100vw"}, "normal", 'easeInOutExpo').removeClass('realization__slide--active');
-		nextSlide.animate({"left":"0"}, "normal", 'easeInOutExpo').addClass('realization__slide--active');
+		nextSlide.animate({"left":"0"}, 375, 'easeInOutExpo').addClass('realization__slide--active');
     }
 		
 	var currentDot = $('.realization__slider-dots .dot--active');
@@ -1216,7 +1242,7 @@ function slideRealLeft() {
 		$(currentSlideTextSelector).fadeOut("fast"); 
 		$(prevSlideTextSelector).fadeIn("fast"); 
 		currentSlide.animate({"left":"100vw"}, "normal", 'easeInOutExpo').removeClass('realization__slide--active');
-		prevSlide.animate({"left":"0"}, "normal", 'easeInOutExpo').addClass('realization__slide--active');
+		prevSlide.animate({"left":"0"}, 375, 'easeInOutExpo').addClass('realization__slide--active');
     }
 		
 	var currentDot = $('.realization__slider-dots .dot--active');
@@ -1262,6 +1288,48 @@ function dotSlider(clickedDot) {
 	}
 		
 }
+
+/*Story functions */ 
+
+function pathPrepare ($el) {
+	"use strict";
+		var lineLength = $el[0].getTotalLength();
+		$el.css("stroke-dasharray", lineLength);
+		$el.css("stroke-dashoffset", lineLength);
+} 
+
+
+function activeStoryChecker() { 
+	"use strict"; 
+		var currentYear = $(".story__year--active"); 
+		console.log(currentYear);
+
+		if (currentYear.length == 0) { 
+			scrollToSection('#story__trigger--2009')
+		} else { 
+			var extractYear = $(currentYear).find('a').text();
+			var yearToScrollTo = parseInt(extractYear);
+			yearToScrollTo ++ ;
+			yearToScrollTo.toString();
+			if (yearToScrollTo == "2016") { 
+				scrollToSection('#hobby');
+			} else { 
+				scrollToSection('#story__trigger--'+yearToScrollTo);
+			}
+
+		}
+
+}
+
+function scrollToSection(hash) {
+	"use strict";
+    $('html, body').animate({
+       	scrollTop: $(hash).offset().top
+    }, 1000);
+
+}
+
+/* General functions() */ 
 
 function sizeHeightMobile() // return the height of the screen minus the menu height
 {

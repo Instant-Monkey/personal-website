@@ -47,6 +47,8 @@ if( empty($errors))
 echo nl2br($errors);
 ?>
 
+<a href="http://www.sylvainlaugier.com/#contact">Retourner sur le site</a>
+
 
 </body>
 </html>
