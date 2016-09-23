@@ -2,6 +2,7 @@ $( document ).ready(function() {
 	"use strict";
 	
 	
+	
 /* ---------------------------------- *\ 
   #SMOOTH SCROLLING, MAKE ANCHORS BUG ON MOBILE 
 \* ---------------------------------- */
@@ -351,7 +352,7 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  {
 if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large")  { 
 	new ScrollMagic.Scene({
 			triggerElement: '.story__intro',
-			duration: (1405*vh()),    // last 100 vh 
+			duration: (1605*vh()),    // last 100 vh 
 			offset: (45*vh())       // start this scene after scrolling for 50 vh 
 		})
 		.setClassToggle(".story__arrow", "story__arrow--displayed") 
@@ -390,8 +391,8 @@ if (getTypeOfMedia() !== "small") {
 
 		new ScrollMagic.Scene({
 			triggerElement: '.story__wrapper',
-			duration: 340*vh(),    // last 100 vh 
-			offset: 50*vh()       // start this scene after scrolling for 50 vh 
+			duration: 350*vh(),    // last 100 vh 
+			offset: 25*vh()       // start this scene after scrolling for 50 vh 
 		})
 		.setClassToggle(".story__list-year", "story__list-year--fixed") // pins the element for the the scene's duration
 		
@@ -414,7 +415,7 @@ if (getTypeOfMedia() !== "small") {
 
 		new ScrollMagic.Scene({
 			triggerElement: '.story__wrapper',
-			duration: 1200*vh(),    // last 100 vh 
+			duration: 1400*vh(),    // last 100 vh 
 			offset: 50*vh()       // start this scene after scrolling for 50 vh 
 		})
 		.setPin(".story__list-year ul") // pins the element for the the scene's duration
@@ -571,7 +572,7 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 
 	var toggleYear2013 = new ScrollMagic.Scene({
 		triggerElement: ".story__wrapper",
-		duration:25*vh(),
+		duration:20*vh(),
 		offset: (300*vh())
 		})						
 		
@@ -598,8 +599,8 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 
 	var toggleYear2014 = new ScrollMagic.Scene({
 		triggerElement: ".story__wrapper",
-		duration:25*vh(),
-		offset: (325*vh())
+		duration:20*vh(),
+		offset: (320*vh())
 		})						
 		
 		.setClassToggle(".story__y2014", "story__year--active")
@@ -614,7 +615,7 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 
 	var toggleYear2015 = new ScrollMagic.Scene({
 		triggerElement: ".story__wrapper",
-		duration:50*vh(),
+		duration:150*vh(),
 		offset: (1200*vh())
 		})						
 		
@@ -625,14 +626,41 @@ if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
 } else { 
 	var toggleYear2015 = new ScrollMagic.Scene({
 		triggerElement: ".story__wrapper",
-		duration:50*vh(),
-		offset: (350*vh())
+		duration:20*vh(),
+		offset: (340*vh())
 		})						
 		
 		.setClassToggle(".story__y2015", "story__year--active")
 							
 		.addTo(controller); 
 }
+
+//-------------2016 -------------//
+
+if (getTypeOfMedia() === "large" || getTypeOfMedia() === "x-large") {
+
+	var toggleYear2016 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:100*vh(),
+		offset: (1350*vh())
+		})						
+		
+		.setClassToggle(".story__y2016", "story__year--active")
+							
+		.addTo(controller); 
+
+} else { 
+	var toggleYear2016 = new ScrollMagic.Scene({
+		triggerElement: ".story__wrapper",
+		duration:30*vh(),
+		offset: (360*vh())
+		})						
+		
+		.setClassToggle(".story__y2016", "story__year--active")
+							
+		.addTo(controller); 
+}
+
 	
 	
 	
@@ -649,7 +677,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 		offset:100*vh()
 	})	
 					
-	.setClassToggle(".story__wrapper-description-iut","story__wrapper-description-iut--display")
+	.setClassToggle("#story__experience-IUT","story__wrapper-description-iut--display")
 					
 	.addTo(controller);
 	
@@ -661,7 +689,7 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 		offset:100*vh()
 	})		
 				
-	.setTween(".story__wrapper-description-iut", 0.2, {opacity: "1" })	
+	.setTween("#story__experience-IUT", 0.2, {opacity: "1" })	
 					
 	.addTo(controller);
 
@@ -674,7 +702,7 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 	offset:200*vh()
 	})						
 	
-	.setTween(".story__wrapper-description-iut", 0.2, {opacity: "0" })	
+	.setTween("#story__experience-IUT", 0.2, {opacity: "0" })	
 					
 	.addTo(controller); 
 	
@@ -1091,9 +1119,9 @@ var fadeOutDescriptionIut = new ScrollMagic.Scene({
 
 //Toggle the class which 'display:block' the div 
 
-var displayDescriptionIut = new ScrollMagic.Scene({
+var displayDescriptionGem = new ScrollMagic.Scene({
 		triggerElement: ".story__france-2",
-		duration:125*vh(),
+		duration:150*vh(),
 		offset:350*vh()
 	})	
 					
@@ -1103,9 +1131,9 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 
 //Toggle the class which 'display:block' the title/text for 1A 
 
-var displayDescriptionIut = new ScrollMagic.Scene({
+var displayDescriptionGem = new ScrollMagic.Scene({
 		triggerElement: ".story__france-2",
-		duration:125*vh(),
+		duration:150*vh(),
 		offset:350*vh()
 	})	
 					
@@ -1115,7 +1143,7 @@ var displayDescriptionIut = new ScrollMagic.Scene({
 	
 // Setting the Fade In 
 
-var fadeInDescriptionIut = new ScrollMagic.Scene({
+var fadeInDescriptionGem = new ScrollMagic.Scene({
 		triggerElement: ".story__france-2",
 		duration:25*vh(),
 		offset:350*vh()
@@ -1125,16 +1153,53 @@ var fadeInDescriptionIut = new ScrollMagic.Scene({
 					
 	.addTo(controller);
 
+var fadeInDescriptionGem = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:25*vh(),
+		offset:475*vh()
+	})		
+				
+	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
+					
+	.addTo(controller);
+
+//-------------DISPLAY/HIDE DESCRIPTION GOLD NOTE'S RECORDS -------------//
+
+//Toggle the class which 'display:block' the div 
+
+var displayDescriptionGNR = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:150*vh(),
+		offset:525*vh()
+	})	
+					
+	.setClassToggle(".story__wrapper-description-GNR","story__wrapper-description-GNR--display")
+					
+	.addTo(controller);
+	
+// Setting the Fade In 
+
+var fadeInDescriptionGNR = new ScrollMagic.Scene({
+		triggerElement: ".story__france-2",
+		duration:25*vh(),
+		offset:525*vh()
+	})		
+				
+	.setTween(".story__wrapper-description-GNR", 0.2, {opacity: "1" })	
+					
+	.addTo(controller);
+
+
 
 // Setting the Fade Out 
 	
-var fadeOutDescriptionIut = new ScrollMagic.Scene({
+var fadeOutDescriptionGNR = new ScrollMagic.Scene({
 	triggerElement: ".story__france-2",
 	duration:25*vh(),
-	offset:450*vh()
+	offset:650*vh()
 	})						
 	
-	.setTween(".story__wrapper-description-gem", 0.2, {opacity: "0" })	
+	.setTween(".story__wrapper-description-GNR", 0.2, {opacity: "0" })	
 					
 	.addTo(controller); 
 
@@ -1260,31 +1325,38 @@ function slideRealLeft() {
 
 function dotChecker() {  
 
-	var clickedDot = $(this) ;
-	var activeDot = $("dot dot--active");
-
-	if (clickedDot.attr('class').indexOf('dot--active') > - 1) { 
+	if ( typeof dotSlideActive === 'undefined' || dotSlideActive	== false 	) { 
 		
-	} else { 
-		dotSlider(clickedDot);	
+		var clickedDot = $(this) ;
+		var activeDot = $("dot dot--active");
+
+		if (clickedDot.attr('class').indexOf('dot--active') > - 1) { 
+			
+		} else { 
+			dotSlider(clickedDot);	
+		}
 	}
 
 }
 
 function dotSlider(clickedDot) { 
-	
+	dotSlideActive	= true; 
 	var i = 1; 
 	if (clickedDot.prevAll().hasClass("dot--active")) { 
 		slideRealRight();
+		
 
 	} else if (clickedDot.nextAll().hasClass("dot--active")){ 
 		slideRealLeft();
+		
 	}
 
 	if (!clickedDot.hasClass("dot--active")) { 
 		setTimeout(function () { 
 			dotSlider(clickedDot);	
 		},300)
+	} else { 
+		dotSlideActive	= false; 
 	}
 		
 }
@@ -1311,7 +1383,7 @@ function activeStoryChecker() {
 			var yearToScrollTo = parseInt(extractYear);
 			yearToScrollTo ++ ;
 			yearToScrollTo.toString();
-			if (yearToScrollTo == "2016") { 
+			if (yearToScrollTo == "2017") { 
 				scrollToSection('#hobby');
 			} else { 
 				scrollToSection('#story__trigger--'+yearToScrollTo);
