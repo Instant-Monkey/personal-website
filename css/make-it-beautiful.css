@@ -2301,7 +2301,7 @@ p {
 
 .story__wrapper-description-GNR {
 	position:relative;
-	top:25vh;
+	top:20vh;
 }
 
 @media only screen and (min-width: 40.0625em) {
@@ -2328,6 +2328,7 @@ p {
 	.story__wrapper-description-devoteam {
 		top:-160px;
 		left:15px;
+		display: none;
 	}
 
 	.story__location-dot-devoteam {
@@ -2337,8 +2338,8 @@ p {
 	}
 
 	.story__wrapper-description-GNR {
-		top:100px;
-		left:106px;
+		top:-160px;
+		left:15px;
 	}
 
 	.story__location-dot-GNR {
@@ -2367,6 +2368,7 @@ p {
 	.story__wrapper-description-devoteam {
 		top:24px;
 		left:88px;
+		display: none;
 	}
 
 	.story__location-dot-devoteam {
@@ -2376,8 +2378,8 @@ p {
 	}
 
 	.story__wrapper-description-GNR {
-		top:306px;
-		left:79px;
+		top:24px;
+		left:88px;
 	}
 
 }
@@ -2399,6 +2401,12 @@ p {
 @media only screen and (min-width: 60.375em) and (min-aspect-ratio:5/4) {
 
 	.story__wrapper-description-devoteam {
+		top:-162px;
+		left:400px;
+		display:none;
+	}
+
+	.story__wrapper-description-GNR {
 		top:-162px;
 		left:400px;
 	}
@@ -2469,8 +2477,8 @@ p {
 	}
 	.story__wrapper-description-GNR {
 		position:fixed;
-		top:342px;
-		left:210px;
+		top:235px;
+		left:276px;
 		opacity:0;
 		display:none;
 	}
@@ -2483,10 +2491,7 @@ p {
 
 @media only screen and (min-width: 70em) {  /*correct the 1024-1120 situation when list year display on wrapper description */
 
-	.story__wrapper-description-GNR {
-		top:342px;
-		left:438px;
-	}
+
 
 	.story__location-dot-GNR {
 		float:none;
@@ -2519,8 +2524,8 @@ p {
 	}
 
 	.story__wrapper-description-GNR {
-		top:542px;
-		left:665px;
+		top: 300px;
+   		left: 459px;
 	}
 
 }
